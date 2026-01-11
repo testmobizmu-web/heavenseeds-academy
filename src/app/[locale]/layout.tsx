@@ -6,18 +6,19 @@ export const metadata: Metadata = {
   description: "Mauritius Pre-Primary & Online Learning for non-native English speakers.",
 };
 
-export default function LocaleLayout({
-  children,
-  params,
-}: {
+export default async function LocaleLayout(props: {
   children: React.ReactNode;
-  params: { locale: "en" | "fr" };
+  params: Promise<{ locale?: string }>;
 }) {
+  const { children, params } = props;
+
+  const p = await params;
+  const locale = p?.locale === "fr" ? "fr" : "en";
+
   return (
-    <html lang={params.locale}>
-      <body className="min-h-screen bg-white text-slate-900">
-        {children}
-      </body>
+    <html lang={locale}>
+      <body className="min-h-screen bg-white text-slate-900">{children}</body>
     </html>
   );
 }
+
