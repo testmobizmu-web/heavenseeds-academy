@@ -1,9 +1,29 @@
 // src/app/[locale]/page.tsx
 import Image from "next/image";
 import Link from "next/link";
-
 import Reveal from "@/components/hsa/Reveal";
 import BlogMarqueeClient from "@/components/home/BlogMarquee.client";
+
+
+import { headers } from "next/headers";
+
+// ✅ Next 16: headers() is async
+async function getBaseUrl() {
+  const h = await headers();
+  const host = h.get("x-forwarded-host") || h.get("host");
+  const proto = h.get("x-forwarded-proto") || "http";
+  if (host) return `${proto}://${host}`;
+
+  const env =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    process.env.NEXT_PUBLIC_VERCEL_URL ||
+    process.env.VERCEL_URL ||
+    "";
+  if (env) return env.startsWith("http") ? env : `https://${env}`;
+
+  return "http://localhost:3000";
+}
+
 
 /* ---------- helpers ---------- */
 function clamp(str: string, n: number) {
@@ -21,15 +41,6 @@ function ensureProto(url: string) {
   return url.startsWith("http://") || url.startsWith("https://") ? url : `https://${url}`;
 }
 
-function getBaseUrl() {
-  const env =
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    process.env.NEXT_PUBLIC_VERCEL_URL ||
-    process.env.VERCEL_URL ||
-    "";
-  if (env) return ensureProto(env);
-  return "http://localhost:3000";
-}
 
 /* ---------- types ---------- */
 type Locale = "en" | "fr";
@@ -123,16 +134,18 @@ function normalizeNews(items: any[]): NewsItem[] {
 
 async function getNews(locale: Locale): Promise<NewsItem[]> {
   try {
-    const base = getBaseUrl(); // ✅ works on Vercel (VERCEL_URL) + local
-    const url = `${base}/api/news?lang=${locale}&topic=education`;
+    // ✅ Relative fetch works on Vercel + local, no host/proto issues
+    const res = await fetch(`/api/news?lang=${locale}&topic=education`, {
+      next: { revalidate: 60 * 60 * 12 },
+    });
 
-    const res = await fetch(url, { next: { revalidate: 60 * 60 * 12 } });
     if (!res.ok) return [];
 
     const data = await res.json();
-    const raw: any[] = Array.isArray(data?.items) ? data.items : Array.isArray(data) ? data : [];
+    const raw: any[] = Array.isArray(data?.items) ? data.items : [];
 
     const items = normalizeNews(raw).slice(0, 16);
+
     const fallbacks = [
       "/images/news-fallback-01.webp",
       "/images/news-fallback-02.webp",
@@ -151,6 +164,7 @@ async function getNews(locale: Locale): Promise<NewsItem[]> {
 }
 
 
+
 /* ---------- SEO ---------- */
 export async function generateMetadata(props: { params: Promise<{ locale?: string }> }) {
   const p = await props.params;
@@ -166,7 +180,8 @@ export async function generateMetadata(props: { params: Promise<{ locale?: strin
     : "Mauritius nursery & pre-primary school (inclusive, early intervention) + international online learning. Mobile-first, fast, and parent-friendly.";
 
   const ogImg = "/images/hero/hero-rainbow-seed-classroom.webp";
-  const base = getBaseUrl();
+  const base = await getBaseUrl();
+
 
   return {
     title,
@@ -223,7 +238,8 @@ export default async function Home(props: { params: Promise<{ locale?: string }>
     (_, i) => `/images/strip/strip-${String(i + 1).padStart(2, "0")}.webp`
   );
 
-  const base = getBaseUrl();
+  const base = await getBaseUrl();
+
 
   const jsonLd = {
     "@context": "https://schema.org",

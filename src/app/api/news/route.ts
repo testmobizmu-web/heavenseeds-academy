@@ -1,8 +1,10 @@
+// src/app/api/news/route.ts
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 
 const WEEK = 60 * 60 * 24 * 7;
+const TIMEOUT_MS = 8000;
 
 type FeedSource = { name: string; url: string };
 
@@ -75,28 +77,49 @@ function parseRss(xml: string, sourceName: string): NewsItem[] {
 }
 
 async function fetchFeed(src: FeedSource): Promise<NewsItem[]> {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+
   try {
     const res = await fetch(src.url, {
-      next: { revalidate: WEEK },
+      signal: ctrl.signal,
+      redirect: "follow",
+      cache: "no-store", // avoid weird caching differences between local/prod
       headers: {
-        "user-agent": "HeavenSeedsAcademyBot/1.0",
+        // ✅ browser-like UA (some RSS hosts block bot UAs on serverless)
+        "user-agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         accept: "application/rss+xml, application/xml;q=0.9, text/xml;q=0.8, */*;q=0.7",
+        "accept-language": "en-US,en;q=0.9,fr;q=0.8",
+        referer: "https://heavenseedacademy.com/",
       },
     });
+
     if (!res.ok) return [];
+
     const xml = await res.text();
+
+    // ✅ guard: some sites return HTML block pages instead of XML
+    if (!xml || (!xml.includes("<rss") && !xml.includes("<feed") && !xml.includes("<rdf"))) return [];
+
     return parseRss(xml, src.name);
   } catch {
     return [];
+  } finally {
+    clearTimeout(timer);
   }
 }
 
-export async function GET(req: Request) {
-  // memory cache
+export async function GET() {
+  // ✅ memory cache (prevents frequent refetch on hot traffic)
   if (MEM_CACHE && Date.now() - MEM_CACHE.ts < WEEK * 1000) {
     return NextResponse.json(
       { items: MEM_CACHE.items },
-      { headers: { "Cache-Control": `s-maxage=${WEEK}, stale-while-revalidate=86400` } }
+      {
+        headers: {
+          "Cache-Control": `s-maxage=${WEEK}, stale-while-revalidate=86400`,
+        },
+      }
     );
   }
 
@@ -112,8 +135,12 @@ export async function GET(req: Request) {
     { name: "EdSurge", url: "https://www.edsurge.com/feed" },
   ];
 
-  const all = await Promise.all(sources.map(fetchFeed));
-  const flat = all.flat();
+  // ✅ Do NOT let one slow feed block everything
+  const all = await Promise.allSettled(sources.map(fetchFeed));
+  const flat = all
+    .filter((r): r is PromiseFulfilledResult<NewsItem[]> => r.status === "fulfilled")
+    .map((r) => r.value)
+    .flat();
 
   // dedupe by link
   const seen = new Set<string>();
@@ -129,6 +156,11 @@ export async function GET(req: Request) {
 
   return NextResponse.json(
     { items },
-    { headers: { "Cache-Control": `s-maxage=${WEEK}, stale-while-revalidate=86400` } }
+    {
+      headers: {
+        "Cache-Control": `s-maxage=${WEEK}, stale-while-revalidate=86400`,
+      },
+    }
   );
 }
+
