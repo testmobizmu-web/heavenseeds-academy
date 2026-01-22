@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import "../globals.css";
 import HsaHeader from "@/components/HsaHeader";
 import Footer from "@/components/Footer";
 
@@ -59,20 +58,16 @@ export default async function LocaleLayout(props: {
     : "Hello 👋 I’d like information about HeavenSeeds Academy (Mauritius school + international academy).";
 
   const waHref = `https://wa.me/23058204613?text=${encodeURIComponent(waText)}`;
-
   const year = new Date().getFullYear();
 
+  // ✅ IMPORTANT: no <html> or <body> here.
   return (
-    <html lang={locale} className="rp-html">
-      <body className="rp-body">
-        <div data-locale={locale} className="hsa-page">
-          <HsaHeader locale={locale} menu={menu} ctaText={t.cta} ctaHref={waHref} />
+    <div data-locale={locale} className="hsa-page">
+      <HsaHeader locale={locale} menu={menu} ctaText={t.cta} ctaHref={waHref} />
 
-          <main className="hsa-content">{props.children}</main>
+      <main className="hsa-content">{props.children}</main>
 
-          <Footer locale={locale} year={year} />
-        </div>
-      </body>
-    </html>
+      <Footer locale={locale} year={year} />
+    </div>
   );
 }

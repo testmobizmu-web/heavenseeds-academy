@@ -1,6 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect } from "react";
+
+type BlogCard = {
+  img: string;
+  tag: string;
+  title: string;
+  desc: string;
+  href: string;
+};
 
 function clamp(s: string, n: number) {
   if (!s) return "";
@@ -10,8 +20,8 @@ function clamp(s: string, n: number) {
 export default function BlogMarquee(props: { locale: string; isFr: boolean }) {
   const { locale, isFr } = props;
 
-  // ✅ 8 Mauritius cards — UNIQUE TITLES + UNIQUE DESCRIPTIONS
-  const mu = [
+  // ✅ 8 Mauritius cards
+  const mu: BlogCard[] = [
     {
       img: "/images/blog/blog-01.webp",
       tag: isFr ? "Maurice" : "Mauritius",
@@ -86,11 +96,11 @@ export default function BlogMarquee(props: { locale: string; isFr: boolean }) {
     },
   ];
 
-  // ✅ 8 International cards — UNIQUE TITLES + UNIQUE DESCRIPTIONS
-  const intl = [
+  // ✅ 8 International cards
+  const intl: BlogCard[] = [
     {
       img: "/images/blog/blog-09.webp",
-      tag: isFr ? "International" : "International",
+      tag: "International",
       title: isFr ? "Anglais kids : routine courte, résultats réels" : "English for Kids: Short Routine, Real Results",
       desc: isFr
         ? "Une structure simple pour vocabulaire, écoute et expression — sans surcharge."
@@ -99,7 +109,7 @@ export default function BlogMarquee(props: { locale: string; isFr: boolean }) {
     },
     {
       img: "/images/blog/blog-10.webp",
-      tag: isFr ? "International" : "International",
+      tag: "International",
       title: isFr ? "Anglais pro : parler clair au travail" : "Professional English: Speak Clearly at Work",
       desc: isFr
         ? "Phrases utiles, confiance et progression — idéal pour réunions, emails et appels."
@@ -108,7 +118,7 @@ export default function BlogMarquee(props: { locale: string; isFr: boolean }) {
     },
     {
       img: "/images/blog/blog-11.webp",
-      tag: isFr ? "International" : "International",
+      tag: "International",
       title: isFr ? "Cours en visio : méthode premium, fluide" : "Video Lessons: A Premium, Smooth Method",
       desc: isFr
         ? "Comment apprendre vite avec une méthode claire + guidance d’enseignant."
@@ -117,7 +127,7 @@ export default function BlogMarquee(props: { locale: string; isFr: boolean }) {
     },
     {
       img: "/images/blog/blog-12.webp",
-      tag: isFr ? "International" : "International",
+      tag: "International",
       title: isFr ? "Prononciation : 10 minutes par jour" : "Pronunciation: 10 Minutes a Day",
       desc: isFr
         ? "Exercices ciblés, erreurs fréquentes et routine pour parler plus naturellement."
@@ -126,7 +136,7 @@ export default function BlogMarquee(props: { locale: string; isFr: boolean }) {
     },
     {
       img: "/images/blog/blog-13.webp",
-      tag: isFr ? "International" : "International",
+      tag: "International",
       title: isFr ? "Parents : soutenir l’anglais à la maison" : "Parents: Support English at Home",
       desc: isFr
         ? "Petits rituels efficaces (sans pression) pour progresser en confiance."
@@ -135,7 +145,7 @@ export default function BlogMarquee(props: { locale: string; isFr: boolean }) {
     },
     {
       img: "/images/blog/blog-14.webp",
-      tag: isFr ? "International" : "International",
+      tag: "International",
       title: isFr ? "Classe de groupe : parler plus, stresser moins" : "Group Classes: Speak More, Stress Less",
       desc: isFr
         ? "Conversation guidée, feedback premium et progrès mesurable semaine après semaine."
@@ -144,7 +154,7 @@ export default function BlogMarquee(props: { locale: string; isFr: boolean }) {
     },
     {
       img: "/images/blog/blog-15.webp",
-      tag: isFr ? "International" : "International",
+      tag: "International",
       title: isFr ? "Vocabulaire : méthode flashcards moderne" : "Vocabulary: A Modern Flashcards Method",
       desc: isFr
         ? "Apprendre plus vite avec révision intelligente + mini objectifs quotidiens."
@@ -153,7 +163,7 @@ export default function BlogMarquee(props: { locale: string; isFr: boolean }) {
     },
     {
       img: "/images/blog/blog-16.webp",
-      tag: isFr ? "International" : "International",
+      tag: "International",
       title: isFr ? "Confiance à l’oral : parler naturellement" : "Speaking Confidence: Sound Natural",
       desc: isFr
         ? "Stratégies simples pour gagner en fluidité, clarté et assurance."
@@ -165,25 +175,29 @@ export default function BlogMarquee(props: { locale: string; isFr: boolean }) {
   const muLoop = [...mu, ...mu];
   const intlLoop = [...intl, ...intl];
 
-  const Card = (b: any, key: string) => (
-    <a key={key} href={b.href} className="hsa-postCard hsa-sheen hsa-postCard--pro">
+  useEffect(() => {
+    // If you open browser console, you must see this on homepage.
+    console.log("[BlogMarquee] mounted", { locale, mu: mu.length, intl: intl.length });
+  }, [locale]);
+
+  const Card = (b: BlogCard, key: string) => (
+    <Link key={key} href={b.href} className="hsa-postCard hsa-postCard--force">
       <div className="hsa-postCard__imgWrap">
         <Image
           src={b.img}
           alt={b.title}
           width={520}
           height={520}
-          className="hsa-postCard__img hsa-postCard__img--sq"
-          sizes="280px"
+          className="hsa-postCard__img"
+          sizes="260px"
           loading="lazy"
         />
-        <div className="hsa-postCard__shine" aria-hidden="true" />
       </div>
 
       <div className="hsa-postCard__body">
         <div className="hsa-postCard__meta">
           <span className="hsa-tag">{b.tag}</span>
-          <span className="hsa-level">{isFr ? "Premium" : "Premium"}</span>
+          <span className="hsa-level">Premium</span>
         </div>
 
         <div className="hsa-postCard__title">{clamp(b.title, 62)}</div>
@@ -191,17 +205,65 @@ export default function BlogMarquee(props: { locale: string; isFr: boolean }) {
 
         <div className="hsa-postCard__foot">
           <span className="hsa-readPill">
-            <span className="hsa-readPill__short">{isFr ? "Lire" : "Read"}</span>
-            <span className="hsa-readPill__long">{isFr ? "Lire l’article" : "Read article"}</span>
-            <span className="hsa-readPill__arrow" aria-hidden="true">→</span>
+            {isFr ? "Lire l’article" : "Read article"} <span aria-hidden="true">→</span>
           </span>
         </div>
       </div>
-    </a>
+    </Link>
   );
 
   return (
     <>
+      {/* Force-visible minimal CSS (so cards show even if global postCard CSS is missing) */}
+      <style>{`
+        .hsa-blogRowHead{display:flex;align-items:center;gap:12px;margin:14px 0 6px}
+        .hsa-blogRowHead--mt{margin-top:18px}
+        .hsa-blogRowPill{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(15,23,42,.12);background:rgba(255,255,255,.75)}
+        .hsa-blogRowPill--intl{background:rgba(255,255,255,.75)}
+        .hsa-blogRowHint{font-size:13px;color:rgba(11,18,32,.62)}
+
+        /* important: ensure marquee area has height */
+        .hsa-auto{overflow:hidden;position:relative;mask-image:linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);}
+        .hsa-autoRow{display:flex;gap:12px;padding:10px 0}
+        .hsa-autoTrack{display:flex;flex-wrap:nowrap;gap:12px;width:max-content;will-change:transform;animation:hsa-marquee-left 62s linear infinite}
+        .hsa-autoTrack--right{animation:hsa-marquee-right 62s linear infinite}
+        @keyframes hsa-marquee-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+        @keyframes hsa-marquee-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+        @media (prefers-reduced-motion: reduce){.hsa-autoTrack,.hsa-autoTrack--right{animation:none!important;transform:none!important}}
+
+        /* force visible card */
+        .hsa-postCard--force{
+          min-width:260px;max-width:260px;
+          display:flex;flex-direction:column;
+          border-radius:18px;
+          border:1px solid rgba(15,23,42,.10);
+          background:rgba(255,255,255,.85);
+          box-shadow:0 14px 40px rgba(2,6,23,.08);
+          overflow:hidden;
+          text-decoration:none;
+          color:inherit;
+        }
+        .hsa-postCard__imgWrap{padding:12px 12px 0}
+        .hsa-postCard__img{
+          width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;
+          border-radius:14px;border:1px solid rgba(15,23,42,.10);background:rgba(255,255,255,.6);
+        }
+        .hsa-postCard__body{padding:12px 12px 14px;display:flex;flex-direction:column;gap:8px}
+        .hsa-postCard__meta{display:flex;align-items:center;justify-content:space-between;gap:10px}
+        .hsa-tag{font-size:12px;padding:5px 9px;border-radius:999px;background:rgba(140,15,26,.10);border:1px solid rgba(140,15,26,.18);color:rgba(140,15,26,.92)}
+        .hsa-level{font-size:12px;color:rgba(11,18,32,.55)}
+        .hsa-postCard__title{font-weight:800;letter-spacing:-.02em;line-height:1.2}
+        .hsa-postCard__desc{font-size:13px;line-height:1.45;color:rgba(11,18,32,.72);min-height:40px}
+        .hsa-postCard__foot{margin-top:auto}
+        .hsa-readPill{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:10px 12px;border-radius:999px;border:1px solid rgba(15,23,42,.12);background:rgba(255,255,255,.8)}
+        .hsa-blogFoot{margin-top:14px}
+      `}</style>
+
+      {/* Debug line: if you see this, component rendered */}
+      <div style={{ fontSize: 12, opacity: 0.55, marginBottom: 6 }}>
+        BlogMarquee OK • {mu.length + intl.length} posts loaded
+      </div>
+
       {/* Row 1 — Mauritius */}
       <div className="hsa-blogRowHead">
         <span className="hsa-blogRowPill">{isFr ? "Maurice" : "Mauritius"}</span>
@@ -210,32 +272,34 @@ export default function BlogMarquee(props: { locale: string; isFr: boolean }) {
         </span>
       </div>
 
-      <div className="hsa-autoRow hsa-autoRow--left hsa-blogRow" aria-label="Mauritius blog row">
-        <div className="hsa-autoRow__track">
-          {muLoop.map((b, idx) => Card(b, `mu-${b.img}-${idx}`))}
+      <div className="hsa-auto" aria-label="Mauritius blog row">
+        <div className="hsa-autoRow">
+          <div className="hsa-autoTrack">{muLoop.map((b, idx) => Card(b, `mu-${b.href}-${idx}`))}</div>
         </div>
       </div>
 
       {/* Row 2 — International */}
       <div className="hsa-blogRowHead hsa-blogRowHead--mt">
-        <span className="hsa-blogRowPill hsa-blogRowPill--intl">{isFr ? "International" : "International"}</span>
-        <span className="hsa-blogRowHint">
-          {isFr ? "Anglais • Confiance • Progression" : "English • Confidence • Progress"}
-        </span>
+        <span className="hsa-blogRowPill hsa-blogRowPill--intl">International</span>
+        <span className="hsa-blogRowHint">{isFr ? "Anglais • Confiance • Progression" : "English • Confidence • Progress"}</span>
       </div>
 
-      <div className="hsa-autoRow hsa-autoRow--right hsa-blogRow" aria-label="International blog row">
-        <div className="hsa-autoRow__track">
-          {intlLoop.map((b, idx) => Card(b, `intl-${b.img}-${idx}`))}
+      <div className="hsa-auto" aria-label="International blog row">
+        <div className="hsa-autoRow">
+          <div className="hsa-autoTrack hsa-autoTrack--right">
+            {intlLoop.map((b, idx) => Card(b, `intl-${b.href}-${idx}`))}
+          </div>
         </div>
       </div>
 
       <div className="hsa-blogFoot">
-        <a className="hsa-btn hsa-btn--dark" href={`/${locale}/blog`}>
+        <Link className="hsa-btn hsa-btn--dark" href={`/${locale}/blog`}>
           {isFr ? "Voir tous les articles" : "View all articles"}
-        </a>
+        </Link>
       </div>
     </>
   );
 }
+
+
 

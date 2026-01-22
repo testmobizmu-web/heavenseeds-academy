@@ -120,9 +120,10 @@ function normalizeNews(items: any[]): NewsItem[] {
 }
 
 /* ---------- NEWS FETCH (SERVER SAFE) ---------- */
+
 async function getNews(locale: Locale): Promise<NewsItem[]> {
   try {
-    const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+    const base = getBaseUrl(); // ✅ works on Vercel (VERCEL_URL) + local
     const url = `${base}/api/news?lang=${locale}&topic=education`;
 
     const res = await fetch(url, { next: { revalidate: 60 * 60 * 12 } });
@@ -148,6 +149,7 @@ async function getNews(locale: Locale): Promise<NewsItem[]> {
     return [];
   }
 }
+
 
 /* ---------- SEO ---------- */
 export async function generateMetadata(props: { params: Promise<{ locale?: string }> }) {
