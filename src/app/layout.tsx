@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
+
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://heavenseedacademy.com";
 
@@ -73,7 +73,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className="rp-html" suppressHydrationWarning>
       <body className="rp-body">
         {children}
-        <WhatsAppFloat />
       </body>
     </html>
   );

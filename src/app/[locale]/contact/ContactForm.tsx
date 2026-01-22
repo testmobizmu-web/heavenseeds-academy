@@ -224,12 +224,10 @@ export default function ContactForm({ locale }: Props) {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
-            placeholder={
-              isFr
-                ? "Expliquez votre demande (âge, niveau, horaires, etc.)"
-                : "Tell us what you need (age, level, schedule, etc.)"
-            }
-          />
+            style={{ minHeight: 110 }}   // ✅ compact
+           placeholder={isFr ? "Expliquez votre demande (âge, niveau, horaires, etc.)" : "Tell us what you need (age, level, schedule,                         etc.)"}
+      />
+
         </label>
 
         <button
