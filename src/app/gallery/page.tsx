@@ -2,6 +2,8 @@
 import Link from "next/link";
 import {
   ArrowRight,
+  Baby,
+  Brain,
   Camera,
   CheckCircle2,
   Heart,
@@ -10,103 +12,108 @@ import {
   MessageCircle,
   ShieldCheck,
   Sparkles,
+  Speech,
 } from "lucide-react";
 import { createMetadata } from "@/lib/seo/metadata";
 import { pageSeo } from "@/lib/seo/site";
 
-export const metadata = createMetadata(pageSeo.gallery);
-
+export const metadata = createMetadata({
+  ...pageSeo.gallery,
+  title: "Gallery",
+  description:
+    "Explore Heaven’s Seed International School gallery showing nursery learning, inclusive education, speech support, creative development, primary support and caring child development moments.",
+});
 
 const galleryItems = [
   {
     src: "/images/Gallery/gallery-01.jpg",
-    label: "Creative Learning",
-    title: "Children learning through creativity",
+    label: "Nursery Learning",
+    title: "A gentle start for young learners",
     description:
-      "A warm pre-primary classroom where children explore ideas through hands-on activities, guided discovery and gentle teacher support.",
-    highlights: ["Creative activities", "Guided discovery", "Confidence building"],
-    alt: "Realistic warm pre-primary classroom in Mauritius with children doing creative learning activities",
+      "A warm nursery environment where children feel safe, loved and ready to explore learning through play, routine and caring guidance.",
+    highlights: ["Nursery care", "Safe routines", "Confidence building"],
+    alt: "Nursery children learning in a warm caring classroom environment",
   },
   {
     src: "/images/Gallery/gallery-02.jpg",
-    label: "Art & Painting",
-    title: "Expression through art and painting",
+    label: "Creative Expression",
+    title: "Expression through art and creativity",
     description:
-      "Children develop imagination, fine motor skills and self-expression through painting, drawing and colourful classroom experiences.",
+      "Creative activities help children express emotions, build fine motor skills and develop imagination in a joyful, supportive space.",
     highlights: ["Art confidence", "Fine motor skills", "Self-expression"],
-    alt: "Mauritius preschool classroom with young children painting and drawing in a safe space",
+    alt: "Children doing art and creative learning activities",
   },
   {
     src: "/images/Gallery/gallery-03.jpg",
-    label: "Story Time",
+    label: "Speech & Language",
     title: "Language growth through stories",
     description:
-      "Story time helps children build listening skills, vocabulary, imagination and a love for books from an early age.",
-    highlights: ["Early language", "Listening skills", "Love for books"],
-    alt: "Children in Mauritius sitting in a circle for story time with a teacher reading a book",
+      "Story time supports listening, vocabulary, communication, expression and early speech development in a calm learning environment.",
+    highlights: ["Speech support", "Vocabulary growth", "Listening skills"],
+    alt: "Children listening to story time for language and speech development",
   },
   {
     src: "/images/Gallery/gallery-04.jpg",
-    label: "Outdoor Play",
-    title: "Safe outdoor play and movement",
+    label: "Outdoor Discovery",
+    title: "Movement, discovery and confidence",
     description:
-      "Outdoor play supports movement, balance, social confidence and joyful exploration in a safe Mauritius school environment.",
+      "Outdoor play supports social confidence, movement, balance and emotional wellbeing while children explore the world around them.",
     highlights: ["Safe play", "Motor skills", "Social confidence"],
-    alt: "Pre-primary school outdoor play area in Mauritius with children playing safely",
+    alt: "Children playing safely outdoors in a caring school environment",
   },
   {
     src: "/images/Gallery/gallery-05.jpg",
-    label: "Alphabet Learning",
-    title: "Early alphabet and language support",
+    label: "Primary Support",
+    title: "Early literacy and primary readiness",
     description:
-      "Children are gently introduced to letters, sounds and early communication skills through caring teacher guidance.",
-    highlights: ["Alphabet awareness", "Teacher guidance", "Early literacy"],
-    alt: "Caring teacher helping a child with alphabet learning in a Mauritius nursery classroom",
+      "Children receive patient support with letters, sounds, early reading, communication and the foundations needed for primary learning.",
+    highlights: ["Early literacy", "Reading support", "Teacher guidance"],
+    alt: "Teacher helping a child with alphabet and early literacy learning",
   },
   {
     src: "/images/Gallery/gallery-06.jpg",
-    label: "Teamwork",
-    title: "Building confidence together",
+    label: "Inclusive Learning",
+    title: "Learning together with patience",
     description:
-      "Block play and group activities help children learn sharing, teamwork, patience and problem-solving in a joyful way.",
-    highlights: ["Teamwork", "Problem-solving", "Social learning"],
-    alt: "Young children building blocks in a clean pre-primary classroom in Mauritius",
+      "Inclusive learning moments help children build teamwork, confidence, focus and problem-solving at their own pace.",
+    highlights: ["Inclusive care", "Teamwork", "Problem-solving"],
+    alt: "Children building blocks together in an inclusive classroom setting",
   },
   {
     src: "/images/Gallery/gallery-07.jpg",
     label: "Music & Movement",
-    title: "Joyful music and movement",
+    title: "Joyful rhythm and movement",
     description:
-      "Music, rhythm and guided movement help children develop coordination, expression and confidence in group settings.",
-    highlights: ["Rhythm", "Movement", "Group participation"],
-    alt: "Mauritius kindergarten music and movement activity with children smiling",
+      "Music and movement activities help children develop coordination, expression, confidence and group participation.",
+    highlights: ["Rhythm", "Movement", "Group confidence"],
+    alt: "Children enjoying music and movement activities",
   },
   {
     src: "/images/Gallery/gallery-08.jpg",
     label: "Healthy Routines",
-    title: "Learning healthy daily habits",
+    title: "Learning daily habits with care",
     description:
-      "Simple routines such as handwashing and hygiene help children develop independence, responsibility and self-care.",
-    highlights: ["Hygiene habits", "Independence", "Daily routine"],
-    alt: "Children learning hygiene routine at a preschool in Mauritius",
+      "Simple routines such as hygiene, self-care and calm transitions help children develop independence and responsibility.",
+    highlights: ["Daily routine", "Independence", "Self-care"],
+    alt: "Children learning hygiene and healthy daily routines",
   },
   {
     src: "/images/Gallery/gallery-09.jpg",
-    label: "Snack Time",
-    title: "Calm, caring snack routines",
+    label: "Emotional Support",
+    title: "Calm routines that support wellbeing",
     description:
-      "Snack time is part of a nurturing daily rhythm where children practise manners, patience and social connection.",
-    highlights: ["Healthy rhythm", "Social manners", "Calm routine"],
-    alt: "Pre-primary classroom snack time in Mauritius with calm nurturing atmosphere",
+      "Children grow best when they feel emotionally safe. Caring routines help build patience, social comfort and emotional security.",
+    highlights: ["Emotional care", "Calm routine", "Social comfort"],
+    alt: "Children in a calm caring classroom routine",
   },
   {
     src: "/images/Gallery/gallery-10.jpg",
-    label: "Garden Discovery",
-    title: "Exploring nature with curiosity",
+    label: "Nature Learning",
+    title: "Exploring with curiosity",
     description:
-      "Garden discovery encourages children to observe, ask questions and connect with nature in a safe tropical setting.",
-    highlights: ["Nature learning", "Curiosity", "Outdoor discovery"],
-    alt: "Mauritius preschool garden learning activity with children exploring plants and leaves",
+      "Nature discovery encourages observation, language, curiosity and sensory learning in a safe, inspiring environment.",
+    highlights: ["Nature learning", "Curiosity", "Sensory discovery"],
+    alt: "Children exploring plants and nature in a garden learning activity",
   },
 ];
 
@@ -116,37 +123,37 @@ export default function GalleryPage() {
       {/* Hero */}
       <section className="relative px-4 py-7 sm:px-6 sm:py-9 lg:px-8 lg:py-10">
         <div className="mx-auto max-w-7xl">
-          <div className="overflow-hidden rounded-[2rem] bg-[#183528] p-6 text-white shadow-[0_26px_85px_rgba(24,53,40,0.14)] sm:p-8 lg:p-10">
+          <div className="overflow-hidden rounded-[2rem] bg-[#A84F3F] p-6 text-white shadow-[0_26px_85px_rgba(168,79,63,0.18)] sm:p-8 lg:p-10">
             <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
               <div>
-                <p className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/10 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#f4d77b] backdrop-blur-md sm:text-[11px]">
+                <p className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/10 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#F4D77B] backdrop-blur-md sm:text-[11px]">
                   <Camera size={14} />
-                  Heaven Seeds Gallery
+                  Heaven’s Seed Gallery
                 </p>
 
                 <h1 className="mt-5 max-w-3xl text-3xl font-extrabold leading-tight tracking-[-0.055em] text-white sm:text-5xl lg:text-6xl">
-                  Real moments of care, play and discovery.
+                  Moments of care, growth and inclusive learning.
                 </h1>
 
-                <p className="mt-4 max-w-2xl text-sm font-semibold leading-7 text-white/78 sm:text-lg sm:leading-8">
-                  Explore the warm learning environment of Heaven Seeds Academy
-                  in Mauritius â€” from creative classroom moments to outdoor
-                  discovery, story time, healthy routines and joyful pre-primary
-                  development.
+                <p className="mt-4 max-w-2xl text-sm font-semibold leading-7 text-white/82 sm:text-lg sm:leading-8">
+                  Explore the warm learning environment of Heaven’s Seed
+                  International School — from nursery care and creative learning
+                  to speech support, inclusive education, primary guidance and
+                  emotional development.
                 </p>
 
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                   <Link
                     href="/admissions"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#7f1d1d] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(127,29,29,0.36)] transition hover:-translate-y-1 hover:bg-[#991b1b]"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.36)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
                   >
-                    <span className="text-white">Start Enrollment</span>
-                    <ArrowRight size={17} className="text-white" />
+                    <span className="text-[#7F342B]">Start Enrollment</span>
+                    <ArrowRight size={17} className="text-[#7F342B]" />
                   </Link>
 
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f28c28] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(242,140,40,0.36)] transition hover:-translate-y-1 hover:bg-[#ff9f3f]"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-white/16 px-6 py-3 text-sm font-extrabold !text-white ring-1 ring-white/25 backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/24"
                   >
                     <span className="text-white">Contact Us</span>
                     <MessageCircle size={17} className="text-white" />
@@ -162,19 +169,19 @@ export default function GalleryPage() {
                     text: "A caring environment where children feel secure.",
                   },
                   {
+                    icon: Speech,
+                    title: "Speech Support",
+                    text: "Gentle guidance for speech, language and expression.",
+                  },
+                  {
+                    icon: Brain,
+                    title: "Emotional Care",
+                    text: "Support for confidence, behaviour and wellbeing.",
+                  },
+                  {
                     icon: Heart,
-                    title: "Warm Care",
-                    text: "Gentle support, kindness and daily encouragement.",
-                  },
-                  {
-                    icon: Sparkles,
-                    title: "Joyful Learning",
-                    text: "Creative activities that build confidence.",
-                  },
-                  {
-                    icon: Leaf,
-                    title: "Nature Moments",
-                    text: "Outdoor discovery in a tropical Mauritius setting.",
+                    title: "Inclusive Learning",
+                    text: "Every child is valued and supported at their own pace.",
                   },
                 ].map((item) => {
                   const Icon = item.icon;
@@ -184,7 +191,7 @@ export default function GalleryPage() {
                       key={item.title}
                       className="rounded-[1.5rem] border border-white/12 bg-white/10 p-5 shadow-[0_18px_55px_rgba(0,0,0,0.12)] backdrop-blur-xl"
                     >
-                      <div className="grid size-11 place-items-center rounded-2xl bg-white text-[#183528]">
+                      <div className="grid size-11 place-items-center rounded-2xl bg-[#F4B321] text-[#7F342B]">
                         <Icon size={20} strokeWidth={2.4} />
                       </div>
 
@@ -192,7 +199,7 @@ export default function GalleryPage() {
                         {item.title}
                       </h2>
 
-                      <p className="mt-2 text-sm leading-6 text-white/72">
+                      <p className="mt-2 text-sm leading-6 text-white/76">
                         {item.text}
                       </p>
                     </article>
@@ -209,19 +216,19 @@ export default function GalleryPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 grid gap-4 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
-              <p className="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#d6a84f]">
+              <p className="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F]">
                 <Images size={15} />
                 Learning Moments
               </p>
 
               <h2 className="mt-3 text-3xl font-extrabold leading-tight tracking-[-0.045em] text-[#183528] sm:text-4xl">
-                Inside our pre-primary environment.
+                Inside our inclusive learning environment.
               </h2>
             </div>
 
             <p className="max-w-2xl text-sm leading-7 text-[#426252] sm:text-base lg:ml-auto">
-              Each moment reflects our approach: safety, love, creativity,
-              structure, confidence and joyful early childhood learning.
+              Each moment reflects our approach: safety, love, speech support,
+              creativity, emotional care, primary readiness and joyful learning.
             </p>
           </div>
 
@@ -229,16 +236,16 @@ export default function GalleryPage() {
             {galleryItems.map((item, index) => (
               <article
                 key={item.src}
-                className="group grid gap-5 rounded-[2rem] border border-white/45 bg-white/55 p-4 shadow-[0_24px_80px_rgba(24,53,40,0.10)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-white/70 sm:p-5 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-8 lg:p-6"
+                className="group grid gap-5 rounded-[2rem] border border-white/45 bg-white/58 p-4 shadow-[0_24px_80px_rgba(24,53,40,0.10)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-white/75 sm:p-5 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-8 lg:p-6"
               >
                 {/* Text Left */}
                 <div className="order-2 flex flex-col justify-center px-1 py-2 lg:order-1 lg:px-4">
                   <div className="flex items-center gap-3">
-                    <span className="grid size-10 place-items-center rounded-2xl bg-[#183528] text-sm font-extrabold text-white shadow-[0_14px_35px_rgba(24,53,40,0.18)]">
+                    <span className="grid size-10 place-items-center rounded-2xl bg-[#A84F3F] text-sm font-extrabold text-white shadow-[0_14px_35px_rgba(168,79,63,0.18)]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
-                    <p className="rounded-full border border-[#d6a84f]/35 bg-[#fff4df]/70 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#7f1d1d]">
+                    <p className="rounded-full border border-[#F4B321]/35 bg-[#FFF4DF]/85 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#7F342B]">
                       {item.label}
                     </p>
                   </div>
@@ -255,11 +262,11 @@ export default function GalleryPage() {
                     {item.highlights.map((highlight) => (
                       <div
                         key={highlight}
-                        className="flex items-center gap-2 rounded-2xl border border-[#183528]/10 bg-white/64 px-3 py-2 text-xs font-extrabold text-[#183528] shadow-sm"
+                        className="flex items-center gap-2 rounded-2xl border border-[#A84F3F]/10 bg-white/68 px-3 py-2 text-xs font-extrabold text-[#183528] shadow-sm"
                       >
                         <CheckCircle2
                           size={15}
-                          className="shrink-0 text-[#d6a84f]"
+                          className="shrink-0 text-[#F4B321]"
                           strokeWidth={2.5}
                         />
                         {highlight}
@@ -270,17 +277,17 @@ export default function GalleryPage() {
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                     <Link
                       href="/admissions"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[#7f1d1d] px-5 py-2.5 text-sm font-extrabold !text-white shadow-[0_16px_38px_rgba(127,29,29,0.25)] transition hover:-translate-y-1 hover:bg-[#991b1b]"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-5 py-2.5 text-sm font-extrabold !text-[#7F342B] shadow-[0_16px_38px_rgba(244,179,33,0.25)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
                     >
-                      <span className="text-white">Start Enrollment</span>
-                      <ArrowRight size={16} className="text-white" />
+                      <span className="text-[#7F342B]">Start Enrollment</span>
+                      <ArrowRight size={16} className="text-[#7F342B]" />
                     </Link>
 
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f28c28] px-5 py-2.5 text-sm font-extrabold !text-white shadow-[0_16px_38px_rgba(242,140,40,0.28)] transition hover:-translate-y-1 hover:bg-[#ff9f3f]"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[#A84F3F] px-5 py-2.5 text-sm font-extrabold !text-white shadow-[0_16px_38px_rgba(168,79,63,0.28)] transition hover:-translate-y-1 hover:bg-[#7F342B]"
                     >
-                      <span className="text-white">Ask About Visits</span>
+                      <span className="text-white">Ask About Support</span>
                       <MessageCircle size={16} className="text-white" />
                     </Link>
                   </div>
@@ -288,7 +295,7 @@ export default function GalleryPage() {
 
                 {/* Image Right */}
                 <div className="order-1 lg:order-2">
-                  <div className="relative aspect-[3/2] overflow-hidden rounded-[1.75rem] bg-[#183528] shadow-[0_22px_70px_rgba(24,53,40,0.15)]">
+                  <div className="relative aspect-[3/2] overflow-hidden rounded-[1.75rem] bg-[#A84F3F] shadow-[0_22px_70px_rgba(168,79,63,0.15)]">
                     <Image
                       src={item.src}
                       alt={item.alt}
@@ -298,12 +305,12 @@ export default function GalleryPage() {
                       priority={index === 0}
                     />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#183528]/50 via-transparent to-transparent opacity-80" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#7F342B]/50 via-transparent to-transparent opacity-80" />
 
                     <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-2xl border border-white/25 bg-white/18 px-4 py-3 text-white shadow-lg backdrop-blur-md">
                       <span className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.16em]">
                         <Sparkles size={14} />
-                        Heaven Seeds Academy
+                        Heaven’s Seed International School
                       </span>
 
                       <ArrowRight size={16} />
@@ -319,37 +326,38 @@ export default function GalleryPage() {
       {/* Final CTA */}
       <section className="px-4 py-6 pb-12 sm:px-6 sm:py-8 sm:pb-14 lg:px-8 lg:py-10 lg:pb-16">
         <div className="mx-auto max-w-7xl">
-          <div className="rounded-[2rem] bg-[#183528] p-6 text-white shadow-[0_26px_85px_rgba(24,53,40,0.16)] sm:p-8 lg:p-10">
+          <div className="rounded-[2rem] bg-[#A84F3F] p-6 text-white shadow-[0_26px_85px_rgba(168,79,63,0.18)] sm:p-8 lg:p-10">
             <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
-                <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#f4d77b]">
-                  Visit Heaven Seeds
+                <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#F4D77B]">
+                  Visit Heaven’s Seed
                 </p>
 
                 <h2 className="mt-3 max-w-3xl text-3xl font-extrabold leading-tight tracking-[-0.045em] text-white sm:text-4xl">
-                  Want to experience the environment in person?
+                  Want to discuss the right support for your child?
                 </h2>
 
-                <p className="mt-4 max-w-2xl text-sm leading-7 text-white/76 sm:text-base">
-                  Contact us to discuss admissions, visits and how Heaven Seeds
-                  Academy can support your childâ€™s early learning journey.
+                <p className="mt-4 max-w-2xl text-sm leading-7 text-white/80 sm:text-base">
+                  Contact us to discuss nursery, inclusive learning, primary
+                  support, speech delay support, speech therapy guidance and
+                  child psychology support.
                 </p>
               </div>
 
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
                 <Link
                   href="/admissions"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#7f1d1d] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(127,29,29,0.36)] transition hover:-translate-y-1 hover:bg-[#991b1b]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.36)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
                 >
-                  <span className="text-white">Start Enrollment</span>
-                  <ArrowRight size={17} className="text-white" />
+                  <span className="text-[#7F342B]">Start Enrollment</span>
+                  <ArrowRight size={17} className="text-[#7F342B]" />
                 </Link>
 
                 <Link
                   href="https://wa.me/23058204613"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f28c28] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(242,140,40,0.36)] transition hover:-translate-y-1 hover:bg-[#ff9f3f]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white/16 px-6 py-3 text-sm font-extrabold !text-white ring-1 ring-white/25 backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/24"
                 >
                   <span className="text-white">WhatsApp Us</span>
                   <MessageCircle size={17} className="text-white" />
@@ -359,10 +367,10 @@ export default function GalleryPage() {
           </div>
 
           <p className="sr-only">
-            Heaven Seeds Academy gallery page showing realistic pre-primary
-            school life in Mauritius, including creative learning, painting,
-            story time, outdoor play, alphabet learning, teamwork, music,
-            hygiene routines, snack time and garden discovery.
+            Heaven’s Seed International School gallery page showing nursery,
+            inclusive education, primary support, speech delay support, speech
+            therapy guidance, child psychology support, creative development and
+            emotional care.
           </p>
         </div>
       </section>

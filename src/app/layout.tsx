@@ -22,63 +22,145 @@ const siteUrl = siteConfig.url;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  applicationName: "Heaven Seeds Academy",
+  applicationName: "Heaven’s Seed International School",
+
   title: {
-    default: "Heaven Seeds Academy | Pre-Primary School in Mauritius",
-    template: "%s | Heaven Seeds Academy",
+    default:
+      "Heaven’s Seed International School | Nursery, Inclusive & Primary Support",
+    template: "%s | Heaven’s Seed International School",
   },
+
   description:
-    "Heaven Seeds Academy is a warm, safe and nurturing pre-primary school in Mauritius, helping children grow with love, confidence, creativity and strong early learning foundations.",
+    "Heaven’s Seed International School is an inclusive learning community in Mauritius offering nursery education, inclusive education, primary learning support, speech delay support, speech therapy guidance and child psychology support in a safe, caring and flexible environment.",
+
   keywords: [
+    "Heaven’s Seed International School",
     "Heaven Seeds Academy",
-    "pre-primary school Mauritius",
-    "preschool Mauritius",
+    "Heaven Seed Mauritius",
+    "Heaven Seeds Mauritius",
+    "Heaven’s Seed School Mauritius",
+    "Heaven’s Seed International School Mauritius",
+
     "nursery school Mauritius",
+    "nursery Mauritius",
+    "nursery Quatre Bornes",
+    "nursery school Quatre Bornes",
+    "pre-primary school Mauritius",
+    "pre primary Mauritius",
+    "preschool Mauritius",
     "kindergarten Mauritius",
     "early childhood education Mauritius",
-    "Quatre Bornes pre-primary school",
-    "Mauritius early learning",
+    "early learning Mauritius",
     "childcare Mauritius",
-    "admissions pre-primary Mauritius",
+    "children learning Mauritius",
+
+    "primary support Mauritius",
+    "primary learning support Mauritius",
+    "primary school support Mauritius",
+    "primary tuition Mauritius",
+    "primary education support Mauritius",
+    "home learning support Mauritius",
+    "online learning Mauritius",
+    "online education Mauritius",
+    "online school Mauritius",
+    "flexible education Mauritius",
+
+    "inclusive education Mauritius",
+    "inclusive school Mauritius",
+    "inclusive learning Mauritius",
+    "special needs education Mauritius",
+    "different learning needs Mauritius",
+    "learning support Mauritius",
+    "child learning support Mauritius",
+    "personalised learning Mauritius",
+    "individual learning support Mauritius",
+    "supportive school Mauritius",
+
+    "speech delay support Mauritius",
+    "speech delay Mauritius",
+    "speech therapy Mauritius",
+    "speech therapy guidance Mauritius",
+    "speech support Mauritius",
+    "language delay support Mauritius",
+    "communication support children Mauritius",
+    "speech and language support Mauritius",
+    "child communication support Mauritius",
+
+    "child psychology support Mauritius",
+    "child psychology Mauritius",
+    "child emotional support Mauritius",
+    "child behaviour support Mauritius",
+    "child development support Mauritius",
+    "child confidence building Mauritius",
+    "emotional development children Mauritius",
+    "social development children Mauritius",
+    "holistic child development Mauritius",
+
+    "parent support Mauritius",
+    "family learning support Mauritius",
+    "teacher parent partnership Mauritius",
+    "admissions nursery Mauritius",
+    "admissions inclusive school Mauritius",
+    "admissions primary support Mauritius",
+    "school admissions Mauritius",
+    "Quatre Bornes school",
+    "Quatre Bornes nursery",
+    "Quatre Bornes inclusive education",
+    "Malartic Avenue Quatre Bornes",
   ],
-  authors: [{ name: "Heaven Seeds Academy" }],
-  creator: "Heaven Seeds Academy",
-  publisher: "Heaven Seeds Academy",
+
+  authors: [{ name: "Heaven’s Seed International School" }],
+  creator: "Heaven’s Seed International School",
+  publisher: "Heaven’s Seed International School",
+
+  category: "education",
+
   alternates: {
     canonical: siteUrl,
   },
+
   openGraph: {
-    title: "Heaven Seeds Academy | Pre-Primary School in Mauritius",
+    title:
+      "Heaven’s Seed International School | Nursery, Inclusive & Primary Support",
     description:
-      "A safe, caring and joyful pre-primary environment in Mauritius where children grow with confidence and love.",
+      "An inclusive learning community in Mauritius offering nursery education, primary support, speech delay support, speech therapy guidance and child psychology support.",
     url: siteUrl,
-    siteName: "Heaven Seeds Academy",
+    siteName: "Heaven’s Seed International School",
     images: [
       {
         url: "/images/og/heaven-seeds-og.jpg",
         width: 1200,
         height: 630,
-        alt: "Heaven Seeds Academy pre-primary school in Mauritius",
+        alt: "Heaven’s Seed International School inclusive learning community in Mauritius",
       },
     ],
     locale: "en_MU",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Heaven Seeds Academy | Pre-Primary School in Mauritius",
-    description: "A warm, safe and nurturing pre-primary school in Mauritius.",
+    title:
+      "Heaven’s Seed International School | Inclusive Learning in Mauritius",
+    description:
+      "Nursery, inclusive education, primary support, speech delay support and child psychology support in Mauritius.",
     images: ["/images/og/heaven-seeds-og.jpg"],
   },
+
   icons: {
     icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
+
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       "max-image-preview": "large",
       "max-snippet": -1,
       "max-video-preview": -1,

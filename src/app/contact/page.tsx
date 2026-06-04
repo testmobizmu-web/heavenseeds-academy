@@ -3,6 +3,7 @@
 import Link from "next/link";
 import {
   ArrowRight,
+  Brain,
   ChevronDown,
   Clock,
   Mail,
@@ -12,6 +13,7 @@ import {
   Send,
   ShieldCheck,
   Sparkles,
+  Speech,
 } from "lucide-react";
 import { FormEvent, useState } from "react";
 
@@ -24,11 +26,13 @@ const address =
   "111, Malartic Avenue, Quatre Bornes, 75947, Zone 4, Mauritius";
 
 const enquiryTypes = [
-  "Admission enquiry",
-  "Book a school visit",
-  "Programme information",
+  "Nursery admission enquiry",
+  "Inclusive education support",
+  "Primary learning support",
+  "Speech delay support",
+  "Speech therapy guidance",
+  "Child psychology support",
   "Fees and availability",
-  "Parent support",
   "Other",
 ];
 
@@ -53,7 +57,7 @@ export default function ContactPage() {
     name: "",
     phone: "",
     email: "",
-    enquiryType: "Admission enquiry",
+    enquiryType: "Nursery admission enquiry",
     message: "",
   });
 
@@ -67,7 +71,7 @@ export default function ContactPage() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const message = `Hello Heaven Seeds Academy,%0A%0AI would like to request more information.%0A%0AEnquiry: ${encodeURIComponent(
+    const message = `Hello Heaven's Seed International School,%0A%0AI would like to request more information.%0A%0AEnquiry: ${encodeURIComponent(
       form.enquiryType
     )}%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(
       form.phone
@@ -79,7 +83,7 @@ export default function ContactPage() {
   }
 
   const quickWhatsappMessage = encodeURIComponent(
-    "Hello Heaven Seeds Academy, I would like to know more about admissions."
+    "Hello Heaven's Seed International School, I would like to know more about nursery, inclusive education, primary support, speech delay support or child psychology support."
   );
 
   return (
@@ -87,24 +91,26 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="relative px-4 py-7 sm:px-6 sm:py-9 lg:px-8 lg:py-10">
         <div className="mx-auto max-w-7xl">
-          <div className="relative overflow-hidden rounded-[2rem] bg-[#183528] p-6 text-white shadow-[0_26px_85px_rgba(24,53,40,0.16)] sm:p-8 lg:p-10">
-            <div className="absolute -left-24 -top-24 size-72 rounded-full bg-[#f4d77b]/18 blur-3xl" />
-            <div className="absolute -bottom-32 right-0 size-96 rounded-full bg-[#f28c28]/14 blur-3xl" />
+          <div className="relative overflow-hidden rounded-[2rem] bg-[#A84F3F] p-6 text-white shadow-[0_26px_85px_rgba(168,79,63,0.18)] sm:p-8 lg:p-10">
+            <div className="absolute -left-24 -top-24 size-72 rounded-full bg-[#F4D77B]/20 blur-3xl" />
+            <div className="absolute -bottom-32 right-0 size-96 rounded-full bg-[#7F342B]/28 blur-3xl" />
 
             <div className="relative grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
               <div>
-                <p className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/10 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#f4d77b] backdrop-blur-md sm:text-[11px]">
+                <p className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/10 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#F4D77B] backdrop-blur-md sm:text-[11px]">
                   <Sparkles size={14} />
-                  Contact Heaven Seeds Academy
+                  Contact Heaven’s Seed
                 </p>
 
                 <h1 className="mt-5 max-w-3xl text-3xl font-extrabold leading-tight tracking-[-0.055em] text-white sm:text-5xl lg:text-6xl">
-                  Speak with us about your child’s next step.
+                  Speak with us about your child’s support pathway.
                 </h1>
 
-                <p className="mt-4 max-w-2xl text-sm font-semibold leading-7 text-white/78 sm:text-lg sm:leading-8">
-                  Contact Heaven Seeds Academy for admissions, school visits,
-                  programme information and parent support in Mauritius.
+                <p className="mt-4 max-w-2xl text-sm font-semibold leading-7 text-white/82 sm:text-lg sm:leading-8">
+                  Contact Heaven’s Seed International School for nursery
+                  admissions, inclusive education, primary learning support,
+                  speech delay support, speech therapy guidance and child
+                  psychology support.
                 </p>
 
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -112,15 +118,15 @@ export default function ContactPage() {
                     href={`https://wa.me/${whatsappNumber}?text=${quickWhatsappMessage}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#7f1d1d] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(127,29,29,0.36)] transition hover:-translate-y-1 hover:bg-[#991b1b]"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.36)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
                   >
-                    <span className="text-white">WhatsApp Us</span>
-                    <MessageCircle size={17} className="text-white" />
+                    <span className="text-[#7F342B]">WhatsApp Us</span>
+                    <MessageCircle size={17} className="text-[#7F342B]" />
                   </Link>
 
                   <Link
                     href={`mailto:${emailAddress}`}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f28c28] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(242,140,40,0.36)] transition hover:-translate-y-1 hover:bg-[#ff9f3f]"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-white/16 px-6 py-3 text-sm font-extrabold !text-white ring-1 ring-white/25 backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/24"
                   >
                     <span className="text-white">Email Us</span>
                     <Mail size={17} className="text-white" />
@@ -141,14 +147,14 @@ export default function ContactPage() {
                     text: emailAddress,
                   },
                   {
-                    icon: MapPin,
-                    title: "Location",
-                    text: "Quatre Bornes, Mauritius",
+                    icon: Speech,
+                    title: "Speech Support",
+                    text: "Speech delay and communication guidance",
                   },
                   {
-                    icon: Clock,
-                    title: "Parent Support",
-                    text: "Admissions and visit guidance",
+                    icon: Brain,
+                    title: "Child Support",
+                    text: "Learning, emotional and psychology support",
                   },
                 ].map((item) => {
                   const Icon = item.icon;
@@ -158,7 +164,7 @@ export default function ContactPage() {
                       key={item.title}
                       className="rounded-[1.5rem] border border-white/12 bg-white/10 p-5 shadow-[0_18px_55px_rgba(0,0,0,0.12)] backdrop-blur-xl"
                     >
-                      <div className="grid size-11 place-items-center rounded-2xl bg-white text-[#183528]">
+                      <div className="grid size-11 place-items-center rounded-2xl bg-[#F4B321] text-[#7F342B]">
                         <Icon size={20} strokeWidth={2.4} />
                       </div>
 
@@ -166,7 +172,7 @@ export default function ContactPage() {
                         {item.title}
                       </h2>
 
-                      <p className="mt-2 break-words text-sm leading-6 text-white/72">
+                      <p className="mt-2 break-words text-sm leading-6 text-white/76">
                         {item.text}
                       </p>
                     </article>
@@ -181,15 +187,15 @@ export default function ContactPage() {
       {/* Contact Form + Details */}
       <section className="px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
         <div className="mx-auto max-w-7xl">
-          <div className="overflow-hidden rounded-[2rem] border border-[#183528]/10 bg-white shadow-[0_26px_85px_rgba(24,53,40,0.12)]">
+          <div className="overflow-hidden rounded-[2rem] border border-[#A84F3F]/10 bg-white shadow-[0_26px_85px_rgba(24,53,40,0.12)]">
             <div className="grid items-stretch lg:grid-cols-[0.92fr_1.08fr]">
               {/* Left Details */}
-              <div className="relative flex h-full flex-col bg-[#183528] p-5 text-white sm:p-7 lg:p-8">
-                <div className="absolute -left-20 -top-20 size-60 rounded-full bg-[#f4d77b]/18 blur-3xl" />
-                <div className="absolute -bottom-24 right-0 size-64 rounded-full bg-[#f28c28]/14 blur-3xl" />
+              <div className="relative flex h-full flex-col bg-[#A84F3F] p-5 text-white sm:p-7 lg:p-8">
+                <div className="absolute -left-20 -top-20 size-60 rounded-full bg-[#F4D77B]/20 blur-3xl" />
+                <div className="absolute -bottom-24 right-0 size-64 rounded-full bg-[#7F342B]/28 blur-3xl" />
 
                 <div className="relative flex h-full flex-col">
-                  <p className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#f4d77b] sm:text-[11px]">
+                  <p className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#F4D77B] sm:text-[11px]">
                     Our Details
                   </p>
 
@@ -197,10 +203,10 @@ export default function ContactPage() {
                     Visit, call or message us.
                   </h2>
 
-                  <p className="mt-3 max-w-xl text-sm leading-6 text-white/78">
-                    We are here to answer your questions about admissions,
-                    availability, visits and early learning at Heaven Seeds
-                    Academy.
+                  <p className="mt-3 max-w-xl text-sm leading-6 text-white/82">
+                    We are here to answer your questions about nursery,
+                    inclusive learning, primary support, speech delay,
+                    speech therapy guidance and child development support.
                   </p>
 
                   <div className="mt-5 grid gap-2.5">
@@ -208,7 +214,7 @@ export default function ContactPage() {
                       href={`tel:${phonePrimary}`}
                       className="flex items-center gap-3 rounded-2xl border border-white/12 bg-white/10 p-3 text-sm font-bold text-white backdrop-blur-md transition hover:bg-white/15"
                     >
-                      <Phone size={17} className="text-[#f4d77b]" />
+                      <Phone size={17} className="text-[#F4D77B]" />
                       {phonePrimary}
                     </Link>
 
@@ -218,7 +224,7 @@ export default function ContactPage() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 rounded-2xl border border-white/12 bg-white/10 p-3 text-sm font-bold text-white backdrop-blur-md transition hover:bg-white/15"
                     >
-                      <MessageCircle size={17} className="text-[#f4d77b]" />
+                      <MessageCircle size={17} className="text-[#F4D77B]" />
                       WhatsApp: {phoneWhatsapp}
                     </Link>
 
@@ -226,7 +232,7 @@ export default function ContactPage() {
                       href={`mailto:${emailAddress}`}
                       className="flex items-center gap-3 rounded-2xl border border-white/12 bg-white/10 p-3 text-sm font-bold text-white backdrop-blur-md transition hover:bg-white/15"
                     >
-                      <Mail size={17} className="text-[#f4d77b]" />
+                      <Mail size={17} className="text-[#F4D77B]" />
                       {emailAddress}
                     </Link>
 
@@ -240,7 +246,7 @@ export default function ContactPage() {
                     >
                       <MapPin
                         size={17}
-                        className="mt-0.5 shrink-0 text-[#f4d77b]"
+                        className="mt-0.5 shrink-0 text-[#F4D77B]"
                       />
                       <span>{address}</span>
                     </Link>
@@ -251,8 +257,8 @@ export default function ContactPage() {
                       href="https://www.facebook.com/share/1CKUaPFuv4/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Heaven Seeds Academy Facebook"
-                      className="grid size-11 place-items-center rounded-full border border-white/20 bg-[#f4d77b] text-[#183528] shadow-[0_14px_35px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-1 hover:bg-white"
+                      aria-label="Heaven’s Seed Facebook"
+                      className="grid size-11 place-items-center rounded-full border border-white/20 bg-[#F4B321] text-[#7F342B] shadow-[0_14px_35px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-1 hover:bg-white"
                     >
                       <FacebookIcon />
                     </Link>
@@ -261,8 +267,8 @@ export default function ContactPage() {
                       href="https://www.instagram.com/heavenseedsacademy/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Heaven Seeds Academy Instagram"
-                      className="grid size-11 place-items-center rounded-full border border-white/20 bg-[#f4d77b] text-[#183528] shadow-[0_14px_35px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-1 hover:bg-white"
+                      aria-label="Heaven’s Seed Instagram"
+                      className="grid size-11 place-items-center rounded-full border border-white/20 bg-[#F4B321] text-[#7F342B] shadow-[0_14px_35px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-1 hover:bg-white"
                     >
                       <InstagramIcon />
                     </Link>
@@ -275,10 +281,10 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-5 block overflow-hidden rounded-[1.5rem] border border-white/14 bg-white/10 shadow-[0_18px_55px_rgba(0,0,0,0.18)]"
-                    aria-label="Open Heaven Seeds Academy location on Google Maps"
+                    aria-label="Open Heaven’s Seed location on Google Maps"
                   >
                     <iframe
-                      title="Heaven Seeds Academy location map"
+                      title="Heaven’s Seed International School location map"
                       src={`https://www.google.com/maps?q=${encodeURIComponent(
                         address
                       )}&output=embed`}
@@ -293,7 +299,7 @@ export default function ContactPage() {
               {/* Right Form */}
               <div className="flex h-full flex-col justify-center bg-white p-5 sm:p-7 lg:p-8">
                 <div className="mb-4">
-                  <p className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#d6a84f] sm:text-[11px]">
+                  <p className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F] sm:text-[11px]">
                     Send Enquiry
                   </p>
 
@@ -321,7 +327,7 @@ export default function ContactPage() {
                           updateField("name", event.target.value)
                         }
                         placeholder="Your name"
-                        className="h-11 w-full rounded-2xl border border-[#183528]/10 bg-[#fffaf0] px-4 text-sm font-semibold text-[#183528] outline-none transition focus:border-[#d6a84f] focus:bg-white"
+                        className="h-11 w-full rounded-2xl border border-[#A84F3F]/12 bg-[#fffaf0] px-4 text-sm font-semibold text-[#183528] outline-none transition focus:border-[#F4B321] focus:bg-white"
                       />
                     </div>
 
@@ -337,7 +343,7 @@ export default function ContactPage() {
                           updateField("phone", event.target.value)
                         }
                         placeholder="Your number"
-                        className="h-11 w-full rounded-2xl border border-[#183528]/10 bg-[#fffaf0] px-4 text-sm font-semibold text-[#183528] outline-none transition focus:border-[#d6a84f] focus:bg-white"
+                        className="h-11 w-full rounded-2xl border border-[#A84F3F]/12 bg-[#fffaf0] px-4 text-sm font-semibold text-[#183528] outline-none transition focus:border-[#F4B321] focus:bg-white"
                       />
                     </div>
                   </div>
@@ -355,7 +361,7 @@ export default function ContactPage() {
                           updateField("email", event.target.value)
                         }
                         placeholder="your@email.com"
-                        className="h-11 w-full rounded-2xl border border-[#183528]/10 bg-[#fffaf0] px-4 text-sm font-semibold text-[#183528] outline-none transition focus:border-[#d6a84f] focus:bg-white"
+                        className="h-11 w-full rounded-2xl border border-[#A84F3F]/12 bg-[#fffaf0] px-4 text-sm font-semibold text-[#183528] outline-none transition focus:border-[#F4B321] focus:bg-white"
                       />
                     </div>
 
@@ -371,7 +377,7 @@ export default function ContactPage() {
                           onChange={(event) =>
                             updateField("enquiryType", event.target.value)
                           }
-                          className="h-11 w-full appearance-none rounded-2xl border border-[#183528]/10 bg-[#fffaf0] px-4 pr-10 text-sm font-semibold text-[#183528] outline-none transition focus:border-[#d6a84f] focus:bg-white"
+                          className="h-11 w-full appearance-none rounded-2xl border border-[#A84F3F]/12 bg-[#fffaf0] px-4 pr-10 text-sm font-semibold text-[#183528] outline-none transition focus:border-[#F4B321] focus:bg-white"
                         >
                           {enquiryTypes.map((type) => (
                             <option key={type} value={type}>
@@ -382,7 +388,7 @@ export default function ContactPage() {
 
                         <ChevronDown
                           size={17}
-                          className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#183528]/55"
+                          className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#A84F3F]/70"
                         />
                       </div>
                     </div>
@@ -398,24 +404,24 @@ export default function ContactPage() {
                       onChange={(event) =>
                         updateField("message", event.target.value)
                       }
-                      placeholder="I would like to know more about enrollment..."
+                      placeholder="I would like to know more about nursery, inclusive education or speech support..."
                       rows={5}
-                      className="w-full resize-none rounded-2xl border border-[#183528]/10 bg-[#fffaf0] px-4 py-3 text-sm font-semibold leading-6 text-[#183528] outline-none transition focus:border-[#d6a84f] focus:bg-white"
+                      className="w-full resize-none rounded-2xl border border-[#A84F3F]/12 bg-[#fffaf0] px-4 py-3 text-sm font-semibold leading-6 text-[#183528] outline-none transition focus:border-[#F4B321] focus:bg-white"
                     />
                   </div>
 
                   <div className="grid gap-3 sm:grid-cols-2">
                     <button
                       type="submit"
-                      className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#7f1d1d] px-5 text-sm font-extrabold !text-white shadow-[0_16px_35px_rgba(127,29,29,0.26)] transition duration-300 hover:-translate-y-1 hover:bg-[#991b1b]"
+                      className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#F4B321] px-5 text-sm font-extrabold !text-[#7F342B] shadow-[0_16px_35px_rgba(244,179,33,0.28)] transition duration-300 hover:-translate-y-1 hover:bg-[#FFD46A]"
                     >
-                      <span className="text-white">WhatsApp Us</span>
-                      <Send size={16} className="text-white" />
+                      <span className="text-[#7F342B]">WhatsApp Us</span>
+                      <Send size={16} className="text-[#7F342B]" />
                     </button>
 
                     <Link
                       href={`mailto:${emailAddress}`}
-                      className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#f28c28] px-5 text-sm font-extrabold !text-white shadow-[0_16px_35px_rgba(242,140,40,0.28)] transition duration-300 hover:-translate-y-1 hover:bg-[#ff9f3f]"
+                      className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#A84F3F] px-5 text-sm font-extrabold !text-white shadow-[0_16px_35px_rgba(168,79,63,0.28)] transition duration-300 hover:-translate-y-1 hover:bg-[#7F342B]"
                     >
                       <span className="text-white">Email Us</span>
                       <Mail size={16} className="text-white" />
@@ -427,9 +433,11 @@ export default function ContactPage() {
           </div>
 
           <p className="sr-only">
-            Contact Heaven Seeds Academy in Quatre Bornes, Mauritius by phone,
-            WhatsApp, email, Facebook, Instagram or contact form for pre-primary
-            admissions and parent enquiries.
+            Contact Heaven’s Seed International School in Quatre Bornes,
+            Mauritius by phone, WhatsApp, email, Facebook, Instagram or contact
+            form for nursery admissions, inclusive education, primary learning
+            support, speech delay support, speech therapy guidance and child
+            psychology support.
           </p>
         </div>
       </section>
@@ -445,14 +453,14 @@ export default function ContactPage() {
                 text: "A nurturing space for children and peace of mind for parents.",
               },
               {
-                icon: MessageCircle,
-                title: "Fast Parent Support",
-                text: "Reach us easily by phone, WhatsApp or email.",
+                icon: Speech,
+                title: "Speech Support",
+                text: "Support for speech delay, communication and expression.",
               },
               {
-                icon: Sparkles,
-                title: "Admissions Guidance",
-                text: "Clear help with visits, availability and enrollment steps.",
+                icon: Brain,
+                title: "Holistic Guidance",
+                text: "Support for learning, behaviour, confidence and emotional wellbeing.",
               },
             ].map((item) => {
               const Icon = item.icon;
@@ -462,7 +470,7 @@ export default function ContactPage() {
                   key={item.title}
                   className="rounded-[1.75rem] border border-white/45 bg-white/55 p-5 shadow-[0_18px_55px_rgba(24,53,40,0.08)] backdrop-blur-xl"
                 >
-                  <div className="grid size-12 place-items-center rounded-2xl bg-[#183528] text-white">
+                  <div className="grid size-12 place-items-center rounded-2xl bg-[#A84F3F] text-white">
                     <Icon size={21} strokeWidth={2.4} />
                   </div>
 

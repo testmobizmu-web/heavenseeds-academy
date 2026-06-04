@@ -1,36 +1,105 @@
 export const siteConfig = {
-  name: "Heaven Seeds Academy",
-  shortName: "Heaven Seeds",
+  name: "Heaven’s Seed International School",
+  shortName: "Heaven’s Seed",
   url: "https://heavenseedsacademy.com",
   locale: "en_MU",
   type: "website",
 
-  title: "Heaven Seeds Academy | Pre-Primary School in Mauritius",
+  title:
+    "Heaven’s Seed International School | Nursery, Inclusive Education & Primary Support in Mauritius",
+
   description:
-    "Heaven Seeds Academy is a warm, safe and nurturing pre-primary school in Mauritius, helping children grow with love, confidence, creativity and strong early learning foundations.",
+    "Heaven’s Seed International School is an inclusive learning community in Mauritius offering nursery education, inclusive education, primary learning support, speech delay support, speech therapy guidance and child psychology support in a safe, caring and flexible environment.",
 
   keywords: [
+    "Heaven’s Seed International School",
     "Heaven Seeds Academy",
-    "HeavenSeeds Academy",
-    "pre-primary school Mauritius",
-    "preschool Mauritius",
+    "Heaven Seeds Mauritius",
+    "Heaven Seed School Mauritius",
+    "Heaven’s Seed Academy",
+    "Heaven’s Seed Mauritius",
+    "Heaven’s Seed International School Mauritius",
+
     "nursery school Mauritius",
+    "nursery Mauritius",
+    "nursery Quatre Bornes",
+    "nursery school Quatre Bornes",
+    "preschool Mauritius",
+    "pre-primary school Mauritius",
+    "pre primary Mauritius",
     "kindergarten Mauritius",
     "early childhood education Mauritius",
+    "early learning Mauritius",
     "childcare Mauritius",
     "daycare Mauritius",
-    "Quatre Bornes pre-primary school",
-    "Quatre Bornes preschool",
-    "pre-primary school Quatre Bornes",
-    "nursery school Quatre Bornes",
-    "school admissions Mauritius",
-    "early learning Mauritius",
     "children learning Mauritius",
-    "parents Mauritius preschool",
-    "safe preschool Mauritius",
-    "private preschool Mauritius",
+    "safe nursery Mauritius",
+    "private nursery Mauritius",
+    "nursery admissions Mauritius",
     "pre-primary admissions Mauritius",
-    "Mauritius nursery admissions",
+
+    "primary support Mauritius",
+    "primary learning support Mauritius",
+    "primary school support Mauritius",
+    "primary education support Mauritius",
+    "primary tuition Mauritius",
+    "home learning support Mauritius",
+    "online learning Mauritius",
+    "online education Mauritius",
+    "online school Mauritius",
+    "flexible education Mauritius",
+    "personalised learning Mauritius",
+    "individual learning support Mauritius",
+
+    "inclusive education Mauritius",
+    "inclusive school Mauritius",
+    "inclusive learning Mauritius",
+    "inclusive nursery Mauritius",
+    "inclusive primary support Mauritius",
+    "special needs education Mauritius",
+    "children with different learning needs Mauritius",
+    "different learning needs Mauritius",
+    "learning support Mauritius",
+    "child learning support Mauritius",
+    "supportive school Mauritius",
+    "special education support Mauritius",
+
+    "speech delay support Mauritius",
+    "speech delay Mauritius",
+    "speech therapy Mauritius",
+    "speech therapy guidance Mauritius",
+    "speech support Mauritius",
+    "language delay support Mauritius",
+    "communication support children Mauritius",
+    "speech and language support Mauritius",
+    "child communication support Mauritius",
+    "speech development Mauritius",
+    "language development children Mauritius",
+
+    "child psychology support Mauritius",
+    "child psychology Mauritius",
+    "psychology support children Mauritius",
+    "child emotional support Mauritius",
+    "child behaviour support Mauritius",
+    "behaviour support children Mauritius",
+    "child development support Mauritius",
+    "emotional development children Mauritius",
+    "social development children Mauritius",
+    "holistic child development Mauritius",
+    "confidence building children Mauritius",
+
+    "parent support Mauritius",
+    "family learning support Mauritius",
+    "teacher parent partnership Mauritius",
+    "admissions inclusive school Mauritius",
+    "admissions nursery Mauritius",
+    "admissions primary support Mauritius",
+    "school admissions Mauritius",
+    "Quatre Bornes school",
+    "Quatre Bornes nursery",
+    "Quatre Bornes inclusive education",
+    "Quatre Bornes speech support",
+    "Malartic Avenue Quatre Bornes",
   ],
 
   address: {
@@ -63,72 +132,73 @@ export const siteConfig = {
 
 export const pageSeo = {
   home: {
-    title: "Pre-Primary School in Mauritius",
+    title:
+      "Nursery, Inclusive Education & Primary Support in Mauritius",
     description:
-      "Heaven Seeds Academy offers a safe, loving and joyful pre-primary learning environment in Mauritius for children to grow with confidence.",
+      "Heaven’s Seed International School offers nursery education, inclusive education, primary learning support, speech delay support, speech therapy guidance and child psychology support in Mauritius.",
     path: "/",
   },
 
   about: {
-    title: "About Us",
+    title: "About Heaven’s Seed International School",
     description:
-      "Learn about Heaven Seeds Academy, a caring pre-primary school in Mauritius focused on safety, love, confidence, early childhood development and parent partnership.",
+      "Learn about Heaven’s Seed International School, an inclusive learning community supporting nursery learners, primary learners, children with speech delay and children with different learning needs.",
     path: "/about",
   },
 
   programmes: {
-    title: "Programmes",
+    title: "Nursery, Inclusive & Primary Programmes",
     description:
-      "Explore Heaven Seeds Academy programmes in Mauritius, including early childhood care, pre-primary readiness, creative learning, music, movement and outdoor discovery.",
+      "Explore Heaven’s Seed International School programmes, including nursery education, inclusive education, primary support, speech delay support, speech therapy guidance and child psychology support.",
     path: "/programmes",
   },
 
   admissions: {
-    title: "Admissions",
+    title: "Admissions for Nursery, Inclusive & Primary Support",
     description:
-      "Start admission at Heaven Seeds Academy in Mauritius. Learn about enrollment steps, parent visits, required details and how to contact our pre-primary school.",
+      "Start admissions at Heaven’s Seed International School for nursery, inclusive education, primary learning support, speech delay support and child psychology support in Mauritius.",
     path: "/admissions",
   },
 
   gallery: {
     title: "Gallery",
     description:
-      "Explore Heaven Seeds Academy gallery in Mauritius, showing pre-primary classroom moments, creative learning, outdoor play, story time and daily routines.",
+      "Explore Heaven’s Seed International School gallery showing nursery learning, inclusive education, speech support, creative development, emotional care and primary support moments.",
     path: "/gallery",
   },
 
   blog: {
-    title: "Blog",
+    title: "Learning Journal",
     description:
-      "Read Heaven Seeds Academy blog articles for Mauritius parents on pre-primary education, early childhood development, school readiness, routines and confidence.",
+      "Read Heaven’s Seed International School articles on nursery learning, inclusive education, primary support, speech delay support, speech therapy guidance and child psychology support.",
     path: "/blog",
   },
 
   contact: {
     title: "Contact Us",
     description:
-      "Contact Heaven Seeds Academy in Quatre Bornes, Mauritius for admissions, school visits, programme information and parent support.",
+      "Contact Heaven’s Seed International School in Quatre Bornes, Mauritius for nursery admissions, inclusive education, primary support, speech delay support and child psychology support.",
     path: "/contact",
   },
 
   faq: {
     title: "FAQ",
     description:
-      "Frequently asked questions about Heaven Seeds Academy admissions, visits, contact details and pre-primary education in Mauritius.",
+      "Frequently asked questions about Heaven’s Seed International School admissions, nursery learning, inclusive education, primary support, speech delay support and parent guidance.",
     path: "/faq",
   },
 
   privacy: {
     title: "Privacy Policy",
     description:
-      "Read the Heaven Seeds Academy privacy policy for parents, visitors and users in Mauritius.",
+      "Read the Heaven’s Seed International School privacy policy for parents, visitors and users in Mauritius.",
     path: "/privacy-policy",
   },
 
   terms: {
     title: "Terms & Conditions",
     description:
-      "Read the Heaven Seeds Academy terms and conditions for website visitors, parents and admission enquiries in Mauritius.",
+      "Read the Heaven’s Seed International School terms and conditions for website visitors, parents and admission enquiries in Mauritius.",
     path: "/terms",
   },
 };

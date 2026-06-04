@@ -1,5 +1,29 @@
+"use client";
+
 import Image from "next/image";
-import { Star, StarHalf } from "lucide-react";
+import { Brain, HeartHandshake, ShieldCheck, Speech, Star, StarHalf } from "lucide-react";
+import { useEffect, useState } from "react";
+
+type Language = "en" | "fr";
+
+const content = {
+  en: {
+    eyebrow: "Parent Reviews",
+    title: "Trusted by families seeking caring, inclusive support.",
+    description:
+      "English and French parent feedback reflecting nursery care, inclusive education, speech support, emotional guidance and confidence-building learning.",
+    sr:
+      "Parent testimonials for Heaven’s Seed International School, offering nursery education, inclusive education, primary learning support, speech delay support and child psychology support.",
+  },
+  fr: {
+    eyebrow: "Avis des parents",
+    title: "La confiance des familles pour un soutien inclusif et bienveillant.",
+    description:
+      "Des retours en anglais et en français sur la nurserie, l’éducation inclusive, le soutien du langage, l’accompagnement émotionnel et la confiance.",
+    sr:
+      "Avis des parents pour Heaven’s Seed International School, proposant la nurserie, l’éducation inclusive, le soutien primaire, le soutien du langage et l’accompagnement émotionnel.",
+  },
+};
 
 const testimonials = [
   {
@@ -8,7 +32,7 @@ const testimonials = [
     lang: "EN",
     rating: 5,
     image: "/images/Home/testimonials/man/profileenglish2.png",
-    text: "A warm, safe and professional academy. My son settled quickly and became more confident every week.",
+    text: "A warm and professional learning environment. My son became more confident with communication and daily routines.",
   },
   {
     name: "Julien Moreau",
@@ -16,7 +40,7 @@ const testimonials = [
     lang: "FR",
     rating: 4.5,
     image: "/images/Home/testimonials/man/profilefrance.png",
-    text: "Une équipe rassurante, douce et très attentive. Mon enfant aime venir à l’école chaque matin.",
+    text: "Une équipe douce et rassurante. Mon enfant progresse avec plus de confiance, surtout dans l’expression.",
   },
   {
     name: "Claire Bennett",
@@ -24,7 +48,7 @@ const testimonials = [
     lang: "EN",
     rating: 5,
     image: "/images/Home/testimonials/women/profileengland1.png",
-    text: "The environment feels premium, calm and caring. Communication with parents is clear and very professional.",
+    text: "The inclusive approach is very reassuring. The teachers are patient, structured and genuinely caring.",
   },
   {
     name: "Camille Martin",
@@ -32,7 +56,7 @@ const testimonials = [
     lang: "FR",
     rating: 5,
     image: "/images/Home/testimonials/women/profilefrance.png",
-    text: "Un très bel encadrement pour les petits. L’école inspire confiance dès la première visite.",
+    text: "Un accompagnement très humain pour les petits. On sent que chaque enfant est écouté et valorisé.",
   },
   {
     name: "Arjun Mehta",
@@ -40,7 +64,7 @@ const testimonials = [
     lang: "EN",
     rating: 4,
     image: "/images/Home/testimonials/man/profileindia.png",
-    text: "A caring pre-primary environment with structure, kindness and strong parent support.",
+    text: "A caring place for nursery and primary support. The communication with parents is clear and helpful.",
   },
   {
     name: "Priya Nair",
@@ -48,7 +72,7 @@ const testimonials = [
     lang: "EN",
     rating: 4.5,
     image: "/images/Home/testimonials/women/profileindia.png",
-    text: "My daughter feels happy, safe and excited to learn. The teachers are patient and loving.",
+    text: "My daughter feels safe and supported. We appreciate the focus on confidence and emotional wellbeing.",
   },
   {
     name: "Marc Dubois",
@@ -56,7 +80,7 @@ const testimonials = [
     lang: "FR",
     rating: 5,
     image: "/images/Home/testimonials/man/profileparis.png",
-    text: "Un cadre propre, accueillant et bien organisé. Nous sommes très rassurés comme parents.",
+    text: "Un cadre propre, calme et bien organisé. L’approche inclusive donne beaucoup de confiance aux parents.",
   },
   {
     name: "Élise Laurent",
@@ -64,7 +88,7 @@ const testimonials = [
     lang: "FR",
     rating: 4.5,
     image: "/images/Home/testimonials/women/profilefrance1.png",
-    text: "Une école douce et familiale avec une vraie attention au développement de chaque enfant.",
+    text: "Une école douce et familiale avec une vraie attention au rythme et aux besoins de chaque enfant.",
   },
   {
     name: "Daniel Tan",
@@ -72,7 +96,7 @@ const testimonials = [
     lang: "EN",
     rating: 5,
     image: "/images/Home/testimonials/man/profilesingapore.png",
-    text: "Very reassuring for young children. The academy feels safe, modern and genuinely caring.",
+    text: "Very reassuring for children who need extra support. The learning feels calm, modern and caring.",
   },
   {
     name: "Anastasia Petrova",
@@ -80,7 +104,7 @@ const testimonials = [
     lang: "EN",
     rating: 4,
     image: "/images/Home/testimonials/women/profilerussia.png",
-    text: "A peaceful learning space with kind teachers and excellent attention to children’s confidence.",
+    text: "A peaceful learning space with kind teachers and strong attention to emotional development.",
   },
   {
     name: "Kwame Mensah",
@@ -88,7 +112,7 @@ const testimonials = [
     lang: "EN",
     rating: 4.5,
     image: "/images/Home/testimonials/man/profileafrican.png",
-    text: "The team is approachable, professional and warm. It feels like a second home for children.",
+    text: "The team is approachable and professional. Their support for communication and confidence is excellent.",
   },
   {
     name: "Thandiwe Mokoena",
@@ -96,7 +120,7 @@ const testimonials = [
     lang: "EN",
     rating: 5,
     image: "/images/Home/testimonials/women/profilesouthafrica.png",
-    text: "A beautiful place for early learning. Safe, caring and focused on every child’s growth.",
+    text: "A beautiful place for children who need patience, structure and encouragement to grow at their pace.",
   },
   {
     name: "Thomas Bernard",
@@ -112,7 +136,7 @@ const testimonials = [
     lang: "FR",
     rating: 5,
     image: "/images/Home/testimonials/women/profilefrance3.png",
-    text: "Heaven Seeds Academy donne une vraie impression de confiance, de douceur et de qualité.",
+    text: "Heaven’s Seed donne une vraie impression de confiance, de douceur et de qualité dans l’accompagnement.",
   },
   {
     name: "William Parker",
@@ -120,7 +144,7 @@ const testimonials = [
     lang: "EN",
     rating: 4,
     image: "/images/Home/testimonials/man/profileenglish.png",
-    text: "A premium early learning experience with a family feeling. Very good support for parents.",
+    text: "A premium learning experience with a family feeling. Very good support for parents and children.",
   },
   {
     name: "Sophie Carter",
@@ -128,7 +152,7 @@ const testimonials = [
     lang: "EN",
     rating: 5,
     image: "/images/Home/testimonials/women/profileengland.png",
-    text: "My child became more independent and expressive. We feel very happy with the care given.",
+    text: "My child became more independent and expressive. We feel very happy with the care and guidance.",
   },
   {
     name: "Étienne Laurent",
@@ -136,7 +160,7 @@ const testimonials = [
     lang: "FR",
     rating: 4.5,
     image: "/images/Home/testimonials/man/profilefrance1.png",
-    text: "Une approche humaine, professionnelle et bienveillante. Les enfants sont vraiment valorisés.",
+    text: "Une approche humaine, professionnelle et bienveillante. Les enfants sont vraiment encouragés.",
   },
   {
     name: "Naledi Dlamini",
@@ -144,11 +168,27 @@ const testimonials = [
     lang: "EN",
     rating: 5,
     image: "/images/Home/testimonials/women/profilesouthafrica1.png",
-    text: "A safe and joyful environment where children are encouraged to explore and shine.",
+    text: "A safe and joyful environment where children are supported to explore, communicate and shine.",
   },
 ];
 
 const marqueeItems = [...testimonials.slice(0, 10), ...testimonials.slice(0, 6)];
+
+function getInitialLanguage(): Language {
+  if (typeof window === "undefined") return "en";
+
+  const saved =
+    window.localStorage.getItem("hsa-language") ||
+    window.localStorage.getItem("hsaLang") ||
+    window.localStorage.getItem("language");
+
+  if (saved === "fr") return "fr";
+
+  const htmlLang = document.documentElement.lang?.toLowerCase();
+  if (htmlLang?.startsWith("fr")) return "fr";
+
+  return "en";
+}
 
 function RatingStars({ rating }: { rating: number }) {
   const fullStars = Math.floor(rating);
@@ -157,14 +197,14 @@ function RatingStars({ rating }: { rating: number }) {
 
   return (
     <div
-      className="flex items-center gap-0.5 text-[#f5b301]"
+      className="flex items-center gap-0.5 text-[#F4B321]"
       aria-label={`${rating} out of 5 stars`}
     >
       {Array.from({ length: fullStars }).map((_, index) => (
         <Star
           key={`full-${index}`}
           size={14}
-          className="fill-[#f5b301]"
+          className="fill-[#F4B321]"
           strokeWidth={2.1}
         />
       ))}
@@ -172,7 +212,7 @@ function RatingStars({ rating }: { rating: number }) {
       {hasHalf ? (
         <StarHalf
           size={14}
-          className="fill-[#f5b301]"
+          className="fill-[#F4B321]"
           strokeWidth={2.1}
         />
       ) : null}
@@ -181,12 +221,12 @@ function RatingStars({ rating }: { rating: number }) {
         <Star
           key={`empty-${index}`}
           size={14}
-          className="text-[#f5b301]/35"
+          className="text-[#F4B321]/35"
           strokeWidth={2.1}
         />
       ))}
 
-      <span className="ml-2 text-[11px] font-extrabold text-[#183528]/65">
+      <span className="ml-2 text-[11px] font-extrabold text-[#7F342B]/70">
         {rating.toFixed(rating % 1 === 0 ? 0 : 1)}
       </span>
     </div>
@@ -194,6 +234,42 @@ function RatingStars({ rating }: { rating: number }) {
 }
 
 export default function ParentTestimonials() {
+  const [language, setLanguage] = useState<Language>("en");
+
+  useEffect(() => {
+    setLanguage(getInitialLanguage());
+
+    const handleStorage = () => {
+      setLanguage(getInitialLanguage());
+    };
+
+    const handleLanguageChange = (event: Event) => {
+      const customEvent = event as CustomEvent<{ language?: Language }>;
+
+      if (customEvent.detail?.language === "fr") {
+        setLanguage("fr");
+        return;
+      }
+
+      if (customEvent.detail?.language === "en") {
+        setLanguage("en");
+        return;
+      }
+
+      setLanguage(getInitialLanguage());
+    };
+
+    window.addEventListener("storage", handleStorage);
+    window.addEventListener("hsa-language-change", handleLanguageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorage);
+      window.removeEventListener("hsa-language-change", handleLanguageChange);
+    };
+  }, []);
+
+  const t = content[language];
+
   return (
     <section
       aria-labelledby="parent-testimonials-heading"
@@ -202,37 +278,59 @@ export default function ParentTestimonials() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-4 grid gap-3 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <div>
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#d6a84f] sm:text-[11px]">
-              Parent Reviews
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F] sm:text-[11px]">
+              {t.eyebrow}
             </p>
 
             <h2
               id="parent-testimonials-heading"
               className="mt-2 text-2xl font-extrabold leading-tight tracking-[-0.04em] text-[#183528] sm:text-3xl lg:text-4xl"
             >
-              Trusted by families in Mauritius.
+              {t.title}
             </h2>
           </div>
 
-          <p className="max-w-2xl text-sm leading-6 text-[#426252] sm:text-base lg:ml-auto">
-            English and French parent feedback that reflects safety, care,
-            confidence and joyful early learning.
-          </p>
+          <div className="max-w-2xl lg:ml-auto">
+            <p className="text-sm font-semibold leading-6 text-[#426252] sm:text-base">
+              {t.description}
+            </p>
+
+            <div className="mt-3 flex flex-wrap gap-2">
+              {[
+                { icon: ShieldCheck, label: "Safe" },
+                { icon: Speech, label: "Speech Support" },
+                { icon: Brain, label: "Emotional Care" },
+                { icon: HeartHandshake, label: "Inclusive" },
+              ].map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <span
+                    key={item.label}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-[#A84F3F]/10 bg-white/58 px-3 py-1.5 text-[11px] font-extrabold text-[#183528] backdrop-blur-md"
+                  >
+                    <Icon size={13} className="text-[#A84F3F]" />
+                    {item.label}
+                  </span>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="relative">
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-12 bg-gradient-to-r from-white/75 to-transparent sm:w-28" />
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 bg-gradient-to-l from-white/75 to-transparent sm:w-28" />
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-12 bg-gradient-to-r from-white/78 to-transparent sm:w-28" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 bg-gradient-to-l from-white/78 to-transparent sm:w-28" />
 
         <div className="hsa-testimonial-marquee flex gap-4 py-2">
           {marqueeItems.map((item, index) => (
             <article
               key={`${item.name}-${index}`}
-              className="w-[300px] shrink-0 rounded-[1.45rem] border border-white/45 bg-white/36 p-4 shadow-[0_18px_55px_rgba(24,53,40,0.10)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-white/52 sm:w-[350px]"
+              className="w-[300px] shrink-0 rounded-[1.45rem] border border-white/45 bg-white/50 p-4 shadow-[0_18px_55px_rgba(24,53,40,0.09)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-white/70 sm:w-[350px]"
             >
               <div className="flex items-start gap-3">
-                <div className="relative size-13 shrink-0 overflow-hidden rounded-full bg-transparent shadow-[0_10px_28px_rgba(24,53,40,0.14)] ring-2 ring-white/80">
+                <div className="relative size-13 shrink-0 overflow-hidden rounded-full bg-transparent shadow-[0_10px_28px_rgba(24,53,40,0.14)] ring-2 ring-[#F4B321]/65">
                   <Image
                     src={item.image}
                     alt={`${item.name} parent review avatar`}
@@ -256,7 +354,7 @@ export default function ParentTestimonials() {
                       </p>
                     </div>
 
-                    <span className="shrink-0 rounded-full bg-[#183528]/8 px-2 py-1 text-[10px] font-extrabold text-[#183528]">
+                    <span className="shrink-0 rounded-full bg-[#A84F3F]/10 px-2 py-1 text-[10px] font-extrabold text-[#7F342B]">
                       {item.lang}
                     </span>
                   </div>
@@ -275,10 +373,7 @@ export default function ParentTestimonials() {
         </div>
       </div>
 
-      <p className="sr-only">
-        Parent testimonials for Heaven Seeds Academy, a pre-primary school in
-        Mauritius offering safe, caring and nurturing early childhood education.
-      </p>
+      <p className="sr-only">{t.sr}</p>
     </section>
   );
 }

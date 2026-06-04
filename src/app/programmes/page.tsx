@@ -4,6 +4,7 @@ import {
   ArrowRight,
   Baby,
   BookOpenCheck,
+  Brain,
   CheckCircle2,
   Heart,
   Leaf,
@@ -13,47 +14,105 @@ import {
   Puzzle,
   ShieldCheck,
   Sparkles,
+  Speech,
   Sun,
   Users,
 } from "lucide-react";
 import { createMetadata } from "@/lib/seo/metadata";
 import { pageSeo } from "@/lib/seo/site";
 
-export const metadata = createMetadata(pageSeo.programmes);
+export const metadata = createMetadata({
+  ...pageSeo.programmes,
+  title: "Nursery, Inclusive & Primary Programmes",
+  description:
+    "Explore Heaven’s Seed International School programmes including nursery, inclusive education, primary support, speech delay support, speech therapy guidance and child psychology support.",
+});
 
 const programmes = [
   {
     icon: Baby,
-    title: "Early Childhood Care",
-    age: "Ages 2+",
+    title: "Nursery Programme",
+    age: "Early Years",
     description:
-      "A gentle introduction to school life through love, routine, play and caring guidance.",
+      "A warm, gentle and caring nursery environment where young children feel safe, loved and ready to begin their learning journey.",
     points: [
       "Safe daily routines",
-      "Social confidence",
+      "Early social confidence",
       "Gentle independence",
-      "Creative discovery",
+      "Play-based discovery",
     ],
   },
   {
     icon: BookOpenCheck,
-    title: "Pre-Primary Readiness",
-    age: "Ages 3–5",
+    title: "Primary Learning Support",
+    age: "Primary",
     description:
-      "Strong foundations for language, numbers, listening, confidence and school readiness.",
+      "Flexible primary learning support focused on confidence, literacy, numeracy, communication and guided academic development.",
     points: [
-      "Early literacy",
-      "Early numeracy",
-      "Fine motor skills",
-      "School preparation",
+      "Reading foundations",
+      "Number confidence",
+      "Homework support",
+      "Personal learning pace",
+    ],
+  },
+  {
+    icon: Heart,
+    title: "Inclusive Education",
+    age: "All Learners",
+    description:
+      "Supportive learning for children with different learning needs, helping every child feel valued, included and empowered.",
+    points: [
+      "Individual attention",
+      "Flexible learning",
+      "Different learning needs",
+      "Confidence building",
+    ],
+  },
+  {
+    icon: Speech,
+    title: "Speech Delay Support",
+    age: "Language Growth",
+    description:
+      "Gentle communication support for children who need help with speech development, expression, vocabulary and confidence.",
+    points: [
+      "Speech confidence",
+      "Vocabulary growth",
+      "Expression support",
+      "Parent guidance",
+    ],
+  },
+  {
+    icon: Brain,
+    title: "Speech Therapy Guidance",
+    age: "Special Support",
+    description:
+      "A caring pathway to support speech and language development through observation, guided activities and family collaboration.",
+    points: [
+      "Language activities",
+      "Communication goals",
+      "Listening skills",
+      "Progress support",
+    ],
+  },
+  {
+    icon: Sparkles,
+    title: "Child Psychology Support",
+    age: "Emotional Care",
+    description:
+      "Support for children’s emotional, social and behavioural development through patience, understanding and caring guidance.",
+    points: [
+      "Emotional support",
+      "Social confidence",
+      "Behaviour guidance",
+      "Calm learning approach",
     ],
   },
   {
     icon: Palette,
     title: "Creative Development",
-    age: "Daily learning",
+    age: "Daily Learning",
     description:
-      "Art, craft, storytelling and sensory activities that help children express themselves.",
+      "Art, craft, storytelling and sensory activities that help children express themselves with joy and imagination.",
     points: [
       "Art and craft",
       "Sensory play",
@@ -64,9 +123,9 @@ const programmes = [
   {
     icon: Music,
     title: "Music & Movement",
-    age: "Active learning",
+    age: "Active Learning",
     description:
-      "Movement, rhythm and guided play to support coordination, expression and joy.",
+      "Movement, rhythm and guided play to support coordination, body awareness, expression and joyful participation.",
     points: [
       "Rhythm activities",
       "Movement games",
@@ -77,9 +136,9 @@ const programmes = [
   {
     icon: Puzzle,
     title: "Problem Solving",
-    age: "Thinking skills",
+    age: "Thinking Skills",
     description:
-      "Simple puzzles, shapes, blocks and guided discovery to develop focus and curiosity.",
+      "Simple puzzles, shapes, blocks and guided discovery to develop focus, curiosity and independent thinking.",
     points: [
       "Shape recognition",
       "Logical thinking",
@@ -87,51 +146,40 @@ const programmes = [
       "Focus building",
     ],
   },
-  {
-    icon: Leaf,
-    title: "Outdoor Discovery",
-    age: "Nature learning",
-    description:
-      "Safe outdoor moments that encourage curiosity, movement and connection with nature.",
-    points: [
-      "Outdoor play",
-      "Garden discovery",
-      "Motor development",
-      "Nature awareness",
-    ],
-  },
 ];
 
 const benefits = [
   {
     icon: ShieldCheck,
-    title: "Safe Environment",
-    text: "Children learn in a calm, caring and supervised space.",
+    title: "Safe & Caring",
+    text: "Children learn in a calm, nurturing and supervised environment.",
   },
   {
     icon: Heart,
-    title: "Nurturing Approach",
-    text: "Every child is supported with patience, kindness and attention.",
+    title: "Inclusive Approach",
+    text: "We support every child with patience, kindness and respect for their pace.",
   },
   {
     icon: Users,
     title: "Parent Partnership",
-    text: "We keep parents informed and involved in the learning journey.",
+    text: "We work closely with families through clear communication and guidance.",
   },
   {
-    icon: Sparkles,
-    title: "Confidence Building",
-    text: "Children are encouraged to explore, speak, create and shine.",
+    icon: Brain,
+    title: "Holistic Support",
+    text: "We focus on academic, emotional, social, creative and communication growth.",
   },
 ];
 
 const dailyFlow = [
   "Warm welcome and settling-in routine",
-  "Circle time, stories and language moments",
-  "Creative learning, play and guided activities",
-  "Snack time, hygiene and healthy routines",
-  "Outdoor movement and social development",
+  "Circle time, stories and communication moments",
+  "Nursery, inclusive or primary learning activities",
+  "Speech, language and expression support",
+  "Creative learning, sensory play and guided discovery",
+  "Movement, music and social confidence building",
   "Reflection, calm time and parent update support",
+  "Family guidance for continued progress at home",
 ];
 
 export default function ProgrammesPage() {
@@ -141,11 +189,11 @@ export default function ProgrammesPage() {
       <section className="relative px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="overflow-hidden rounded-[2rem] border border-white/45 bg-white/75 shadow-[0_26px_85px_rgba(24,53,40,0.12)] backdrop-blur-xl">
-            {/* Mobile/tablet image: full 16:9, no crop, no text covering image */}
-            <div className="relative aspect-video w-full overflow-hidden bg-[#183528] lg:hidden">
+            {/* Mobile/tablet image: full 16:9 */}
+            <div className="relative aspect-video w-full overflow-hidden bg-[#A84F3F] lg:hidden">
               <Image
                 src="/images/Programmes/programmes-hero.webp"
-                alt="Heaven Seeds Academy programmes for pre-primary children in Mauritius"
+                alt="Heaven’s Seed International School nursery inclusive and primary programmes"
                 fill
                 priority
                 quality={80}
@@ -154,11 +202,11 @@ export default function ProgrammesPage() {
               />
             </div>
 
-            {/* Desktop hero image with premium overlay */}
-            <div className="relative hidden aspect-[16/7] w-full overflow-hidden bg-[#183528] lg:block">
+            {/* Desktop hero */}
+            <div className="relative hidden aspect-[16/7] w-full overflow-hidden bg-[#A84F3F] lg:block">
               <Image
                 src="/images/Programmes/programmes-hero.webp"
-                alt="Heaven Seeds Academy programmes for pre-primary children in Mauritius"
+                alt="Heaven’s Seed International School nursery inclusive and primary programmes"
                 fill
                 priority
                 quality={80}
@@ -166,37 +214,38 @@ export default function ProgrammesPage() {
                 className="object-cover object-center"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-r from-[#183528]/84 via-[#183528]/40 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#183528]/48 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#7F342B]/88 via-[#A84F3F]/48 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#7F342B]/44 via-transparent to-transparent" />
 
               <div className="absolute inset-0 flex items-center">
                 <div className="max-w-3xl px-10">
-                  <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/14 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.24em] text-[#f4d77b] backdrop-blur-md">
+                  <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/14 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.24em] text-[#F4D77B] backdrop-blur-md">
                     <Sun size={14} />
                     Our Programmes
                   </p>
 
                   <h1 className="mt-5 max-w-3xl text-5xl font-extrabold leading-tight tracking-[-0.055em] text-white drop-shadow-2xl xl:text-6xl">
-                    Early learning programmes designed with love and purpose.
+                    Nursery, inclusive and primary support for every child.
                   </h1>
 
                   <p className="mt-4 max-w-2xl text-lg font-semibold leading-8 text-white/88">
-                    Heaven Seeds Academy supports children in Mauritius with
-                    safe, joyful and confidence-building pre-primary learning.
+                    Heaven’s Seed International School supports children through
+                    caring nursery, inclusive learning, primary guidance, speech
+                    support and holistic development.
                   </p>
 
                   <div className="mt-7 flex gap-3">
                     <Link
                       href="/admissions"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[#7f1d1d] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(127,29,29,0.38)] transition hover:-translate-y-1 hover:bg-[#991b1b]"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.36)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
                     >
-                      <span className="text-white">Start Enrollment</span>
-                      <ArrowRight size={17} className="text-white" />
+                      <span className="text-[#7F342B]">Start Enrollment</span>
+                      <ArrowRight size={17} className="text-[#7F342B]" />
                     </Link>
 
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f28c28] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(242,140,40,0.38)] transition hover:-translate-y-1 hover:bg-[#ff9f3f]"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-white/16 px-6 py-3 text-sm font-extrabold !text-white ring-1 ring-white/25 backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/24"
                     >
                       <span className="text-white">Ask a Question</span>
                       <MessageCircle size={17} className="text-white" />
@@ -206,34 +255,35 @@ export default function ProgrammesPage() {
               </div>
             </div>
 
-            {/* Mobile/tablet text below image */}
+            {/* Mobile/tablet text */}
             <div className="p-5 sm:p-7 lg:hidden">
-              <p className="inline-flex items-center gap-2 rounded-full border border-[#183528]/10 bg-[#183528]/5 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#7f1d1d]">
+              <p className="inline-flex items-center gap-2 rounded-full border border-[#A84F3F]/15 bg-[#A84F3F]/8 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#7F342B]">
                 <Sun size={14} />
                 Our Programmes
               </p>
 
               <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-[-0.055em] text-[#183528] sm:text-4xl">
-                Early learning programmes designed with love and purpose.
+                Nursery, inclusive and primary support for every child.
               </h1>
 
               <p className="mt-3 text-sm font-semibold leading-7 text-[#426252] sm:text-base">
-                Heaven Seeds Academy supports children in Mauritius with safe,
-                joyful and confidence-building pre-primary learning.
+                Heaven’s Seed International School supports children through
+                caring nursery, inclusive learning, primary guidance, speech
+                support and holistic development.
               </p>
 
               <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/admissions"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#7f1d1d] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(127,29,29,0.28)] transition hover:-translate-y-1 hover:bg-[#991b1b]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.32)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
                 >
-                  <span className="text-white">Start Enrollment</span>
-                  <ArrowRight size={17} className="text-white" />
+                  <span className="text-[#7F342B]">Start Enrollment</span>
+                  <ArrowRight size={17} className="text-[#7F342B]" />
                 </Link>
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f28c28] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(242,140,40,0.32)] transition hover:-translate-y-1 hover:bg-[#ff9f3f]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#A84F3F] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(168,79,63,0.32)] transition hover:-translate-y-1 hover:bg-[#7F342B]"
                 >
                   <span className="text-white">Ask a Question</span>
                   <MessageCircle size={17} className="text-white" />
@@ -248,26 +298,27 @@ export default function ProgrammesPage() {
       <section className="px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <div className="rounded-[2rem] border border-white/45 bg-white/55 p-6 shadow-[0_22px_70px_rgba(24,53,40,0.09)] backdrop-blur-xl sm:p-8 lg:p-10">
-              <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#d6a84f]">
+            <div className="rounded-[2rem] border border-white/45 bg-white/62 p-6 shadow-[0_22px_70px_rgba(24,53,40,0.09)] backdrop-blur-xl sm:p-8 lg:p-10">
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F]">
                 Learning With Care
               </p>
 
               <h2 className="mt-3 text-3xl font-extrabold leading-tight tracking-[-0.045em] text-[#183528] sm:text-4xl">
-                A balanced programme for early childhood growth.
+                A flexible programme pathway for learning, speech and emotional growth.
               </h2>
 
               <p className="mt-5 text-sm leading-7 text-[#426252] sm:text-base sm:leading-8">
-                Our programmes are designed to help children feel safe, loved
-                and ready to learn. We combine guided play, language development,
-                creativity, routines, movement and social growth to prepare
-                children for the next stage of school life.
+                Our programmes are designed to support children at different
+                stages of development, from nursery foundations to primary
+                learning support. We combine care, structure, creativity,
+                communication support and family partnership.
               </p>
 
               <p className="mt-4 text-sm leading-7 text-[#426252] sm:text-base sm:leading-8">
-                Every child grows at their own pace. At Heaven Seeds Academy, we
-                support children gently, celebrate progress and work closely
-                with parents to build confidence from the earliest years.
+                We also focus on inclusive education for children with different
+                learning needs, including speech delay support, speech therapy
+                guidance and child psychology support through compassionate,
+                patient and child-centered methods.
               </p>
             </div>
 
@@ -278,9 +329,9 @@ export default function ProgrammesPage() {
                 return (
                   <article
                     key={item.title}
-                    className="group rounded-[1.75rem] border border-white/45 bg-white/45 p-5 shadow-[0_18px_55px_rgba(24,53,40,0.08)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-white/65 sm:p-6"
+                    className="group rounded-[1.75rem] border border-white/45 bg-white/48 p-5 shadow-[0_18px_55px_rgba(24,53,40,0.08)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-white/70 sm:p-6"
                   >
-                    <div className="grid size-12 place-items-center rounded-2xl bg-[#183528] text-white shadow-[0_16px_38px_rgba(24,53,40,0.22)] transition duration-500 group-hover:bg-[#7f1d1d]">
+                    <div className="grid size-12 place-items-center rounded-2xl bg-[#A84F3F] text-white shadow-[0_16px_38px_rgba(168,79,63,0.22)] transition duration-500 group-hover:bg-[#7F342B]">
                       <Icon size={22} strokeWidth={2.4} />
                     </div>
 
@@ -304,7 +355,7 @@ export default function ProgrammesPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-7 grid gap-4 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
-              <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#d6a84f]">
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F]">
                 Programme Areas
               </p>
 
@@ -314,8 +365,9 @@ export default function ProgrammesPage() {
             </div>
 
             <p className="max-w-2xl text-sm leading-7 text-[#426252] sm:text-base lg:ml-auto">
-              A child-friendly blend of learning, care, creativity, movement and
-              school readiness for Mauritius families.
+              Nursery, inclusive education, primary learning support, speech
+              delay guidance, speech therapy support and child psychology
+              support — all delivered with compassion and patience.
             </p>
           </div>
 
@@ -326,17 +378,17 @@ export default function ProgrammesPage() {
               return (
                 <article
                   key={programme.title}
-                  className="group relative overflow-hidden rounded-[2rem] border border-white/45 bg-white/50 p-6 shadow-[0_22px_70px_rgba(24,53,40,0.09)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-white/70"
+                  className="group relative overflow-hidden rounded-[2rem] border border-white/45 bg-white/52 p-6 shadow-[0_22px_70px_rgba(24,53,40,0.09)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-white/75"
                 >
-                  <div className="absolute -right-16 -top-16 size-40 rounded-full bg-[#d6a84f]/16 blur-3xl transition duration-500 group-hover:bg-[#f28c28]/18" />
+                  <div className="absolute -right-16 -top-16 size-40 rounded-full bg-[#F4B321]/16 blur-3xl transition duration-500 group-hover:bg-[#A84F3F]/16" />
 
                   <div className="relative">
                     <div className="flex items-start justify-between gap-4">
-                      <div className="grid size-13 place-items-center rounded-2xl bg-[#183528] text-white shadow-[0_16px_38px_rgba(24,53,40,0.22)] transition duration-500 group-hover:bg-[#7f1d1d]">
+                      <div className="grid size-13 place-items-center rounded-2xl bg-[#A84F3F] text-white shadow-[0_16px_38px_rgba(168,79,63,0.22)] transition duration-500 group-hover:bg-[#7F342B]">
                         <Icon size={24} strokeWidth={2.4} />
                       </div>
 
-                      <span className="rounded-full border border-[#d6a84f]/35 bg-[#fff4df]/75 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#7f1d1d]">
+                      <span className="rounded-full border border-[#F4B321]/35 bg-[#FFF4DF]/85 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#7F342B]">
                         {programme.age}
                       </span>
                     </div>
@@ -357,7 +409,7 @@ export default function ProgrammesPage() {
                         >
                           <CheckCircle2
                             size={17}
-                            className="shrink-0 text-[#d6a84f]"
+                            className="shrink-0 text-[#F4B321]"
                             strokeWidth={2.5}
                           />
                           {point}
@@ -375,21 +427,22 @@ export default function ProgrammesPage() {
       {/* Daily Flow */}
       <section className="px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
         <div className="mx-auto max-w-7xl">
-          <div className="overflow-hidden rounded-[2rem] bg-[#183528] p-6 text-white shadow-[0_26px_85px_rgba(24,53,40,0.16)] sm:p-8 lg:p-10">
+          <div className="overflow-hidden rounded-[2rem] bg-[#A84F3F] p-6 text-white shadow-[0_26px_85px_rgba(168,79,63,0.18)] sm:p-8 lg:p-10">
             <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
               <div>
-                <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#f4d77b]">
+                <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#F4D77B]">
                   A Day With Us
                 </p>
 
                 <h2 className="mt-3 text-3xl font-extrabold leading-tight tracking-[-0.045em] text-white sm:text-4xl">
-                  Gentle routines that help children feel secure.
+                  Gentle routines that support learning and communication.
                 </h2>
 
-                <p className="mt-4 text-sm leading-7 text-white/76 sm:text-base sm:leading-8">
-                  Young children thrive when their day feels safe, warm and
-                  predictable. Our daily rhythm supports confidence, social
-                  development and joyful learning.
+                <p className="mt-4 text-sm leading-7 text-white/82 sm:text-base sm:leading-8">
+                  Children feel more secure when learning is warm, predictable
+                  and supportive. Our daily rhythm can include nursery learning,
+                  primary guidance, speech support, emotional care and creative
+                  activities.
                 </p>
               </div>
 
@@ -400,7 +453,7 @@ export default function ProgrammesPage() {
                     className="rounded-3xl border border-white/12 bg-white/10 p-4 backdrop-blur-md"
                   >
                     <div className="flex items-start gap-3">
-                      <span className="text-sm font-extrabold text-[#f4d77b]">
+                      <span className="text-sm font-extrabold text-[#F4D77B]">
                         0{index + 1}
                       </span>
 
@@ -419,38 +472,38 @@ export default function ProgrammesPage() {
       {/* Parent CTA */}
       <section className="px-4 py-6 pb-12 sm:px-6 sm:py-8 sm:pb-14 lg:px-8 lg:py-10 lg:pb-16">
         <div className="mx-auto max-w-7xl">
-          <div className="rounded-[2rem] border border-white/45 bg-white/55 p-6 shadow-[0_24px_80px_rgba(24,53,40,0.10)] backdrop-blur-xl sm:p-8 lg:p-10">
+          <div className="rounded-[2rem] border border-white/45 bg-white/60 p-6 shadow-[0_24px_80px_rgba(24,53,40,0.10)] backdrop-blur-xl sm:p-8 lg:p-10">
             <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
-                <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#d6a84f]">
+                <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F]">
                   Admissions Support
                 </p>
 
                 <h2 className="mt-3 max-w-3xl text-3xl font-extrabold leading-tight tracking-[-0.045em] text-[#183528] sm:text-4xl">
-                  Interested in a programme for your child?
+                  Looking for nursery, inclusive or primary support for your child?
                 </h2>
 
                 <p className="mt-4 max-w-2xl text-sm leading-7 text-[#426252] sm:text-base">
-                  Contact Heaven Seeds Academy to discuss your child’s age,
-                  availability, school visit options and the best next step for
-                  enrollment.
+                  Contact Heaven’s Seed International School to discuss your
+                  child’s age, learning needs, speech delay concerns, emotional
+                  support needs and the best next step for enrollment.
                 </p>
               </div>
 
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
                 <Link
                   href="/admissions"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#7f1d1d] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(127,29,29,0.28)] transition hover:-translate-y-1 hover:bg-[#991b1b]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.32)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
                 >
-                  <span className="text-white">Start Enrollment</span>
-                  <ArrowRight size={17} className="text-white" />
+                  <span className="text-[#7F342B]">Start Enrollment</span>
+                  <ArrowRight size={17} className="text-[#7F342B]" />
                 </Link>
 
                 <Link
                   href="https://wa.me/23058204613"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f28c28] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(242,140,40,0.32)] transition hover:-translate-y-1 hover:bg-[#ff9f3f]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#A84F3F] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(168,79,63,0.32)] transition hover:-translate-y-1 hover:bg-[#7F342B]"
                 >
                   <span className="text-white">WhatsApp Us</span>
                   <MessageCircle size={17} className="text-white" />
@@ -460,9 +513,9 @@ export default function ProgrammesPage() {
           </div>
 
           <p className="sr-only">
-            Heaven Seeds Academy programmes in Mauritius include early childhood
-            care, pre-primary readiness, creative development, music and
-            movement, problem solving and outdoor discovery for young children.
+            Heaven’s Seed International School programmes include nursery,
+            inclusive education, primary learning support, speech delay support,
+            speech therapy guidance and child psychology support.
           </p>
         </div>
       </section>
