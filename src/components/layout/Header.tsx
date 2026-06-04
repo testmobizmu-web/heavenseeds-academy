@@ -35,14 +35,8 @@ const announcementText = {
 };
 
 const enrollText = {
-  en: {
-    short: "Enroll",
-    full: "Now",
-  },
-  fr: {
-    short: "Inscrire",
-    full: "Maintenant",
-  },
+  en: "Enroll",
+  fr: "Inscrire",
 };
 
 function FacebookIcon() {
@@ -92,7 +86,6 @@ export default function Header() {
 
     window.localStorage.setItem("hsa-language", nextLanguage);
     window.localStorage.setItem("hsaLang", nextLanguage);
-
     document.documentElement.lang = nextLanguage === "fr" ? "fr-MU" : "en-MU";
 
     window.dispatchEvent(
@@ -107,20 +100,15 @@ export default function Header() {
   return (
     <>
       {/* Announcement Bar */}
-      <div className="relative z-[70] border-b border-white/10 bg-[#A84F3F] text-white shadow-[0_10px_30px_rgba(168,79,63,0.22)]">
-        <div className="grid h-10 w-full grid-cols-[1fr_auto] items-center px-4 sm:px-6 lg:grid-cols-[1fr_auto_1fr] lg:px-8">
-          {/* Left Socials */}
-          <div className="flex animate-hsa-fade items-center justify-start gap-3">
-            <span className="hidden text-[10px] font-extrabold uppercase tracking-[0.28em] text-white/75 sm:inline">
-              Follow Us
-            </span>
-
+      <div className="relative z-[80] border-b border-white/10 bg-[#A84F3F] text-white shadow-[0_8px_24px_rgba(168,79,63,0.22)]">
+        <div className="grid h-10 w-full grid-cols-[auto_1fr_auto] items-center gap-3 px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2">
             <a
               href="https://www.facebook.com/share/1CKUaPFuv4/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="grid size-7 place-items-center rounded-full bg-white/12 text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#F4D77B] hover:text-[#7F342B]"
+              className="grid size-7 place-items-center rounded-full bg-white/12 text-white transition duration-300 hover:bg-[#F4D77B] hover:text-[#7F342B]"
             >
               <FacebookIcon />
             </a>
@@ -130,32 +118,30 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="grid size-7 place-items-center rounded-full bg-white/12 text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#F4D77B] hover:text-[#7F342B]"
+              className="grid size-7 place-items-center rounded-full bg-white/12 text-white transition duration-300 hover:bg-[#F4D77B] hover:text-[#7F342B]"
             >
               <InstagramIcon />
             </a>
           </div>
 
-          {/* Desktop Center Message */}
-          <div className="hidden min-w-[620px] items-center justify-center lg:flex">
+          <div className="hidden items-center justify-center lg:flex">
             <p className="hsa-typewriter overflow-hidden whitespace-nowrap text-sm font-extrabold tracking-[0.06em] text-[#F4D77B]">
               {announcementText[language]}
             </p>
           </div>
 
-          {/* Language Dropdown */}
-          <div className="relative flex animate-hsa-fade items-center justify-end">
+          <div className="relative flex justify-end">
             <button
               type="button"
               onClick={() => setLanguageOpen((value) => !value)}
               aria-label="Change language"
-              className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/12 px-2.5 py-1.5 text-xs font-extrabold text-white shadow-sm backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:bg-white/18"
+              className="inline-flex h-8 items-center gap-2 rounded-full border border-white/14 bg-white/12 px-3 text-xs font-extrabold text-white shadow-sm backdrop-blur-md transition duration-300 hover:bg-white/18"
             >
               <Image
                 src={language === "fr" ? "/images/Flags/fr.png" : "/images/Flags/en.png"}
                 alt={language === "fr" ? "French" : "English"}
-                width={21}
-                height={21}
+                width={22}
+                height={22}
                 className="rounded-full object-cover"
               />
               <span className="hidden sm:inline">{language.toUpperCase()}</span>
@@ -166,19 +152,13 @@ export default function Header() {
             </button>
 
             {languageOpen ? (
-              <div className="absolute right-0 top-10 z-[90] w-36 overflow-hidden rounded-2xl border border-white/18 bg-white p-2 text-[#183528] shadow-[0_20px_55px_rgba(24,53,40,0.18)]">
+              <div className="absolute right-0 top-10 z-[120] w-36 overflow-hidden rounded-2xl border border-[#A84F3F]/10 bg-white p-2 text-[#183528] shadow-[0_20px_55px_rgba(24,53,40,0.18)]">
                 <button
                   type="button"
                   onClick={() => changeLanguage("en")}
                   className="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-xs font-extrabold transition hover:bg-[#FFF4DF]"
                 >
-                  <Image
-                    src="/images/Flags/en.png"
-                    alt="English"
-                    width={22}
-                    height={22}
-                    className="rounded-full"
-                  />
+                  <Image src="/images/Flags/en.png" alt="English" width={22} height={22} className="rounded-full" />
                   English
                 </button>
 
@@ -187,13 +167,7 @@ export default function Header() {
                   onClick={() => changeLanguage("fr")}
                   className="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-xs font-extrabold transition hover:bg-[#FFF4DF]"
                 >
-                  <Image
-                    src="/images/Flags/fr.png"
-                    alt="French"
-                    width={22}
-                    height={22}
-                    className="rounded-full"
-                  />
+                  <Image src="/images/Flags/fr.png" alt="French" width={22} height={22} className="rounded-full" />
                   Français
                 </button>
               </div>
@@ -203,8 +177,7 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <header className="sticky top-0 z-[60] m-0 border-b border-[#A84F3F]/10 bg-white/92 shadow-[0_14px_45px_rgba(24,53,40,0.08)] backdrop-blur-2xl">
-        {/* Desktop background image */}
+      <header className="sticky top-0 z-[70] border-b border-[#A84F3F]/10 bg-white/95 shadow-[0_10px_34px_rgba(24,53,40,0.08)] backdrop-blur-2xl">
         <div className="absolute inset-0 hidden overflow-hidden lg:block">
           <Image
             src="/images/header/header-bg.webp"
@@ -214,23 +187,20 @@ export default function Header() {
             sizes="100vw"
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-white/82 backdrop-blur-[2px]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/76 to-white/95" />
+          <div className="absolute inset-0 bg-white/86 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/96 via-white/78 to-white/96" />
         </div>
 
-        {/* Mobile/tablet clean background */}
-        <div className="absolute inset-0 bg-white/96 backdrop-blur-xl lg:hidden" />
-
-        <div className="relative z-10 grid h-22 w-full grid-cols-[auto_1fr_auto] items-center gap-3 px-4 sm:h-24 sm:gap-4 sm:px-6 lg:grid-cols-[240px_1fr_190px] lg:px-8">
+        <div className="relative z-10 grid h-[82px] w-full grid-cols-[64px_1fr_104px] items-center px-4 sm:h-[88px] sm:grid-cols-[72px_1fr_130px] sm:px-6 lg:grid-cols-[230px_1fr_170px] lg:px-8">
           {/* Mobile Menu Button */}
           <div className="flex items-center justify-start lg:hidden">
             <button
               type="button"
               aria-label={open ? "Close menu" : "Open menu"}
               onClick={() => setOpen((value) => !value)}
-              className="grid size-11 place-items-center rounded-full border border-[#A84F3F]/12 bg-white text-[#7F342B] shadow-[0_12px_30px_rgba(24,53,40,0.12)] transition hover:bg-[#FFF4DF]"
+              className="grid size-12 place-items-center rounded-full border border-[#A84F3F]/12 bg-white text-[#7F342B] shadow-[0_12px_30px_rgba(24,53,40,0.10)] transition hover:bg-[#FFF4DF]"
             >
-              {open ? <X size={20} /> : <Menu size={20} />}
+              {open ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
 
@@ -246,15 +216,12 @@ export default function Header() {
               width={230}
               height={100}
               priority
-              className="h-[70px] w-auto object-contain min-[390px]:h-[76px] sm:h-[86px] lg:h-[92px]"
+              className="h-[64px] w-auto object-contain sm:h-[76px] lg:h-[90px]"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav
-            aria-label="Main navigation"
-            className="hidden items-center justify-center gap-1.5 lg:flex xl:gap-3"
-          >
+          <nav aria-label="Main navigation" className="hidden items-center justify-center gap-2 lg:flex xl:gap-3">
             {navItems.map((item, index) => (
               <Link
                 key={item.href}
@@ -263,12 +230,7 @@ export default function Header() {
                 className="animate-hsa-menu-fade group relative px-3 py-3 text-sm font-extrabold text-[#183528]/90 transition duration-300 hover:text-[#7F342B] xl:px-4"
               >
                 <span className="relative z-10">{item.label}</span>
-
-                {/* Turmeric animated underline */}
                 <span className="absolute bottom-1.5 left-1/2 h-[3px] w-0 -translate-x-1/2 rounded-full bg-[#F4B321] shadow-[0_6px_18px_rgba(244,179,33,0.55)] transition-all duration-300 group-hover:w-[62%]" />
-
-                {/* tiny premium hover glow */}
-                <span className="absolute inset-x-1 bottom-0 h-7 rounded-full bg-[#F4B321]/0 blur-xl transition duration-300 group-hover:bg-[#F4B321]/16" />
               </Link>
             ))}
           </nav>
@@ -277,19 +239,16 @@ export default function Header() {
           <div className="flex items-center justify-end">
             <Link
               href="/admissions"
-              className="inline-flex items-center justify-center rounded-full bg-[#F4B321] px-4 py-2.5 text-xs font-extrabold !text-[#7F342B] shadow-[0_16px_35px_rgba(244,179,33,0.34)] ring-1 ring-[#F4D77B]/45 transition duration-300 hover:-translate-y-0.5 hover:bg-[#FFD46A] sm:px-5 sm:py-3 sm:text-sm"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-[#F4B321] px-5 text-sm font-extrabold !text-[#7F342B] shadow-[0_16px_35px_rgba(244,179,33,0.30)] ring-1 ring-[#F4D77B]/45 transition duration-300 hover:-translate-y-0.5 hover:bg-[#FFD46A]"
             >
-              <span className="text-[#7F342B]">{enrollText[language].short}</span>
-              <span className="hidden text-[#7F342B] sm:inline">
-                {" "}
-                {enrollText[language].full}
-              </span>
+              <span className="text-[#7F342B]">{enrollText[language]}</span>
             </Link>
           </div>
         </div>
 
-        <MobileMenu open={open} onClose={() => setOpen(false)} />
-      </header>
+       </header>
+
+      <MobileMenu open={open} onClose={() => setOpen(false)} />
     </>
   );
 }
