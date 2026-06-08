@@ -22,65 +22,76 @@ const content = {
     eyebrow: "Gallery Preview",
     title: "Moments of care, communication and inclusive learning.",
     description:
-      "A warm look inside Heaven’s Seed International School — nursery learning, inclusive education, primary support, speech development, emotional care and creative discovery.",
+      "A warm look inside Heaven’s Seed International School — nursery learning, pre-primary learning, primary support, inclusive education, speech development, emotional care and creative discovery.",
     cta: "View Gallery",
-    premiumLabel: "Inclusive Care",
+    inclusiveLabel: "Inclusive Care",
     sr:
-      "Heaven’s Seed International School gallery preview showing nursery education, inclusive education, primary support, speech delay support, speech therapy guidance, child psychology support and emotional care.",
+      "Heaven’s Seed International School gallery preview showing nursery education, pre-primary education, primary support, inclusive education, speech delay support, speech therapy guidance, child psychology support and emotional care.",
     images: [
       {
         src: "/images/Gallery/gallery-01.jpg",
         label: "Nursery Learning",
         alt: "Nursery children learning in a warm caring classroom environment",
+        isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-02.jpg",
         label: "Creative Expression",
         alt: "Children doing art and creative learning activities",
+        isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-03.jpg",
         label: "Speech & Language",
         alt: "Children listening to story time for language and speech development",
+        isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-04.jpg",
         label: "Outdoor Discovery",
         alt: "Children playing safely outdoors in a caring school environment",
+        isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-05.jpg",
         label: "Primary Support",
         alt: "Teacher helping a child with alphabet and early literacy learning",
+        isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-06.jpg",
         label: "Inclusive Learning",
         alt: "Children building blocks together in an inclusive classroom setting",
+        isInclusive: true,
       },
       {
         src: "/images/Gallery/gallery-07.jpg",
-        label: "Music & Movement",
-        alt: "Children enjoying music and movement activities",
+        label: "Pre-Primary Activities",
+        alt: "Children enjoying pre-primary learning activities",
+        isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-08.jpg",
         label: "Healthy Routines",
         alt: "Children learning hygiene and healthy daily routines",
+        isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-09.jpg",
         label: "Emotional Support",
         alt: "Children in a calm caring classroom routine",
+        isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-10.jpg",
         label: "Nature Learning",
         alt: "Children exploring plants and nature in a garden learning activity",
+        isInclusive: false,
       },
     ],
     badges: [
       { icon: Baby, label: "Nursery" },
+      { icon: GraduationCap, label: "Pre-Primary" },
       { icon: HeartHandshake, label: "Inclusive" },
       { icon: Speech, label: "Speech Support" },
       { icon: Brain, label: "Emotional Care" },
@@ -90,65 +101,76 @@ const content = {
     eyebrow: "Aperçu Galerie",
     title: "Des moments de soin, de communication et d’apprentissage inclusif.",
     description:
-      "Un aperçu chaleureux de Heaven’s Seed International School — nurserie, éducation inclusive, soutien primaire, développement du langage, soutien émotionnel et découverte créative.",
+      "Un aperçu chaleureux de Heaven’s Seed International School — nurserie, pré-primaire, soutien primaire, éducation inclusive, développement du langage, soutien émotionnel et découverte créative.",
     cta: "Voir la galerie",
-    premiumLabel: "Soin inclusif",
+    inclusiveLabel: "Soin inclusif",
     sr:
-      "Aperçu de la galerie Heaven’s Seed International School montrant la nurserie, l’éducation inclusive, le soutien primaire, le soutien du langage, l’accompagnement émotionnel et le développement de l’enfant.",
+      "Aperçu de la galerie Heaven’s Seed International School montrant la nurserie, le pré-primaire, le soutien primaire, l’éducation inclusive, le soutien du langage, l’accompagnement émotionnel et le développement de l’enfant.",
     images: [
       {
         src: "/images/Gallery/gallery-01.jpg",
         label: "Nurserie",
         alt: "Enfants en nurserie dans une classe chaleureuse et bienveillante",
+        isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-02.jpg",
         label: "Expression créative",
         alt: "Enfants faisant des activités artistiques et créatives",
+        isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-03.jpg",
         label: "Langage & parole",
         alt: "Enfants écoutant une histoire pour développer le langage",
+        isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-04.jpg",
         label: "Découverte extérieure",
         alt: "Enfants jouant dehors dans un environnement sécurisé",
+        isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-05.jpg",
         label: "Soutien primaire",
         alt: "Enseignant aidant un enfant avec les lettres et la lecture",
+        isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-06.jpg",
         label: "Apprentissage inclusif",
         alt: "Enfants construisant ensemble dans une classe inclusive",
+        isInclusive: true,
       },
       {
         src: "/images/Gallery/gallery-07.jpg",
-        label: "Musique & mouvement",
-        alt: "Enfants participant à une activité de musique et mouvement",
+        label: "Activités pré-primaires",
+        alt: "Enfants participant à des activités pré-primaires",
+        isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-08.jpg",
         label: "Routines saines",
         alt: "Enfants apprenant les routines d’hygiène et de soin",
+        isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-09.jpg",
         label: "Soutien émotionnel",
         alt: "Enfants dans une routine calme et bienveillante",
+        isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-10.jpg",
         label: "Nature",
         alt: "Enfants explorant les plantes et la nature",
+        isInclusive: false,
       },
     ],
     badges: [
       { icon: Baby, label: "Nurserie" },
+      { icon: GraduationCap, label: "Pré-primaire" },
       { icon: HeartHandshake, label: "Inclusion" },
       { icon: Speech, label: "Langage" },
       { icon: Brain, label: "Émotionnel" },
@@ -288,10 +310,12 @@ export default function GalleryPreview() {
 
               <div className="absolute inset-0 bg-gradient-to-t from-[#7F342B]/58 via-[#A84F3F]/8 to-transparent transition duration-500 group-hover:from-[#7F342B]/46" />
 
-              <div className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-white/35 bg-white/20 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.16em] text-white shadow-lg backdrop-blur-md">
-                <Sparkles size={12} />
-                {t.premiumLabel}
-              </div>
+              {image.isInclusive ? (
+                <div className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-white/35 bg-white/20 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.16em] text-white shadow-lg backdrop-blur-md">
+                  <Sparkles size={12} />
+                  {t.inclusiveLabel}
+                </div>
+              ) : null}
 
               <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between rounded-2xl border border-white/25 bg-white/18 px-3 py-2 text-white shadow-lg backdrop-blur-md">
                 <span className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.14em]">

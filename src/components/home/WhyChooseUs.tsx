@@ -1,14 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
   Baby,
   Brain,
-  CheckCircle2,
   GraduationCap,
   HeartHandshake,
+  Play,
   ShieldCheck,
   Speech,
 } from "lucide-react";
@@ -16,16 +15,42 @@ import { useEffect, useRef, useState } from "react";
 
 type Language = "en" | "fr";
 
+const videoCards = [
+  {
+    youtubeId: "iCVympHwNS8",
+    poster: "/images/Home/why-video-1-poster.webp",
+    label: "Nursery & Pre-Primary",
+    labelFr: "Nurserie & Pré-primaire",
+    position: "start",
+  },
+  {
+    youtubeId: "9CcCDTKoIWE",
+    poster: "/images/Home/why-video-2-poster.webp",
+    label: "Primary Support",
+    labelFr: "Soutien primaire",
+    position: "end",
+  },
+  {
+    youtubeId: "Mn4pZBuDzjc",
+    poster: "/images/Home/why-video-3-poster.webp",
+    label: "Inclusive Learning",
+    labelFr: "Apprentissage inclusif",
+    position: "start",
+  },
+];
+
 const content = {
   en: {
     eyebrow: "Why Choose Us",
-    title: "A caring pathway for nursery, inclusive and primary learners.",
+    title:
+      "A caring pathway for nursery, pre-primary, primary and inclusive learners.",
     description:
-      "Heaven’s Seed International School supports every child with patience, structure and compassion — from early nursery learning to primary support, speech development and emotional wellbeing.",
+      "Heaven’s Seed International School supports every child with patience, structure and compassion — from nursery and pre-primary foundations to primary support, inclusive education, speech development and emotional wellbeing.",
     cta: "Start Enrollment",
     secondaryCta: "View Programmes",
-    imageAlt:
-      "Children learning with care at Heaven’s Seed International School",
+    videoEyebrow: "Learning in Motion",
+    videoTitle: "Watch how learning comes alive at Heaven’s Seed.",
+    play: "Play video",
     points: [
       {
         icon: ShieldCheck,
@@ -34,7 +59,7 @@ const content = {
       },
       {
         icon: Baby,
-        title: "Nursery Foundation",
+        title: "Nursery & Pre-Primary",
         text: "Gentle early learning through care, routine, play and confidence building.",
       },
       {
@@ -62,13 +87,14 @@ const content = {
   fr: {
     eyebrow: "Pourquoi nous choisir",
     title:
-      "Un accompagnement bienveillant pour la nurserie, l’inclusion et le primaire.",
+      "Un parcours bienveillant pour la nurserie, le pré-primaire, le primaire et l’inclusion.",
     description:
-      "Heaven’s Seed International School accompagne chaque enfant avec patience, structure et compassion — de la nurserie au soutien primaire, au langage et au bien-être émotionnel.",
+      "Heaven’s Seed International School accompagne chaque enfant avec patience, structure et compassion — de la nurserie et du pré-primaire au soutien primaire, à l’éducation inclusive, au langage et au bien-être émotionnel.",
     cta: "Commencer l’inscription",
     secondaryCta: "Voir les programmes",
-    imageAlt:
-      "Enfants apprenant avec soin à Heaven’s Seed International School",
+    videoEyebrow: "Apprendre en mouvement",
+    videoTitle: "Découvrez l’apprentissage vivant à Heaven’s Seed.",
+    play: "Lire la vidéo",
     points: [
       {
         icon: ShieldCheck,
@@ -77,7 +103,7 @@ const content = {
       },
       {
         icon: Baby,
-        title: "Base nurserie",
+        title: "Nurserie & Pré-primaire",
         text: "Un apprentissage doux avec soin, routine, jeu et confiance.",
       },
       {
@@ -120,10 +146,24 @@ function getInitialLanguage(): Language {
   return "en";
 }
 
+function getEmbedUrl(youtubeId: string) {
+  const params = new URLSearchParams({
+    autoplay: "1",
+    mute: "0",
+    controls: "1",
+    rel: "0",
+    modestbranding: "1",
+    playsinline: "1",
+    iv_load_policy: "3",
+  });
+
+  return `https://www.youtube-nocookie.com/embed/${youtubeId}?${params.toString()}`;
+}
+
 export default function WhyChooseUs() {
   const sectionRef = useRef<HTMLElement | null>(null);
-  const [scrollShift, setScrollShift] = useState(0);
   const [language, setLanguage] = useState<Language>("en");
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   useEffect(() => {
     setLanguage(getInitialLanguage());
@@ -157,24 +197,6 @@ export default function WhyChooseUs() {
     };
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const section = sectionRef.current;
-      if (!section) return;
-
-      const rect = section.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const progress = 1 - Math.min(Math.max(rect.top / windowHeight, -1), 1);
-
-      setScrollShift(progress * 8);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const t = content[language];
 
   return (
@@ -184,14 +206,9 @@ export default function WhyChooseUs() {
       aria-label="Why choose Heaven’s Seed International School"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="grid items-center gap-6 lg:grid-cols-[0.98fr_0.86fr] lg:gap-10">
+        <div className="grid items-stretch gap-6 lg:grid-cols-[0.98fr_0.92fr] lg:gap-10">
           {/* Left Text */}
-          <div
-            className="relative flex flex-col justify-center overflow-hidden rounded-[2rem] border border-white/45 bg-white/58 p-5 shadow-[0_24px_80px_rgba(24,53,40,0.10)] backdrop-blur-xl transition-transform duration-300 sm:p-7 lg:p-9"
-            style={{
-              transform: `translateY(${scrollShift * 0.18}px)`,
-            }}
-          >
+          <div className="relative flex flex-col justify-center overflow-hidden rounded-[2rem] border border-white/45 bg-white/58 p-5 shadow-[0_24px_80px_rgba(24,53,40,0.10)] backdrop-blur-xl sm:p-7 lg:p-9">
             <div className="pointer-events-none absolute -left-16 -top-16 size-44 rounded-full bg-[#F4B321]/14 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-20 right-0 size-52 rounded-full bg-[#A84F3F]/12 blur-3xl" />
 
@@ -256,40 +273,86 @@ export default function WhyChooseUs() {
             </div>
           </div>
 
-          {/* Right Image */}
+          {/* Right Clean YouTube Players */}
           <div
-            className="relative mx-auto aspect-[3/2] w-full max-w-[620px] overflow-hidden rounded-[2rem] border border-white/45 bg-[#A84F3F] shadow-[0_24px_80px_rgba(168,79,63,0.16)] transition-transform duration-300 lg:max-w-[560px]"
+            className="relative overflow-hidden rounded-[2rem] border border-white/45 bg-white/70 p-4 shadow-[0_24px_80px_rgba(168,79,63,0.13)] backdrop-blur-xl sm:p-5"
             style={{
-              transform: `translateY(-${scrollShift * 0.25}px)`,
+              backgroundImage: "url('/images/Home/why-choose-video-bg.webp')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
-            <Image
-              src="/images/Home/why-choose-us.webp"
-              alt={t.imageAlt}
-              fill
-              sizes="(max-width: 1024px) 100vw, 560px"
-              quality={75}
-              loading="lazy"
-              className="object-cover object-center transition duration-700 hover:scale-105"
-            />
+            <div className="absolute inset-0 bg-white/88" />
+            <div className="pointer-events-none absolute -right-16 -top-16 size-56 rounded-full bg-[#F4B321]/18 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-20 left-0 size-60 rounded-full bg-[#A84F3F]/12 blur-3xl" />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-[#7F342B]/58 via-transparent to-transparent" />
+            <div className="relative flex h-full min-h-[590px] flex-col justify-center gap-5">
+              <div className="rounded-[1.5rem] border border-[#A84F3F]/10 bg-white/82 p-4 shadow-[0_14px_45px_rgba(24,53,40,0.08)] backdrop-blur-md">
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#A84F3F]">
+                  {t.videoEyebrow}
+                </p>
+                <h3 className="mt-2 text-xl font-extrabold tracking-[-0.04em] text-[#183528] sm:text-2xl">
+                  {t.videoTitle}
+                </h3>
+              </div>
 
-            <div className="absolute bottom-4 left-4 right-4 rounded-3xl border border-white/22 bg-white/18 p-4 text-white shadow-lg backdrop-blur-md">
-              <div className="flex items-start gap-3">
-                <div className="grid size-10 shrink-0 place-items-center rounded-2xl bg-[#F4B321] text-[#7F342B]">
-                  <CheckCircle2 size={19} strokeWidth={2.5} />
-                </div>
+              <div className="flex flex-1 flex-col justify-center gap-5">
+                {videoCards.map((video, index) => {
+                  const isActive = activeIndex === index;
 
-                <div>
-                  <p className="text-sm font-extrabold tracking-[-0.02em] text-white">
-                    Heaven’s Seed International School
-                  </p>
-                  <p className="mt-1 text-xs leading-5 text-white/78">
-                    Nursery • Inclusive Education • Primary Support • Speech
-                    Delay Support
-                  </p>
-                </div>
+                  const align =
+                    video.position === "end"
+                      ? "ml-auto w-[90%] sm:w-[84%]"
+                      : "mr-auto w-[90%] sm:w-[78%]";
+
+                  const label = language === "fr" ? video.labelFr : video.label;
+
+                  return (
+                    <div
+                      key={video.youtubeId}
+                      className={`${align} transition duration-500 hover:-translate-y-1`}
+                    >
+                      <div className="group relative aspect-video overflow-hidden rounded-[1.25rem] bg-black shadow-[0_18px_50px_rgba(24,53,40,0.14)] ring-1 ring-[#A84F3F]/10">
+                        {isActive ? (
+                          <iframe
+                            key={`${video.youtubeId}-player`}
+                            src={getEmbedUrl(video.youtubeId)}
+                            title={label}
+                            allow="autoplay; encrypted-media; picture-in-picture"
+                            allowFullScreen
+                            className="absolute inset-0 h-full w-full"
+                            loading="eager"
+                          />
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={() => setActiveIndex(index)}
+                            aria-label={`${t.play}: ${label}`}
+                            className="absolute inset-0 block h-full w-full"
+                          >
+                            <img
+                              src={video.poster}
+                              alt={label}
+                              loading="lazy"
+                              className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            />
+
+                            <div className="absolute inset-0 bg-black/18 transition duration-300 group-hover:bg-black/10" />
+
+                            <span className="absolute inset-0 grid place-items-center">
+                              <span className="grid size-16 place-items-center rounded-full bg-black/58 text-white shadow-[0_18px_45px_rgba(0,0,0,0.25)] backdrop-blur-md transition duration-300 group-hover:scale-105 group-hover:bg-[#F4B321] group-hover:text-[#7F342B]">
+                                <Play
+                                  size={25}
+                                  className="ml-0.5 fill-current"
+                                />
+                              </span>
+                            </span>
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -297,9 +360,9 @@ export default function WhyChooseUs() {
 
         <p className="sr-only">
           Heaven’s Seed International School provides nursery education,
-          inclusive education, primary learning support, speech delay support,
-          speech therapy guidance, child psychology support and emotional support
-          for children in Mauritius.
+          pre-primary education, primary learning support, inclusive education,
+          speech delay support, speech therapy guidance, child psychology
+          support and emotional support for children in Mauritius.
         </p>
       </div>
     </section>

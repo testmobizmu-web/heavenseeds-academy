@@ -3,7 +3,9 @@
 import Link from "next/link";
 import {
   ArrowRight,
+  Baby,
   Brain,
+  GraduationCap,
   HeartHandshake,
   ShieldCheck,
   Speech,
@@ -15,58 +17,67 @@ type Language = "en" | "fr";
 const content = {
   en: {
     eyebrow: "Heaven’s Seed International School",
-    title: "Nursery, inclusive & primary support for every child.",
+    title: "Nursery, pre-primary and inclusive early childhood education.",
     description:
-      "A caring learning community offering nursery education, inclusive support, primary learning, speech delay guidance and emotional development support.",
+      "A caring inclusive learning community supporting social, emotional, communication and early learning development through adapted pedagogical approaches.",
     primaryCta: "Start Enrollment",
     secondaryCta: "Explore Programmes",
     badges: [
       "Nursery",
+      "Pre-Primary",
+      "Primary Support",
       "Inclusive Education",
       "Speech Delay Support",
       "Child Psychology Support",
     ],
     cards: [
       {
-        icon: ShieldCheck,
-        title: "Safe & Caring",
-        text: "A nurturing space where children feel valued.",
+        icon: Baby,
+        title: "Nursery & Pre-Primary",
+        text: "Gentle foundations for early learning.",
       },
       {
-        icon: Speech,
-        title: "Speech Support",
-        text: "Gentle guidance for speech and expression.",
+        icon: GraduationCap,
+        title: "Primary Support",
+        text: "Learning guidance for growing children.",
       },
       {
-        icon: Brain,
-        title: "Holistic Growth",
-        text: "Emotional, social and learning support.",
+        icon: HeartHandshake,
+        title: "Inclusive Care",
+        text: "Support for different learning needs.",
       },
     ],
   },
   fr: {
     eyebrow: "Heaven’s Seed International School",
-    title: "Nurserie, inclusion & soutien primaire pour chaque enfant.",
+    title: "Nurserie, pré-primaire, primaire & inclusion pour chaque enfant.",
     description:
-      "Une communauté d’apprentissage bienveillante offrant la nurserie, l’éducation inclusive, le soutien primaire, l’accompagnement du langage et le développement émotionnel.",
+      "Une communauté d’apprentissage bienveillante offrant la nurserie, le pré-primaire, le soutien primaire, l’éducation inclusive, l’accompagnement du langage et le développement émotionnel.",
     primaryCta: "Commencer l’inscription",
     secondaryCta: "Voir les programmes",
-    badges: ["Nurserie", "Éducation inclusive", "Soutien du langage", "Soutien émotionnel"],
+    badges: [
+      "Nurserie",
+      "Pré-primaire",
+      "Primaire",
+      "Éducation inclusive",
+      "Soutien du langage",
+      "Soutien émotionnel",
+    ],
     cards: [
       {
-        icon: ShieldCheck,
-        title: "Sécurité & soin",
-        text: "Un espace rassurant où l’enfant se sent valorisé.",
+        icon: Baby,
+        title: "Nurserie & Pré-primaire",
+        text: "Des bases douces pour bien apprendre.",
       },
       {
-        icon: Speech,
-        title: "Soutien du langage",
-        text: "Un accompagnement doux pour la parole.",
+        icon: GraduationCap,
+        title: "Soutien primaire",
+        text: "Un accompagnement pour progresser.",
       },
       {
-        icon: Brain,
-        title: "Développement global",
-        text: "Soutien émotionnel, social et scolaire.",
+        icon: HeartHandshake,
+        title: "Soin inclusif",
+        text: "Soutien pour différents besoins.",
       },
     ],
   },
@@ -100,7 +111,11 @@ export default function Hero() {
 
     const handleLanguageChange = (event: Event) => {
       const customEvent = event as CustomEvent<{ language?: Language }>;
-      if (customEvent.detail?.language === "fr" || customEvent.detail?.language === "en") {
+
+      if (
+        customEvent.detail?.language === "fr" ||
+        customEvent.detail?.language === "en"
+      ) {
         setLanguage(customEvent.detail.language);
         return;
       }
@@ -128,28 +143,37 @@ export default function Hero() {
       try {
         if (video.paused) await video.play();
       } catch {
-        // Autoplay may wait for user/browser readiness.
+        // Some browsers delay autoplay until the video is ready.
       }
+    };
+
+    const handleCanPlay = () => {
+      playVideo();
     };
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const scrollingDown = currentScrollY > lastScrollY.current + 8;
-      const scrollingUp = currentScrollY < lastScrollY.current - 8;
+      const scrollingDown = currentScrollY > lastScrollY.current + 10;
+      const scrollingUp = currentScrollY < lastScrollY.current - 10;
 
-      if (scrollingDown && currentScrollY > 90) video.pause();
-      if (scrollingUp) playVideo();
+      if (scrollingDown && currentScrollY > 120) {
+        video.pause();
+      }
+
+      if (scrollingUp && currentScrollY < 900) {
+        playVideo();
+      }
 
       lastScrollY.current = currentScrollY;
     };
 
-    video.addEventListener("canplay", playVideo);
+    video.addEventListener("canplay", handleCanPlay);
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     playVideo();
 
     return () => {
-      video.removeEventListener("canplay", playVideo);
+      video.removeEventListener("canplay", handleCanPlay);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
@@ -158,11 +182,11 @@ export default function Hero() {
 
   return (
     <section
-      className="relative m-0 w-full overflow-hidden bg-white p-0"
+      className="relative w-full overflow-hidden bg-white"
       aria-label="Heaven’s Seed International School homepage hero"
     >
-      {/* Mobile: full 16:9 video visible */}
-      <div className="relative aspect-video w-full overflow-hidden bg-[#A84F3F] lg:hidden">
+      {/* Video */}
+      <div className="relative aspect-video w-full overflow-hidden bg-[#A84F3F] lg:aspect-[16/7]">
         <video
           ref={videoRef}
           className="block h-full w-full bg-[#A84F3F] object-cover"
@@ -172,94 +196,35 @@ export default function Hero() {
           loop
           playsInline
           preload="metadata"
-          aria-label="Heaven’s Seed International School video"
+          aria-label="Heaven’s Seed International School nursery pre-primary primary and inclusive education video"
         >
-          <source src="/Video/Hero/heaven-seeds-hero-optimized.mp4" type="video/mp4" />
+          <source
+            src="/Video/Hero/heaven-seeds-hero-optimized.mp4"
+            type="video/mp4"
+          />
         </video>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[#7F342B]/48 via-transparent to-transparent" />
-      </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#7F342B]/52 via-[#7F342B]/8 to-transparent lg:bg-gradient-to-r lg:from-[#7F342B]/88 lg:via-[#A84F3F]/42 lg:to-transparent" />
+        <div className="absolute inset-0 hidden bg-gradient-to-t from-[#7F342B]/42 via-transparent to-transparent lg:block" />
 
-      {/* Mobile text card below video */}
-      <div className="relative z-10 rounded-b-[2rem] bg-[#A84F3F] px-4 pb-7 pt-5 text-white shadow-[0_18px_55px_rgba(168,79,63,0.20)] lg:hidden">
-        <p className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/12 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#F4D77B]">
-          <HeartHandshake size={13} />
-          {t.eyebrow}
-        </p>
-
-        <h1 className="mt-4 text-[31px] font-extrabold leading-[1.05] tracking-[-0.05em] text-white min-[390px]:text-[35px]">
-          {t.title}
-        </h1>
-
-        <p className="mt-3 text-sm font-semibold leading-7 text-white/88">
-          {t.description}
-        </p>
-
-        <div className="mt-4 flex flex-wrap gap-2">
-          {t.badges.slice(0, 3).map((badge) => (
-            <span
-              key={badge}
-              className="rounded-full border border-white/16 bg-white/10 px-3 py-1.5 text-[11px] font-extrabold text-white/84"
-            >
-              {badge}
-            </span>
-          ))}
-        </div>
-
-        <div className="mt-5 grid gap-3">
-          <Link
-            href="/admissions"
-            className="inline-flex h-13 items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.35)] transition hover:bg-[#FFD46A]"
-          >
-            <span className="text-[#7F342B]">{t.primaryCta}</span>
-            <ArrowRight size={17} className="text-[#7F342B]" />
-          </Link>
-
-          <Link
-            href="/programmes"
-            className="inline-flex h-13 items-center justify-center rounded-full border border-white/22 bg-white/12 px-6 text-sm font-extrabold !text-white backdrop-blur-md transition hover:bg-white/20"
-          >
-            <span className="text-white">{t.secondaryCta}</span>
-          </Link>
-        </div>
-      </div>
-
-      {/* Desktop hero with overlay text */}
-      <div className="relative hidden aspect-[16/7] w-full overflow-hidden bg-[#A84F3F] lg:block">
-        <video
-          ref={videoRef}
-          className="block h-full w-full bg-[#A84F3F] object-cover"
-          poster="/images/Hero/heaven-seeds-hero-poster.jpg"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-label="Heaven’s Seed International School video"
-        >
-          <source src="/Video/Hero/heaven-seeds-hero-optimized.mp4" type="video/mp4" />
-        </video>
-
-        <div className="absolute inset-0 bg-gradient-to-r from-[#7F342B]/88 via-[#A84F3F]/42 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#7F342B]/52 via-transparent to-transparent" />
-
-        <div className="absolute inset-0 flex items-center">
+        {/* Desktop overlay text */}
+        <div className="absolute inset-0 hidden items-center lg:flex">
           <div className="w-full px-10 xl:px-14">
-            <div className="hero-copy max-w-3xl">
-              <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/22 bg-white/12 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.24em] text-[#F4D77B] shadow-lg backdrop-blur-md">
+            <div className="max-w-3xl">
+              <p className="inline-flex items-center gap-2 rounded-full border border-white/22 bg-white/12 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.24em] text-[#F4D77B] shadow-lg backdrop-blur-md">
                 <HeartHandshake size={14} />
                 {t.eyebrow}
               </p>
 
-              <h1 className="max-w-3xl text-6xl font-extrabold leading-[1.02] tracking-[-0.055em] text-white drop-shadow-2xl xl:text-7xl">
+              <h1 className="mt-5 max-w-3xl text-6xl font-extrabold leading-[1.02] tracking-[-0.055em] text-white drop-shadow-2xl xl:text-7xl">
                 {t.title}
               </h1>
 
-              <p className="mt-5 max-w-xl text-xl font-semibold leading-8 text-white/92 drop-shadow-xl">
+              <p className="mt-5 max-w-2xl text-xl font-semibold leading-8 text-white/92 drop-shadow-xl">
                 {t.description}
               </p>
 
-              <div className="mt-4 flex flex-wrap gap-2">
+              <div className="mt-5 flex flex-wrap gap-2">
                 {t.badges.map((badge) => (
                   <span
                     key={badge}
@@ -270,7 +235,7 @@ export default function Hero() {
                 ))}
               </div>
 
-              <div className="mt-7 flex gap-3">
+              <div className="mt-8 flex gap-3">
                 <Link
                   href="/admissions"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-7 py-4 text-base font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.36)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
@@ -290,6 +255,7 @@ export default function Hero() {
           </div>
         </div>
 
+        {/* Desktop cards */}
         <div className="absolute bottom-5 right-5 hidden max-w-[520px] grid-cols-3 gap-3 xl:grid">
           {t.cards.map((card) => {
             const Icon = card.icon;
@@ -316,11 +282,55 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Mobile text below video */}
+      <div className="relative z-10 rounded-b-[2rem] bg-[#A84F3F] px-4 pb-7 pt-5 text-white shadow-[0_18px_55px_rgba(168,79,63,0.20)] sm:px-6 lg:hidden">
+        <p className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/12 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#F4D77B]">
+          <HeartHandshake size={13} />
+          {t.eyebrow}
+        </p>
+
+        <h1 className="mt-4 text-[30px] font-extrabold leading-[1.05] tracking-[-0.05em] text-white min-[390px]:text-[34px] sm:text-[42px]">
+          {t.title}
+        </h1>
+
+        <p className="mt-3 text-sm font-semibold leading-7 text-white/88 sm:text-base sm:leading-8">
+          {t.description}
+        </p>
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          {t.badges.slice(0, 4).map((badge) => (
+            <span
+              key={badge}
+              className="rounded-full border border-white/16 bg-white/10 px-3 py-1.5 text-[11px] font-extrabold text-white/84"
+            >
+              {badge}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          <Link
+            href="/admissions"
+            className="inline-flex h-[52px] items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.35)] transition hover:bg-[#FFD46A]"
+          >
+            <span className="text-[#7F342B]">{t.primaryCta}</span>
+            <ArrowRight size={17} className="text-[#7F342B]" />
+          </Link>
+
+          <Link
+            href="/programmes"
+            className="inline-flex h-[52px] items-center justify-center rounded-full border border-white/22 bg-white/12 px-6 text-sm font-extrabold !text-white backdrop-blur-md transition hover:bg-white/20"
+          >
+            <span className="text-white">{t.secondaryCta}</span>
+          </Link>
+        </div>
+      </div>
+
       <p className="sr-only">
-        Heaven’s Seed International School offers nursery education, inclusive
-        education, primary learning support, speech delay support, speech therapy
-        guidance, child psychology support and emotional support for children in
-        Mauritius.
+        Heaven’s Seed International School offers nursery education,
+        pre-primary education, primary learning support, inclusive education,
+        speech delay support, speech therapy guidance, child psychology support
+        and emotional support for children in Mauritius.
       </p>
     </section>
   );
