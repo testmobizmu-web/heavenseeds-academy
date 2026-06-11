@@ -50,29 +50,29 @@ const content = {
   },
   fr: {
     eyebrow: "Heaven’s Seed International School",
-    title: "Nurserie, prÃ©-primaire et Ã©ducation inclusive de la petite enfance.",
+    title: "Nurserie, pré-primaire et éducation inclusive de la petite enfance.",
     description:
-      "Une communautÃ© d’apprentissage inclusive et bienveillante qui soutient le dÃ©veloppement social, Ã©motionnel, communicationnel et les premiers apprentissages grÃ¢ce Ã  des approches pÃ©dagogiques adaptÃ©es, un soutien en ergothÃ©rapie et un accompagnement en orthophonie.",
+      "Une communauté d’apprentissage inclusive et bienveillante qui soutient le développement social, émotionnel, communicationnel et les premiers apprentissages grâce à des approches pédagogiques adaptées, un soutien en ergothérapie et un accompagnement en orthophonie.",
     primaryCta: "Commencer l’inscription",
     secondaryCta: "Voir les programmes",
     badges: [
       "Nurserie",
-      "PrÃ©-primaire",
-      "Ã‰ducation inclusive",
-      "DÃ©veloppement social",
-      "Apprentissage Ã©motionnel",
-      "Soutien ergothÃ©rapie & orthophonie",
+      "Pré-primaire",
+      "Éducation inclusive",
+      "Développement social",
+      "Apprentissage émotionnel",
+      "Soutien ergothérapie & orthophonie",
     ],
     cards: [
       {
         icon: Baby,
-        title: "Nurserie & PrÃ©-primaire",
+        title: "Nurserie & Pré-primaire",
         text: "Des bases douces pour la petite enfance avec soin, routine et jeu.",
       },
       {
         icon: HeartHandshake,
-        title: "Ã‰ducation inclusive",
-        text: "Un cadre inclusif avec des approches pÃ©dagogiques adaptÃ©es.",
+        title: "Éducation inclusive",
+        text: "Un cadre inclusif avec des approches pédagogiques adaptées.",
       },
       {
         icon: MessageCircleHeart,

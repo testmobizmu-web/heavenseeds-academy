@@ -96,73 +96,73 @@ const content = {
     eyebrow: "Journal d’apprentissage",
     title: "Des conseils utiles pour les familles et les jeunes apprenants.",
     description:
-      "Des articles courts et pratiques sur les routines de nurserie, la prÃ©paration prÃ©-primaire, l’apprentissage inclusif, le dÃ©veloppement social, l’apprentissage Ã©motionnel, la communication et le soutien en ergothÃ©rapie & orthophonie.",
+      "Des articles courts et pratiques sur les routines de nurserie, la préparation pré-primaire, l’apprentissage inclusif, le développement social, l’apprentissage émotionnel, la communication et le soutien en ergothérapie & orthophonie.",
     cta: "Voir le blog",
     read: "Lire l’article",
     sr:
-      "Articles du blog Heaven’s Seed International School sur les routines de nurserie, la prÃ©paration prÃ©-primaire, l’apprentissage inclusif, le dÃ©veloppement social, l’apprentissage Ã©motionnel, la communication, l’ergothÃ©rapie et l’orthophonie.",
+      "Articles du blog Heaven’s Seed International School sur les routines de nurserie, la préparation pré-primaire, l’apprentissage inclusif, le développement social, l’apprentissage émotionnel, la communication, l’ergothérapie et l’orthophonie.",
     posts: [
       {
         image: "/images/blog/blog-01.webp",
         tag: "Routines nurserie",
         title: "Une routine du matin calme pour les jeunes enfants",
-        desc: "Des habitudes simples pour aider les enfants Ã  se sentir prÃªts, confiants et rassurÃ©s.",
+        desc: "Des habitudes simples pour aider les enfants à se sentir prêts, confiants et rassurés.",
         href: "/blog/calm-morning-routine-pre-primary-children",
       },
       {
         image: "/images/blog/blog-02.webp",
         tag: "Partenariat parents",
         title: "Comment parents et enseignants renforcent la confiance",
-        desc: "Une bonne communication aide chaque enfant Ã  se sentir soutenu et compris.",
+        desc: "Une bonne communication aide chaque enfant à se sentir soutenu et compris.",
         href: "/blog/parent-teacher-communication-confidence",
       },
       {
         image: "/images/blog/blog-03.webp",
-        tag: "DÃ©couverte",
-        title: "Pourquoi le mouvement et la dÃ©couverte sont importants",
-        desc: "Le jeu, le mouvement et l’exploration dÃ©veloppent la concentration et la curiositÃ©.",
+        tag: "Découverte",
+        title: "Pourquoi le mouvement et la découverte sont importants",
+        desc: "Le jeu, le mouvement et l’exploration développent la concentration et la curiosité.",
         href: "/blog/outdoor-play-early-childhood",
       },
       {
         image: "/images/blog/blog-04.webp",
         tag: "Apprentissage inclusif",
-        title: "RepÃ©rer les besoins d’apprentissage avec douceur",
-        desc: "Une observation bienveillante et un soutien adaptÃ© peuvent faire une grande diffÃ©rence.",
+        title: "Repérer les besoins d’apprentissage avec douceur",
+        desc: "Une observation bienveillante et un soutien adapté peuvent faire une grande différence.",
         href: "/blog/spotting-learning-needs-early",
       },
       {
         image: "/images/blog/blog-05.webp",
-        tag: "ErgothÃ©rapie & orthophonie",
+        tag: "Ergothérapie & orthophonie",
         title: "Le jeu sensoriel pour le calme, le focus et la communication",
-        desc: "Les activitÃ©s pratiques aident l’enfant Ã  dÃ©velopper la participation, l’expression et le calme.",
+        desc: "Les activités pratiques aident l’enfant à développer la participation, l’expression et le calme.",
         href: "/blog/sensory-play-calm-focus-language",
       },
       {
         image: "/images/blog/blog-06.webp",
-        tag: "PrÃ©paration prÃ©-primaire",
-        title: "CrÃ©er l’amour des livres dÃ¨s le plus jeune Ã¢ge",
+        tag: "Préparation pré-primaire",
+        title: "Créer l’amour des livres dès le plus jeune âge",
         desc: "De petites routines de lecture renforcent l’attention, la communication et l’imagination.",
         href: "/blog/love-for-books-early-age",
       },
       {
         image: "/images/blog/blog-07.webp",
-        tag: "Apprentissage Ã©motionnel",
-        title: "CrÃ©er des transitions d’apprentissage rassurantes",
-        desc: "Les enfants se sentent mieux avec des routines prÃ©visibles, chaleureuses et constantes.",
+        tag: "Apprentissage émotionnel",
+        title: "Créer des transitions d’apprentissage rassurantes",
+        desc: "Les enfants se sentent mieux avec des routines prévisibles, chaleureuses et constantes.",
         href: "/blog/safe-happy-school-transitions",
       },
       {
         image: "/images/blog/blog-08.webp",
-        tag: "DÃ©veloppement social",
+        tag: "Développement social",
         title: "Apprendre ensemble dans un cadre bienveillant",
-        desc: "L’apprentissage inclusif soutient la confiance, la communication et les compÃ©tences sociales.",
+        desc: "L’apprentissage inclusif soutient la confiance, la communication et les compétences sociales.",
         href: "/blog/inclusive-caring-classroom",
       },
       {
         image: "/images/blog/blog-09.webp",
         tag: "Communication",
-        title: "Aider les enfants Ã  s’exprimer avec joie",
-        desc: "La musique, les histoires et le jeu aident les enfants Ã  communiquer avec confiance.",
+        title: "Aider les enfants à s’exprimer avec joie",
+        desc: "La musique, les histoires et le jeu aident les enfants à communiquer avec confiance.",
         href: "/blog/helping-children-express-themselves",
       },
     ],
@@ -257,7 +257,7 @@ export default function BlogPreview() {
                 {
                   icon: BookOpenCheck,
                   label:
-                    language === "fr" ? "PrÃ©-primaire" : "Pre-Primary",
+                    language === "fr" ? "Pré-primaire" : "Pre-Primary",
                 },
                 {
                   icon: HeartHandshake,
@@ -267,14 +267,14 @@ export default function BlogPreview() {
                   icon: UsersRound,
                   label:
                     language === "fr"
-                      ? "DÃ©veloppement social"
+                      ? "Développement social"
                       : "Social Development",
                 },
                 {
                   icon: Brain,
                   label:
                     language === "fr"
-                      ? "Apprentissage Ã©motionnel"
+                      ? "Apprentissage émotionnel"
                       : "Emotional Learning",
                 },
                 {

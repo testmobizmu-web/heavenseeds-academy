@@ -29,7 +29,7 @@ const navContent = {
   ],
   fr: [
     { label: "Accueil", href: "/" },
-    { label: "Ã€ propos", href: "/about" },
+    { label: "À propos", href: "/about" },
     { label: "Programmes", href: "/programmes" },
     { label: "Admissions", href: "/admissions" },
     { label: "Galerie", href: "/gallery" },
@@ -64,15 +64,15 @@ const text = {
     whatsapp: "WhatsApp",
     schoolName: "Heaven’s Seed International School",
     description:
-      "Nurserie, prÃ©-primaire et Ã©ducation inclusive de la petite enfance, avec soutien social, Ã©motionnel, communicationnel et global.",
+      "Nurserie, pré-primaire et éducation inclusive de la petite enfance, avec soutien social, émotionnel, communicationnel et global.",
     supportTitle: "Soutien",
     supports: [
       { icon: Baby, label: "Nurserie" },
-      { icon: BookOpenCheck, label: "PrÃ©-primaire" },
-      { icon: HeartHandshake, label: "Ã‰ducation inclusive" },
-      { icon: UsersRound, label: "DÃ©veloppement social" },
-      { icon: Brain, label: "Apprentissage Ã©motionnel" },
-      { icon: Speech, label: "ErgothÃ©rapie & orthophonie" },
+      { icon: BookOpenCheck, label: "Pré-primaire" },
+      { icon: HeartHandshake, label: "Éducation inclusive" },
+      { icon: UsersRound, label: "Développement social" },
+      { icon: Brain, label: "Apprentissage émotionnel" },
+      { icon: Speech, label: "Ergothérapie & orthophonie" },
     ],
   },
 };

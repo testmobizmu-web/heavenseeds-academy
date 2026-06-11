@@ -69,38 +69,38 @@ const content = {
     eyebrow: "Contactez-nous",
     title: "Parlez avec Heaven’s Seed International School.",
     description:
-      "Contactez-nous pour l’admission en nurserie, le prÃ©-primaire, l’Ã©ducation inclusive, le dÃ©veloppement social, l’apprentissage Ã©motionnel, le soutien en ergothÃ©rapie et orthophonie, et les besoins d’apprentissage adaptÃ©s.",
+      "Contactez-nous pour l’admission en nurserie, le pré-primaire, l’éducation inclusive, le développement social, l’apprentissage émotionnel, le soutien en ergothérapie et orthophonie, et les besoins d’apprentissage adaptés.",
     detailsTitle: "Visitez, appelez ou envoyez-nous un message.",
     quickTitle: "Envoyez votre demande rapidement.",
     quickDescription:
-      "Choisissez une demande, remplissez vos informations, et WhatsApp s’ouvrira avec le message prÃªt Ã  envoyer.",
+      "Choisissez une demande, remplissez vos informations, et WhatsApp s’ouvrira avec le message prêt à envoyer.",
     name: "Nom",
-    phone: "NumÃ©ro de tÃ©lÃ©phone",
+    phone: "Numéro de téléphone",
     email: "Email",
     queryType: "Type de demande",
     message: "Message court",
     namePlaceholder: "Votre nom",
-    phonePlaceholder: "Votre numÃ©ro",
+    phonePlaceholder: "Votre numéro",
     emailPlaceholder: "votre@email.com",
     messagePlaceholder:
-      "Je souhaite en savoir plus sur l’admission en nurserie, le prÃ©-primaire ou l’Ã©ducation inclusive...",
+      "Je souhaite en savoir plus sur l’admission en nurserie, le pré-primaire ou l’éducation inclusive...",
     whatsappButton: "WhatsApp",
     emailButton: "Email",
     quickWhatsapp:
-      "Bonjour Heaven's Seed International School, je souhaite en savoir plus sur l'admission en nurserie, le prÃ©-primaire, l'Ã©ducation inclusive, le dÃ©veloppement social, l'apprentissage Ã©motionnel, le soutien en ergothÃ©rapie et orthophonie, ou les besoins d'apprentissage adaptÃ©s.",
+      "Bonjour Heaven's Seed International School, je souhaite en savoir plus sur l'admission en nurserie, le pré-primaire, l'éducation inclusive, le développement social, l'apprentissage émotionnel, le soutien en ergothérapie et orthophonie, ou les besoins d'apprentissage adaptés.",
     whatsappIntro:
       "Bonjour Heaven's Seed International School,%0A%0AJe souhaite recevoir plus d'informations.",
     sr:
-      "Contact Heaven’s Seed International School Ã  Quatre Bornes, Maurice pour l’admission en nurserie, le prÃ©-primaire, l’Ã©ducation inclusive, le dÃ©veloppement social, l’apprentissage Ã©motionnel, la communication, l’ergothÃ©rapie, l’orthophonie et les besoins d’apprentissage adaptÃ©s.",
+      "Contact Heaven’s Seed International School à Quatre Bornes, Maurice pour l’admission en nurserie, le pré-primaire, l’éducation inclusive, le développement social, l’apprentissage émotionnel, la communication, l’ergothérapie, l’orthophonie et les besoins d’apprentissage adaptés.",
     enquiryTypes: [
       "Admission nurserie",
-      "Admission prÃ©-primaire",
-      "Ã‰ducation inclusive",
-      "Soutien dÃ©veloppement social",
-      "Soutien apprentissage Ã©motionnel",
-      "Soutien ergothÃ©rapie & orthophonie",
-      "Besoins d’apprentissage adaptÃ©s",
-      "Frais et disponibilitÃ©",
+      "Admission pré-primaire",
+      "Éducation inclusive",
+      "Soutien développement social",
+      "Soutien apprentissage émotionnel",
+      "Soutien ergothérapie & orthophonie",
+      "Besoins d’apprentissage adaptés",
+      "Frais et disponibilité",
       "Autre",
     ],
   },
@@ -469,7 +469,7 @@ export default function HomeContact() {
           {[
             {
               icon: ShieldCheck,
-              title: language === "fr" ? "SÃ©curitÃ© & soin" : "Safe & Caring",
+              title: language === "fr" ? "Sécurité & soin" : "Safe & Caring",
               text:
                 language === "fr"
                   ? "Un espace rassurant pour les enfants et les parents."
@@ -479,7 +479,7 @@ export default function HomeContact() {
               icon: UsersRound,
               title:
                 language === "fr"
-                  ? "DÃ©veloppement social"
+                  ? "Développement social"
                   : "Social Development",
               text:
                 language === "fr"
@@ -494,7 +494,7 @@ export default function HomeContact() {
                   : "Holistic Guidance",
               text:
                 language === "fr"
-                  ? "Un accompagnement pour l’apprentissage, les Ã©motions et le bien-Ãªtre."
+                  ? "Un accompagnement pour l’apprentissage, les émotions et le bien-être."
                   : "Support for learning, emotional development, confidence and wellbeing.",
             },
           ].map((item) => {

@@ -97,14 +97,14 @@ const content = {
     ],
   },
   fr: {
-    eyebrow: "AperÃ§u Galerie",
+    eyebrow: "Aperçu Galerie",
     title: "Des moments de soin, de jeu et d’apprentissage inclusif.",
     description:
-      "Un aperÃ§u chaleureux de Heaven’s Seed International School — nurserie, activitÃ©s prÃ©-primaires, Ã©ducation inclusive, dÃ©veloppement social, soin Ã©motionnel et dÃ©couverte crÃ©ative.",
+      "Un aperçu chaleureux de Heaven’s Seed International School — nurserie, activités pré-primaires, éducation inclusive, développement social, soin émotionnel et découverte créative.",
     cta: "Voir la galerie",
     inclusiveLabel: "Soin inclusif",
     sr:
-      "AperÃ§u de la galerie Heaven’s Seed International School montrant la nurserie, le prÃ©-primaire, l’Ã©ducation inclusive, le dÃ©veloppement social, le soin Ã©motionnel, la communication et l’apprentissage de la petite enfance.",
+      "Aperçu de la galerie Heaven’s Seed International School montrant la nurserie, le pré-primaire, l’éducation inclusive, le développement social, le soin émotionnel, la communication et l’apprentissage de la petite enfance.",
     images: [
       {
         src: "/images/Gallery/gallery-01.jpg",
@@ -114,25 +114,25 @@ const content = {
       },
       {
         src: "/images/Gallery/gallery-02.jpg",
-        label: "Expression crÃ©ative",
-        alt: "Enfants faisant des activitÃ©s artistiques et crÃ©atives",
+        label: "Expression créative",
+        alt: "Enfants faisant des activités artistiques et créatives",
         isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-03.jpg",
         label: "Communication",
-        alt: "Enfants Ã©coutant une histoire pour dÃ©velopper le langage et la communication",
+        alt: "Enfants écoutant une histoire pour développer le langage et la communication",
         isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-04.jpg",
-        label: "DÃ©couverte extÃ©rieure",
-        alt: "Enfants jouant dehors dans un environnement sÃ©curisÃ©",
+        label: "Découverte extérieure",
+        alt: "Enfants jouant dehors dans un environnement sécurisé",
         isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-05.jpg",
-        label: "PrÃ©paration prÃ©-primaire",
+        label: "Préparation pré-primaire",
         alt: "Enseignant aidant un enfant avec les lettres et les premiers apprentissages",
         isInclusive: false,
       },
@@ -144,19 +144,19 @@ const content = {
       },
       {
         src: "/images/Gallery/gallery-07.jpg",
-        label: "ActivitÃ©s prÃ©-primaires",
-        alt: "Enfants participant Ã  des activitÃ©s prÃ©-primaires",
+        label: "Activités pré-primaires",
+        alt: "Enfants participant à des activités pré-primaires",
         isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-08.jpg",
         label: "Routines saines",
-        alt: "Enfants apprenant les routines d’hygiÃ¨ne et de soin",
+        alt: "Enfants apprenant les routines d’hygiène et de soin",
         isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-09.jpg",
-        label: "Soin Ã©motionnel",
+        label: "Soin émotionnel",
         alt: "Enfants dans une routine calme et bienveillante",
         isInclusive: false,
       },
@@ -169,10 +169,10 @@ const content = {
     ],
     badges: [
       { icon: Baby, label: "Nurserie" },
-      { icon: HeartHandshake, label: "PrÃ©-primaire" },
-      { icon: HeartHandshake, label: "Ã‰ducation inclusive" },
-      { icon: UsersRound, label: "DÃ©veloppement social" },
-      { icon: Brain, label: "Soin Ã©motionnel" },
+      { icon: HeartHandshake, label: "Pré-primaire" },
+      { icon: HeartHandshake, label: "Éducation inclusive" },
+      { icon: UsersRound, label: "Développement social" },
+      { icon: Brain, label: "Soin émotionnel" },
     ],
   },
 };

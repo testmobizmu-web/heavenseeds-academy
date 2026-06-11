@@ -20,7 +20,7 @@ const navContent = {
   ],
   fr: [
     { label: "Accueil", href: "/" },
-    { label: "Ã€ propos", href: "/about" },
+    { label: "À propos", href: "/about" },
     { label: "Programmes", href: "/programmes" },
     { label: "Admissions", href: "/admissions" },
     { label: "Galerie", href: "/gallery" },
@@ -31,7 +31,7 @@ const navContent = {
 
 const announcementText = {
   en: "Planted with love, growing under Heaven’s light...",
-  fr: "PlantÃ© avec amour, grandissant sous la lumiÃ¨re du ciel...",
+  fr: "Planté avec amour, grandissant sous la lumière du ciel...",
 };
 
 const enrollText = {
@@ -168,7 +168,7 @@ export default function Header() {
                   className="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-xs font-extrabold transition hover:bg-[#FFF4DF]"
                 >
                   <Image src="/images/Flags/fr.png" alt="French" width={22} height={22} className="rounded-full" />
-                  FranÃ§ais
+                  Français
                 </button>
               </div>
             ) : null}

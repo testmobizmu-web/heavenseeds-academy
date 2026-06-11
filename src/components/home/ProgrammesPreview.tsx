@@ -114,16 +114,16 @@ const content = {
   fr: {
     eyebrow: "Nos Programmes",
     title:
-      "Nurserie, prÃ©-primaire et Ã©ducation inclusive de la petite enfance.",
+      "Nurserie, pré-primaire et éducation inclusive de la petite enfance.",
     description:
-      "Heaven’s Seed International School accompagne les enfants avec la nurserie, le prÃ©-primaire, l’Ã©ducation inclusive, le dÃ©veloppement social, l’apprentissage Ã©motionnel et des approches pÃ©dagogiques adaptÃ©es.",
+      "Heaven’s Seed International School accompagne les enfants avec la nurserie, le pré-primaire, l’éducation inclusive, le développement social, l’apprentissage émotionnel et des approches pédagogiques adaptées.",
     trustPoints: [
-      { icon: ShieldCheck, label: "SÃ©curitÃ© & soin" },
-      { icon: Baby, label: "Nurserie & PrÃ©-primaire" },
+      { icon: ShieldCheck, label: "Sécurité & soin" },
+      { icon: Baby, label: "Nurserie & Pré-primaire" },
       { icon: HeartHandshake, label: "Cadre inclusif" },
-      { icon: UsersRound, label: "DÃ©veloppement social" },
-      { icon: Brain, label: "Apprentissage Ã©motionnel" },
-      { icon: Speech, label: "ErgothÃ©rapie & orthophonie" },
+      { icon: UsersRound, label: "Développement social" },
+      { icon: Brain, label: "Apprentissage émotionnel" },
+      { icon: Speech, label: "Ergothérapie & orthophonie" },
     ],
     programmes: [
       {
@@ -131,19 +131,19 @@ const content = {
         title: "Nurserie",
         age: "Petite enfance",
         description:
-          "Une nurserie avec stimulation prÃ©coce, routines douces, jeux sensoriels et soutien en ergothÃ©rapie si nÃ©cessaire.",
+          "Une nurserie avec stimulation précoce, routines douces, jeux sensoriels et soutien en ergothérapie si nécessaire.",
         highlights: [
-          "Routines sÃ©curisantes",
+          "Routines sécurisantes",
           "Jeux sensoriels",
-          "Soutien en ergothÃ©rapie",
+          "Soutien en ergothérapie",
         ],
       },
       {
         icon: UsersRound,
-        title: "DÃ©veloppement social",
+        title: "Développement social",
         age: "Confiance & interaction",
         description:
-          "Le dÃ©veloppement social Ã  travers le jeu, la communication, les activitÃ©s de groupe et la confiance dans un cadre inclusif.",
+          "Le développement social à travers le jeu, la communication, les activités de groupe et la confiance dans un cadre inclusif.",
         highlights: [
           "Interaction en groupe",
           "Communication par le jeu",
@@ -152,57 +152,57 @@ const content = {
       },
       {
         icon: BookOpenCheck,
-        title: "PrÃ©-primaire / Ã‰ducation de la petite enfance",
-        age: "PrÃ©paration scolaire",
+        title: "Pré-primaire / Éducation de la petite enfance",
+        age: "Préparation scolaire",
         description:
-          "Des bases prÃ©-primaires pour la prÃ©paration scolaire, l’Ã©veil Ã  la lecture, aux nombres, Ã  la dÃ©couverte et Ã  l’autonomie.",
+          "Des bases pré-primaires pour la préparation scolaire, l’éveil à la lecture, aux nombres, à la découverte et à l’autonomie.",
         highlights: [
-          "Ã‰veil Ã  la lecture",
-          "Ã‰veil aux nombres",
-          "PrÃ©paration scolaire",
+          "Éveil à la lecture",
+          "Éveil aux nombres",
+          "Préparation scolaire",
         ],
       },
       {
         icon: Brain,
-        title: "Apprentissage Ã©motionnel & communication sociale",
-        age: "Bien-Ãªtre",
+        title: "Apprentissage émotionnel & communication sociale",
+        age: "Bien-être",
         description:
-          "Un soutien pour l’apprentissage Ã©motionnel et la communication sociale afin de dÃ©velopper la confiance, l’expression et les relations positives.",
+          "Un soutien pour l’apprentissage émotionnel et la communication sociale afin de développer la confiance, l’expression et les relations positives.",
         highlights: [
-          "Conscience Ã©motionnelle",
+          "Conscience émotionnelle",
           "Comportement positif",
           "Communication sociale",
         ],
       },
       {
         icon: HeartHandshake,
-        title: "Ã‰ducation inclusive",
-        age: "Apprentissage adaptÃ©",
+        title: "Éducation inclusive",
+        age: "Apprentissage adapté",
         description:
-          "Un environnement inclusif avec des approches pÃ©dagogiques adaptÃ©es pour soutenir le rythme, les besoins et le potentiel de chaque enfant.",
+          "Un environnement inclusif avec des approches pédagogiques adaptées pour soutenir le rythme, les besoins et le potentiel de chaque enfant.",
         highlights: [
-          "PÃ©dagogie adaptÃ©e",
-          "Besoins diffÃ©rents",
+          "Pédagogie adaptée",
+          "Besoins différents",
           "Attention individuelle",
         ],
       },
       {
         icon: Speech,
-        title: "Soutien ergothÃ©rapie & orthophonie",
-        age: "DÃ©veloppement global",
+        title: "Soutien ergothérapie & orthophonie",
+        age: "Développement global",
         description:
-          "Un soutien en ergothÃ©rapie et en orthophonie pour favoriser le dÃ©veloppement global, la communication, la participation et la confiance.",
+          "Un soutien en ergothérapie et en orthophonie pour favoriser le développement global, la communication, la participation et la confiance.",
         highlights: [
           "Soutien communication",
-          "MotricitÃ© fine",
-          "DÃ©veloppement global",
+          "Motricité fine",
+          "Développement global",
         ],
       },
     ],
     ctaEyebrow: "Inscriptions ouvertes",
     ctaTitle: "Vous cherchez une nurserie dans un cadre inclusif ?",
     ctaText:
-      "Parlez-nous de l’Ã¢ge de votre enfant, de ses besoins d’apprentissage, de son dÃ©veloppement social, Ã©motionnel, de sa communication et de la meilleure Ã©tape pour l’inscription.",
+      "Parlez-nous de l’âge de votre enfant, de ses besoins d’apprentissage, de son développement social, émotionnel, de sa communication et de la meilleure étape pour l’inscription.",
     cta: "Voir les programmes",
   },
 };

@@ -64,33 +64,33 @@ const content = {
     eyebrow: "Inscriptions ouvertes",
     title: "Vous cherchez une nurserie dans un cadre inclusif ?",
     description:
-      "Contactez Heaven’s Seed International School pour discuter de l’Ã¢ge de votre enfant, de ses besoins d’apprentissage, de son dÃ©veloppement social, de son soutien Ã©motionnel et de la meilleure Ã©tape pour l’inscription.",
+      "Contactez Heaven’s Seed International School pour discuter de l’âge de votre enfant, de ses besoins d’apprentissage, de son développement social, de son soutien émotionnel et de la meilleure étape pour l’inscription.",
     primaryCta: "Commencer l’inscription",
     secondaryCta: "Nous contacter",
     journeyEyebrow: "Parcours d’inscription",
-    journeyTitle: "Des Ã©tapes simples et bienveillantes.",
+    journeyTitle: "Des étapes simples et bienveillantes.",
     note:
-      "PrÃ©parez l’Ã¢ge de votre enfant, sa routine actuelle, ses besoins de communication, son dÃ©veloppement social, ses besoins Ã©motionnels et les contacts des parents.",
+      "Préparez l’âge de votre enfant, sa routine actuelle, ses besoins de communication, son développement social, ses besoins émotionnels et les contacts des parents.",
     imageAlt:
-      "Inscription Ã  Heaven’s Seed International School pour la nurserie, le prÃ©-primaire et l’Ã©ducation inclusive",
+      "Inscription à Heaven’s Seed International School pour la nurserie, le pré-primaire et l’éducation inclusive",
     highlights: [
       "Admission nurserie",
-      "Ã‰ducation prÃ©-primaire",
+      "Éducation pré-primaire",
       "Cadre inclusif",
-      "DÃ©veloppement social",
-      "Apprentissage Ã©motionnel",
-      "Soutien ergothÃ©rapie & orthophonie",
+      "Développement social",
+      "Apprentissage émotionnel",
+      "Soutien ergothérapie & orthophonie",
     ],
     steps: [
       {
         icon: MessageCircle,
         title: "Contactez-nous",
-        text: "Partagez l’Ã¢ge de votre enfant, sa routine, ses besoins et la pÃ©riode souhaitÃ©e.",
+        text: "Partagez l’âge de votre enfant, sa routine, ses besoins et la période souhaitée.",
       },
       {
         icon: CalendarCheck,
-        title: "Discussion guidÃ©e",
-        text: "Nous comprenons son dÃ©veloppement social, Ã©motionnel, communicationnel et ses premiers apprentissages.",
+        title: "Discussion guidée",
+        text: "Nous comprenons son développement social, émotionnel, communicationnel et ses premiers apprentissages.",
       },
       {
         icon: CheckCircle2,

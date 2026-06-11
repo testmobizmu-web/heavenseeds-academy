@@ -19,9 +19,9 @@ const content = {
     eyebrow: "Avis des parents",
     title: "La confiance des familles pour un soutien inclusif et bienveillant.",
     description:
-      "Des retours en anglais et en franÃ§ais sur la nurserie, l’Ã©ducation inclusive, le soutien du langage, l’accompagnement Ã©motionnel et la confiance.",
+      "Des retours en anglais et en français sur la nurserie, l’éducation inclusive, le soutien du langage, l’accompagnement émotionnel et la confiance.",
     sr:
-      "Avis des parents pour Heaven’s Seed International School, proposant la nurserie, l’Ã©ducation inclusive, le soutien primaire, le soutien du langage et l’accompagnement Ã©motionnel.",
+      "Avis des parents pour Heaven’s Seed International School, proposant la nurserie, l’éducation inclusive, le soutien primaire, le soutien du langage et l’accompagnement émotionnel.",
   },
 };
 
@@ -40,7 +40,7 @@ const testimonials = [
     lang: "FR",
     rating: 4.5,
     image: "/images/Home/testimonials/man/profilefrance.png",
-    text: "Une Ã©quipe douce et rassurante. Mon enfant progresse avec plus de confiance, surtout dans l’expression.",
+    text: "Une équipe douce et rassurante. Mon enfant progresse avec plus de confiance, surtout dans l’expression.",
   },
   {
     name: "Claire Bennett",
@@ -56,7 +56,7 @@ const testimonials = [
     lang: "FR",
     rating: 5,
     image: "/images/Home/testimonials/women/profilefrance.png",
-    text: "Un accompagnement trÃ¨s humain pour les petits. On sent que chaque enfant est Ã©coutÃ© et valorisÃ©.",
+    text: "Un accompagnement très humain pour les petits. On sent que chaque enfant est écouté et valorisé.",
   },
   {
     name: "Arjun Mehta",
@@ -76,19 +76,19 @@ const testimonials = [
   },
   {
     name: "Marc Dubois",
-    role: "Papa, expatriÃ©",
+    role: "Papa, expatrié",
     lang: "FR",
     rating: 5,
     image: "/images/Home/testimonials/man/profileparis.png",
-    text: "Un cadre propre, calme et bien organisÃ©. L’approche inclusive donne beaucoup de confiance aux parents.",
+    text: "Un cadre propre, calme et bien organisé. L’approche inclusive donne beaucoup de confiance aux parents.",
   },
   {
-    name: "Ã‰lise Laurent",
+    name: "Élise Laurent",
     role: "Maman, Grand Baie",
     lang: "FR",
     rating: 4.5,
     image: "/images/Home/testimonials/women/profilefrance1.png",
-    text: "Une Ã©cole douce et familiale avec une vraie attention au rythme et aux besoins de chaque enfant.",
+    text: "Une école douce et familiale avec une vraie attention au rythme et aux besoins de chaque enfant.",
   },
   {
     name: "Daniel Tan",
@@ -128,15 +128,15 @@ const testimonials = [
     lang: "FR",
     rating: 4.5,
     image: "/images/Home/testimonials/man/profileparis2.png",
-    text: "TrÃ¨s bonne communication avec les parents. L’environnement est calme, joyeux et sÃ©curisant.",
+    text: "Très bonne communication avec les parents. L’environnement est calme, joyeux et sécurisant.",
   },
   {
-    name: "AmÃ©lie Dubois",
+    name: "Amélie Dubois",
     role: "Maman francophone",
     lang: "FR",
     rating: 5,
     image: "/images/Home/testimonials/women/profilefrance3.png",
-    text: "Heaven’s Seed donne une vraie impression de confiance, de douceur et de qualitÃ© dans l’accompagnement.",
+    text: "Heaven’s Seed donne une vraie impression de confiance, de douceur et de qualité dans l’accompagnement.",
   },
   {
     name: "William Parker",
@@ -155,12 +155,12 @@ const testimonials = [
     text: "My child became more independent and expressive. We feel very happy with the care and guidance.",
   },
   {
-    name: "Ã‰tienne Laurent",
+    name: "Étienne Laurent",
     role: "Parent, Maurice",
     lang: "FR",
     rating: 4.5,
     image: "/images/Home/testimonials/man/profilefrance1.png",
-    text: "Une approche humaine, professionnelle et bienveillante. Les enfants sont vraiment encouragÃ©s.",
+    text: "Une approche humaine, professionnelle et bienveillante. Les enfants sont vraiment encouragés.",
   },
   {
     name: "Naledi Dlamini",
