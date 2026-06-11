@@ -3,10 +3,10 @@
 import {
   Baby,
   Brain,
-  GraduationCap,
   HeartHandshake,
   ShieldCheck,
   Speech,
+  UsersRound,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -15,77 +15,77 @@ type Language = "en" | "fr";
 const content = {
   en: {
     eyebrow: "Why families choose Heaven’s Seed",
-    title: "A caring, inclusive learning foundation for every child.",
+    title: "A caring, inclusive early childhood foundation for every child.",
     description:
-      "We support nursery learners, primary learners and children with different learning needs through patience, structure and family partnership.",
+      "We support nursery and pre-primary children through social, emotional and early learning development in an inclusive setup, with adapted pedagogical approaches and family partnership.",
     trustItems: [
       {
-        icon: ShieldCheck,
-        title: "Safe & Caring",
-        text: "A nurturing environment where children feel protected, valued and encouraged.",
-      },
-      {
         icon: Baby,
-        title: "Nursery Support",
-        text: "Gentle early learning foundations through care, routine, play and confidence.",
-      },
-      {
-        icon: GraduationCap,
-        title: "Primary Support",
-        text: "Flexible learning guidance for literacy, numeracy, focus and school progress.",
+        title: "Nursery & Pre-Primary",
+        text: "Gentle early childhood foundations through care, routine, play, discovery and confidence-building.",
       },
       {
         icon: HeartHandshake,
         title: "Inclusive Education",
-        text: "Support for children with different learning needs at their own pace.",
+        text: "An inclusive setup where children with different learning needs are supported with patience and structure.",
       },
       {
-        icon: Speech,
-        title: "Speech Delay Support",
-        text: "Gentle communication guidance for speech, language and expression.",
+        icon: UsersRound,
+        title: "Social Development",
+        text: "Helping children build interaction, participation, social confidence and positive relationships.",
       },
       {
         icon: Brain,
-        title: "Emotional Support",
-        text: "Child psychology support for confidence, behaviour and emotional wellbeing.",
+        title: "Emotional Learning",
+        text: "Supporting emotional awareness, calm learning, behaviour, confidence and wellbeing.",
+      },
+      {
+        icon: Speech,
+        title: "Occupational & Speech Therapy Support",
+        text: "Holistic support for communication, participation, sensory readiness and daily learning confidence.",
+      },
+      {
+        icon: ShieldCheck,
+        title: "Safe & Caring",
+        text: "A nurturing environment where every child feels protected, valued, encouraged and understood.",
       },
     ],
   },
   fr: {
     eyebrow: "Pourquoi les familles choisissent Heaven’s Seed",
-    title: "Une base d’apprentissage inclusive et bienveillante pour chaque enfant.",
+    title: "Une base inclusive et bienveillante pour la petite enfance.",
     description:
-      "Nous accompagnons les enfants en nurserie, les élèves du primaire et les enfants ayant différents besoins d’apprentissage avec patience, structure et partenariat familial.",
+      "Nous accompagnons les enfants en nurserie et prÃ©-primaire dans leur dÃ©veloppement social, Ã©motionnel et leurs premiers apprentissages, dans un cadre inclusif avec des approches pÃ©dagogiques adaptÃ©es et un partenariat familial.",
     trustItems: [
       {
-        icon: ShieldCheck,
-        title: "Sécurité & bienveillance",
-        text: "Un environnement rassurant où chaque enfant se sent protégé, valorisé et encouragé.",
-      },
-      {
         icon: Baby,
-        title: "Soutien nurserie",
-        text: "Des bases douces d’apprentissage avec soin, routine, jeu et confiance.",
-      },
-      {
-        icon: GraduationCap,
-        title: "Soutien primaire",
-        text: "Un accompagnement flexible pour la lecture, les nombres, la concentration et le progrès.",
+        title: "Nurserie & PrÃ©-primaire",
+        text: "Des bases douces pour la petite enfance avec soin, routine, jeu, dÃ©couverte et confiance.",
       },
       {
         icon: HeartHandshake,
-        title: "Éducation inclusive",
-        text: "Un soutien adapté aux enfants ayant différents besoins d’apprentissage.",
+        title: "Ã‰ducation inclusive",
+        text: "Un cadre inclusif oÃ¹ les enfants ayant diffÃ©rents besoins sont accompagnÃ©s avec patience et structure.",
       },
       {
-        icon: Speech,
-        title: "Soutien du langage",
-        text: "Un accompagnement doux pour la parole, le langage et l’expression.",
+        icon: UsersRound,
+        title: "DÃ©veloppement social",
+        text: "Aider l’enfant Ã  dÃ©velopper l’interaction, la participation, la confiance sociale et les relations positives.",
       },
       {
         icon: Brain,
-        title: "Soutien émotionnel",
-        text: "Un accompagnement pour la confiance, le comportement et le bien-être émotionnel.",
+        title: "Apprentissage Ã©motionnel",
+        text: "Soutenir la conscience Ã©motionnelle, le calme, le comportement, la confiance et le bien-Ãªtre.",
+      },
+      {
+        icon: Speech,
+        title: "Soutien ergothÃ©rapie & orthophonie",
+        text: "Un accompagnement global pour la communication, la participation, la prÃ©paration sensorielle et la confiance quotidienne.",
+      },
+      {
+        icon: ShieldCheck,
+        title: "SÃ©curitÃ© & bienveillance",
+        text: "Un environnement rassurant oÃ¹ chaque enfant se sent protÃ©gÃ©, valorisÃ©, encouragÃ© et compris.",
       },
     ],
   },
@@ -152,7 +152,7 @@ export default function TrustStrip() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-6 grid gap-4 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
-            <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F]">
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#B86452]">
               {t.eyebrow}
             </p>
 
@@ -178,10 +178,10 @@ export default function TrustStrip() {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="absolute -right-10 -top-10 size-28 rounded-full bg-[#F4B321]/18 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100" />
-                  <div className="absolute -bottom-10 -left-10 size-28 rounded-full bg-[#A84F3F]/10 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100" />
+                  <div className="absolute -bottom-10 -left-10 size-28 rounded-full bg-[#B86452]/10 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100" />
 
                   <div className="relative flex items-start gap-4">
-                    <div className="grid size-12 shrink-0 place-items-center rounded-2xl bg-[#A84F3F] text-white shadow-[0_14px_35px_rgba(168,79,63,0.22)] transition duration-500 group-hover:-translate-y-1 group-hover:bg-[#7F342B]">
+                    <div className="grid size-12 shrink-0 place-items-center rounded-2xl bg-[#B86452] text-white shadow-[0_14px_35px_rgba(168,79,63,0.22)] transition duration-500 group-hover:-translate-y-1 group-hover:bg-[#944337]">
                       <Icon size={22} strokeWidth={2.4} />
                     </div>
 
@@ -203,8 +203,9 @@ export default function TrustStrip() {
 
         <p className="sr-only">
           Heaven’s Seed International School supports nursery education,
-          inclusive education, primary learning support, speech delay support,
-          speech therapy guidance, child psychology support and emotional support
+          pre-primary education, inclusive education, social development,
+          emotional learning, communication development, adapted pedagogical
+          approaches, occupational therapy support and speech therapy guidance
           for children in Mauritius.
         </p>
       </div>

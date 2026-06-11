@@ -7,11 +7,10 @@ import {
   Baby,
   Brain,
   Camera,
-  GraduationCap,
   HeartHandshake,
   Images,
   Sparkles,
-  Speech,
+  UsersRound,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -20,30 +19,30 @@ type Language = "en" | "fr";
 const content = {
   en: {
     eyebrow: "Gallery Preview",
-    title: "Moments of care, communication and inclusive learning.",
+    title: "Moments of care, play and inclusive early learning.",
     description:
-      "A warm look inside Heaven’s Seed International School — nursery learning, pre-primary learning, primary support, inclusive education, speech development, emotional care and creative discovery.",
+      "A warm look inside Heaven’s Seed International School — nursery care, pre-primary activities, inclusive education, social development, emotional care and creative discovery.",
     cta: "View Gallery",
     inclusiveLabel: "Inclusive Care",
     sr:
-      "Heaven’s Seed International School gallery preview showing nursery education, pre-primary education, primary support, inclusive education, speech delay support, speech therapy guidance, child psychology support and emotional care.",
+      "Heaven’s Seed International School gallery preview showing nursery education, pre-primary education, inclusive education, social development, emotional care, communication development and holistic early childhood learning.",
     images: [
       {
         src: "/images/Gallery/gallery-01.jpg",
-        label: "Nursery Learning",
+        label: "Nursery Care",
         alt: "Nursery children learning in a warm caring classroom environment",
         isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-02.jpg",
         label: "Creative Expression",
-        alt: "Children doing art and creative learning activities",
+        alt: "Children doing art and creative early learning activities",
         isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-03.jpg",
-        label: "Speech & Language",
-        alt: "Children listening to story time for language and speech development",
+        label: "Communication Skills",
+        alt: "Children listening to story time for language and communication development",
         isInclusive: false,
       },
       {
@@ -54,8 +53,8 @@ const content = {
       },
       {
         src: "/images/Gallery/gallery-05.jpg",
-        label: "Primary Support",
-        alt: "Teacher helping a child with alphabet and early literacy learning",
+        label: "Pre-Primary Readiness",
+        alt: "Teacher helping a child with early literacy and pre-primary learning",
         isInclusive: false,
       },
       {
@@ -78,8 +77,8 @@ const content = {
       },
       {
         src: "/images/Gallery/gallery-09.jpg",
-        label: "Emotional Support",
-        alt: "Children in a calm caring classroom routine",
+        label: "Emotional Care",
+        alt: "Children in a calm caring classroom routine with emotional support",
         isInclusive: false,
       },
       {
@@ -91,21 +90,21 @@ const content = {
     ],
     badges: [
       { icon: Baby, label: "Nursery" },
-      { icon: GraduationCap, label: "Pre-Primary" },
-      { icon: HeartHandshake, label: "Inclusive" },
-      { icon: Speech, label: "Speech Support" },
+      { icon: HeartHandshake, label: "Pre-Primary" },
+      { icon: HeartHandshake, label: "Inclusive Education" },
+      { icon: UsersRound, label: "Social Development" },
       { icon: Brain, label: "Emotional Care" },
     ],
   },
   fr: {
-    eyebrow: "Aperçu Galerie",
-    title: "Des moments de soin, de communication et d’apprentissage inclusif.",
+    eyebrow: "AperÃ§u Galerie",
+    title: "Des moments de soin, de jeu et d’apprentissage inclusif.",
     description:
-      "Un aperçu chaleureux de Heaven’s Seed International School — nurserie, pré-primaire, soutien primaire, éducation inclusive, développement du langage, soutien émotionnel et découverte créative.",
+      "Un aperÃ§u chaleureux de Heaven’s Seed International School — nurserie, activitÃ©s prÃ©-primaires, Ã©ducation inclusive, dÃ©veloppement social, soin Ã©motionnel et dÃ©couverte crÃ©ative.",
     cta: "Voir la galerie",
     inclusiveLabel: "Soin inclusif",
     sr:
-      "Aperçu de la galerie Heaven’s Seed International School montrant la nurserie, le pré-primaire, le soutien primaire, l’éducation inclusive, le soutien du langage, l’accompagnement émotionnel et le développement de l’enfant.",
+      "AperÃ§u de la galerie Heaven’s Seed International School montrant la nurserie, le prÃ©-primaire, l’Ã©ducation inclusive, le dÃ©veloppement social, le soin Ã©motionnel, la communication et l’apprentissage de la petite enfance.",
     images: [
       {
         src: "/images/Gallery/gallery-01.jpg",
@@ -115,26 +114,26 @@ const content = {
       },
       {
         src: "/images/Gallery/gallery-02.jpg",
-        label: "Expression créative",
-        alt: "Enfants faisant des activités artistiques et créatives",
+        label: "Expression crÃ©ative",
+        alt: "Enfants faisant des activitÃ©s artistiques et crÃ©atives",
         isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-03.jpg",
-        label: "Langage & parole",
-        alt: "Enfants écoutant une histoire pour développer le langage",
+        label: "Communication",
+        alt: "Enfants Ã©coutant une histoire pour dÃ©velopper le langage et la communication",
         isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-04.jpg",
-        label: "Découverte extérieure",
-        alt: "Enfants jouant dehors dans un environnement sécurisé",
+        label: "DÃ©couverte extÃ©rieure",
+        alt: "Enfants jouant dehors dans un environnement sÃ©curisÃ©",
         isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-05.jpg",
-        label: "Soutien primaire",
-        alt: "Enseignant aidant un enfant avec les lettres et la lecture",
+        label: "PrÃ©paration prÃ©-primaire",
+        alt: "Enseignant aidant un enfant avec les lettres et les premiers apprentissages",
         isInclusive: false,
       },
       {
@@ -145,19 +144,19 @@ const content = {
       },
       {
         src: "/images/Gallery/gallery-07.jpg",
-        label: "Activités pré-primaires",
-        alt: "Enfants participant à des activités pré-primaires",
+        label: "ActivitÃ©s prÃ©-primaires",
+        alt: "Enfants participant Ã  des activitÃ©s prÃ©-primaires",
         isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-08.jpg",
         label: "Routines saines",
-        alt: "Enfants apprenant les routines d’hygiène et de soin",
+        alt: "Enfants apprenant les routines d’hygiÃ¨ne et de soin",
         isInclusive: false,
       },
       {
         src: "/images/Gallery/gallery-09.jpg",
-        label: "Soutien émotionnel",
+        label: "Soin Ã©motionnel",
         alt: "Enfants dans une routine calme et bienveillante",
         isInclusive: false,
       },
@@ -170,10 +169,10 @@ const content = {
     ],
     badges: [
       { icon: Baby, label: "Nurserie" },
-      { icon: GraduationCap, label: "Pré-primaire" },
-      { icon: HeartHandshake, label: "Inclusion" },
-      { icon: Speech, label: "Langage" },
-      { icon: Brain, label: "Émotionnel" },
+      { icon: HeartHandshake, label: "PrÃ©-primaire" },
+      { icon: HeartHandshake, label: "Ã‰ducation inclusive" },
+      { icon: UsersRound, label: "DÃ©veloppement social" },
+      { icon: Brain, label: "Soin Ã©motionnel" },
     ],
   },
 };
@@ -240,7 +239,7 @@ export default function GalleryPreview() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-5 grid gap-4 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
           <div>
-            <p className="inline-flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F] sm:text-[11px]">
+            <p className="inline-flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#B86452] sm:text-[11px]">
               <Camera size={14} />
               {t.eyebrow}
             </p>
@@ -265,9 +264,9 @@ export default function GalleryPreview() {
                 return (
                   <span
                     key={badge.label}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-[#A84F3F]/10 bg-white/58 px-3 py-1.5 text-[11px] font-extrabold text-[#183528] shadow-sm backdrop-blur-md"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-[#B86452]/10 bg-white/58 px-3 py-1.5 text-[11px] font-extrabold text-[#183528] shadow-sm backdrop-blur-md"
                   >
-                    <Icon size={13} className="text-[#A84F3F]" />
+                    <Icon size={13} className="text-[#B86452]" />
                     {badge.label}
                   </span>
                 );
@@ -275,11 +274,11 @@ export default function GalleryPreview() {
 
               <Link
                 href="/gallery"
-                className="inline-flex items-center gap-2 rounded-full bg-[#F4B321] px-5 py-2.5 text-xs font-extrabold !text-[#7F342B] shadow-[0_14px_35px_rgba(244,179,33,0.24)] transition duration-300 hover:-translate-y-1 hover:bg-[#FFD46A] sm:text-sm"
+                className="inline-flex items-center gap-2 rounded-full bg-[#F4B321] px-5 py-2.5 text-xs font-extrabold !text-[#944337] shadow-[0_14px_35px_rgba(244,179,33,0.24)] transition duration-300 hover:-translate-y-1 hover:bg-[#FFD46A] sm:text-sm"
                 aria-label="View Heaven’s Seed International School gallery"
               >
-                <span className="text-[#7F342B]">{t.cta}</span>
-                <ArrowRight size={16} className="text-[#7F342B]" />
+                <span className="text-[#944337]">{t.cta}</span>
+                <ArrowRight size={16} className="text-[#944337]" />
               </Link>
             </div>
           </div>
@@ -295,7 +294,7 @@ export default function GalleryPreview() {
             <Link
               key={`${image.src}-${image.label}-${index}`}
               href="/gallery"
-              className="group relative aspect-[3/2] w-[282px] shrink-0 overflow-hidden rounded-[1.75rem] bg-[#A84F3F] shadow-[0_20px_65px_rgba(168,79,63,0.14)] ring-1 ring-white/45 transition duration-500 hover:-translate-y-1 sm:w-[370px] lg:w-[430px]"
+              className="group relative aspect-[3/2] w-[282px] shrink-0 overflow-hidden rounded-[1.75rem] bg-[#B86452] shadow-[0_20px_65px_rgba(168,79,63,0.14)] ring-1 ring-white/45 transition duration-500 hover:-translate-y-1 sm:w-[370px] lg:w-[430px]"
               aria-label={`Open gallery: ${image.label}`}
             >
               <Image
@@ -308,7 +307,7 @@ export default function GalleryPreview() {
                 className="object-cover transition duration-700 group-hover:scale-105"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#7F342B]/58 via-[#A84F3F]/8 to-transparent transition duration-500 group-hover:from-[#7F342B]/46" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#944337]/58 via-[#B86452]/8 to-transparent transition duration-500 group-hover:from-[#944337]/46" />
 
               {image.isInclusive ? (
                 <div className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-white/35 bg-white/20 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.16em] text-white shadow-lg backdrop-blur-md">

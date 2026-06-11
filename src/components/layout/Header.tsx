@@ -20,7 +20,7 @@ const navContent = {
   ],
   fr: [
     { label: "Accueil", href: "/" },
-    { label: "À propos", href: "/about" },
+    { label: "Ã€ propos", href: "/about" },
     { label: "Programmes", href: "/programmes" },
     { label: "Admissions", href: "/admissions" },
     { label: "Galerie", href: "/gallery" },
@@ -31,7 +31,7 @@ const navContent = {
 
 const announcementText = {
   en: "Planted with love, growing under Heaven’s light...",
-  fr: "Planté avec amour, grandissant sous la lumière du ciel...",
+  fr: "PlantÃ© avec amour, grandissant sous la lumiÃ¨re du ciel...",
 };
 
 const enrollText = {
@@ -100,7 +100,7 @@ export default function Header() {
   return (
     <>
       {/* Announcement Bar */}
-      <div className="relative z-[80] border-b border-white/10 bg-[#A84F3F] text-white shadow-[0_8px_24px_rgba(168,79,63,0.22)]">
+      <div className="relative z-[80] border-b border-white/10 bg-[#B86452] text-white shadow-[0_8px_24px_rgba(168,79,63,0.22)]">
         <div className="grid h-10 w-full grid-cols-[auto_1fr_auto] items-center gap-3 px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
             <a
@@ -108,7 +108,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="grid size-7 place-items-center rounded-full bg-white/12 text-white transition duration-300 hover:bg-[#F4D77B] hover:text-[#7F342B]"
+              className="grid size-7 place-items-center rounded-full bg-white/12 text-white transition duration-300 hover:bg-[#F4D77B] hover:text-[#944337]"
             >
               <FacebookIcon />
             </a>
@@ -118,7 +118,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="grid size-7 place-items-center rounded-full bg-white/12 text-white transition duration-300 hover:bg-[#F4D77B] hover:text-[#7F342B]"
+              className="grid size-7 place-items-center rounded-full bg-white/12 text-white transition duration-300 hover:bg-[#F4D77B] hover:text-[#944337]"
             >
               <InstagramIcon />
             </a>
@@ -152,7 +152,7 @@ export default function Header() {
             </button>
 
             {languageOpen ? (
-              <div className="absolute right-0 top-10 z-[120] w-36 overflow-hidden rounded-2xl border border-[#A84F3F]/10 bg-white p-2 text-[#183528] shadow-[0_20px_55px_rgba(24,53,40,0.18)]">
+              <div className="absolute right-0 top-10 z-[120] w-36 overflow-hidden rounded-2xl border border-[#B86452]/10 bg-white p-2 text-[#183528] shadow-[0_20px_55px_rgba(24,53,40,0.18)]">
                 <button
                   type="button"
                   onClick={() => changeLanguage("en")}
@@ -168,7 +168,7 @@ export default function Header() {
                   className="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-xs font-extrabold transition hover:bg-[#FFF4DF]"
                 >
                   <Image src="/images/Flags/fr.png" alt="French" width={22} height={22} className="rounded-full" />
-                  Français
+                  FranÃ§ais
                 </button>
               </div>
             ) : null}
@@ -177,7 +177,7 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <header className="sticky top-0 z-[70] border-b border-[#A84F3F]/10 bg-white/95 shadow-[0_10px_34px_rgba(24,53,40,0.08)] backdrop-blur-2xl">
+      <header className="sticky top-0 z-[70] border-b border-[#B86452]/10 bg-white/95 shadow-[0_10px_34px_rgba(24,53,40,0.08)] backdrop-blur-2xl">
         <div className="absolute inset-0 hidden overflow-hidden lg:block">
           <Image
             src="/images/header/header-bg.webp"
@@ -198,7 +198,7 @@ export default function Header() {
               type="button"
               aria-label={open ? "Close menu" : "Open menu"}
               onClick={() => setOpen((value) => !value)}
-              className="grid size-12 place-items-center rounded-full border border-[#A84F3F]/12 bg-white text-[#7F342B] shadow-[0_12px_30px_rgba(24,53,40,0.10)] transition hover:bg-[#FFF4DF]"
+              className="grid size-12 place-items-center rounded-full border border-[#B86452]/12 bg-white text-[#944337] shadow-[0_12px_30px_rgba(24,53,40,0.10)] transition hover:bg-[#FFF4DF]"
             >
               {open ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -227,7 +227,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 style={{ animationDelay: `${index * 0.08}s` }}
-                className="animate-hsa-menu-fade group relative px-3 py-3 text-sm font-extrabold text-[#183528]/90 transition duration-300 hover:text-[#7F342B] xl:px-4"
+                className="animate-hsa-menu-fade group relative px-3 py-3 text-sm font-extrabold text-[#183528]/90 transition duration-300 hover:text-[#944337] xl:px-4"
               >
                 <span className="relative z-10">{item.label}</span>
                 <span className="absolute bottom-1.5 left-1/2 h-[3px] w-0 -translate-x-1/2 rounded-full bg-[#F4B321] shadow-[0_6px_18px_rgba(244,179,33,0.55)] transition-all duration-300 group-hover:w-[62%]" />
@@ -239,9 +239,9 @@ export default function Header() {
           <div className="flex items-center justify-end">
             <Link
               href="/admissions"
-              className="inline-flex h-12 items-center justify-center rounded-full bg-[#F4B321] px-5 text-sm font-extrabold !text-[#7F342B] shadow-[0_16px_35px_rgba(244,179,33,0.30)] ring-1 ring-[#F4D77B]/45 transition duration-300 hover:-translate-y-0.5 hover:bg-[#FFD46A]"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-[#F4B321] px-5 text-sm font-extrabold !text-[#944337] shadow-[0_16px_35px_rgba(244,179,33,0.30)] ring-1 ring-[#F4D77B]/45 transition duration-300 hover:-translate-y-0.5 hover:bg-[#FFD46A]"
             >
-              <span className="text-[#7F342B]">{enrollText[language]}</span>
+              <span className="text-[#944337]">{enrollText[language]}</span>
             </Link>
           </div>
         </div>

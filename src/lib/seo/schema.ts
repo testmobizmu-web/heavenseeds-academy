@@ -8,15 +8,18 @@ const fullAddress = `${siteConfig.address.street}, ${siteConfig.address.locality
 
 const servicesOffered = [
   "Nursery education",
+  "Pre-primary education",
   "Inclusive education",
-  "Primary learning support",
-  "Speech delay support",
+  "Inclusive nursery",
+  "Early childhood education",
+  "Social development support",
+  "Emotional learning support",
+  "Communication development support",
+  "Social communication support",
+  "Occupational therapy support",
   "Speech therapy guidance",
-  "Child psychology support",
-  "Child emotional support",
-  "Communication support",
-  "Different learning needs support",
-  "Flexible online learning",
+  "Adapted pedagogical approach",
+  "Adapted learning needs support",
   "Holistic child development",
   "Parent guidance and family support",
 ];
@@ -39,9 +42,10 @@ export const schoolSchema = {
   image: `${siteConfig.url}${siteConfig.assets.ogImage}`,
 
   description:
-    "Heaven’s Seed International School is an inclusive learning community in Mauritius offering nursery education, inclusive education, primary learning support, speech delay support, speech therapy guidance and child psychology support in a safe, caring and flexible environment.",
+    "Heaven’s Seed International School is an inclusive early childhood learning community in Mauritius offering nursery education, pre-primary education, inclusive education, social development, emotional learning, communication development, occupational therapy support and speech therapy guidance in a safe, caring environment.",
 
-  slogan: "Nurturing little minds online and beyond.",
+  slogan:
+    "Nurturing social, emotional, communication and early learning development.",
 
   telephone: siteConfig.contact.whatsapp,
   email: siteConfig.contact.email,
@@ -67,15 +71,20 @@ export const schoolSchema = {
   ],
 
   keywords: [
-    "nursery school Mauritius",
+    "inclusive nursery Mauritius",
+    "nursery in inclusive setup Mauritius",
+    "pre-primary school Mauritius",
+    "early childhood education Mauritius",
     "inclusive education Mauritius",
-    "primary learning support Mauritius",
-    "speech delay support Mauritius",
+    "occupational therapy support Mauritius",
+    "speech therapy support Mauritius",
     "speech therapy guidance Mauritius",
-    "child psychology support Mauritius",
-    "online learning Mauritius",
+    "social development children Mauritius",
+    "emotional learning children Mauritius",
+    "communication development children Mauritius",
+    "adapted pedagogy Mauritius",
+    "adapted pedagogical approach Mauritius",
     "different learning needs Mauritius",
-    "child development support Mauritius",
     "Quatre Bornes nursery",
     "Heaven’s Seed International School",
   ],
@@ -125,7 +134,7 @@ export const websiteSchema = {
   url: siteConfig.url,
 
   description:
-    "Official website of Heaven’s Seed International School, an inclusive learning community offering nursery, primary support, speech delay support, speech therapy guidance and child psychology support.",
+    "Official website of Heaven’s Seed International School, an inclusive early childhood learning community offering nursery education, pre-primary education, inclusive education, social development, emotional learning, communication development, occupational therapy support and speech therapy guidance in Mauritius.",
 
   publisher: {
     "@id": schoolId,
@@ -153,7 +162,7 @@ export const localBusinessSchema = {
   url: siteConfig.url,
 
   description:
-    "Heaven’s Seed International School provides nursery education, inclusive education, primary learning support, speech delay support, speech therapy guidance and child psychology support in Mauritius.",
+    "Heaven’s Seed International School provides nursery and pre-primary education in an inclusive setup, supporting each child’s social, emotional, communication and early learning development through adapted pedagogical approaches, occupational therapy support and speech therapy guidance.",
 
   telephone: siteConfig.contact.whatsapp,
   email: siteConfig.contact.email,

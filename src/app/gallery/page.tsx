@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -123,7 +123,7 @@ export default function GalleryPage() {
       {/* Hero */}
       <section className="relative px-4 py-7 sm:px-6 sm:py-9 lg:px-8 lg:py-10">
         <div className="mx-auto max-w-7xl">
-          <div className="overflow-hidden rounded-[2rem] bg-[#A84F3F] p-6 text-white shadow-[0_26px_85px_rgba(168,79,63,0.18)] sm:p-8 lg:p-10">
+          <div className="overflow-hidden rounded-[2rem] bg-[#B86452] p-6 text-white shadow-[0_26px_85px_rgba(168,79,63,0.18)] sm:p-8 lg:p-10">
             <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
               <div>
                 <p className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/10 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#F4D77B] backdrop-blur-md sm:text-[11px]">
@@ -145,10 +145,10 @@ export default function GalleryPage() {
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                   <Link
                     href="/admissions"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.36)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#944337] shadow-[0_18px_45px_rgba(244,179,33,0.36)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
                   >
-                    <span className="text-[#7F342B]">Start Enrollment</span>
-                    <ArrowRight size={17} className="text-[#7F342B]" />
+                    <span className="text-[#944337]">Start Enrollment</span>
+                    <ArrowRight size={17} className="text-[#944337]" />
                   </Link>
 
                   <Link
@@ -191,7 +191,7 @@ export default function GalleryPage() {
                       key={item.title}
                       className="rounded-[1.5rem] border border-white/12 bg-white/10 p-5 shadow-[0_18px_55px_rgba(0,0,0,0.12)] backdrop-blur-xl"
                     >
-                      <div className="grid size-11 place-items-center rounded-2xl bg-[#F4B321] text-[#7F342B]">
+                      <div className="grid size-11 place-items-center rounded-2xl bg-[#F4B321] text-[#944337]">
                         <Icon size={20} strokeWidth={2.4} />
                       </div>
 
@@ -216,7 +216,7 @@ export default function GalleryPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 grid gap-4 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
-              <p className="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F]">
+              <p className="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#B86452]">
                 <Images size={15} />
                 Learning Moments
               </p>
@@ -241,11 +241,11 @@ export default function GalleryPage() {
                 {/* Text Left */}
                 <div className="order-2 flex flex-col justify-center px-1 py-2 lg:order-1 lg:px-4">
                   <div className="flex items-center gap-3">
-                    <span className="grid size-10 place-items-center rounded-2xl bg-[#A84F3F] text-sm font-extrabold text-white shadow-[0_14px_35px_rgba(168,79,63,0.18)]">
+                    <span className="grid size-10 place-items-center rounded-2xl bg-[#B86452] text-sm font-extrabold text-white shadow-[0_14px_35px_rgba(168,79,63,0.18)]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
-                    <p className="rounded-full border border-[#F4B321]/35 bg-[#FFF4DF]/85 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#7F342B]">
+                    <p className="rounded-full border border-[#F4B321]/35 bg-[#FFF4DF]/85 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#944337]">
                       {item.label}
                     </p>
                   </div>
@@ -262,7 +262,7 @@ export default function GalleryPage() {
                     {item.highlights.map((highlight) => (
                       <div
                         key={highlight}
-                        className="flex items-center gap-2 rounded-2xl border border-[#A84F3F]/10 bg-white/68 px-3 py-2 text-xs font-extrabold text-[#183528] shadow-sm"
+                        className="flex items-center gap-2 rounded-2xl border border-[#B86452]/10 bg-white/68 px-3 py-2 text-xs font-extrabold text-[#183528] shadow-sm"
                       >
                         <CheckCircle2
                           size={15}
@@ -277,15 +277,15 @@ export default function GalleryPage() {
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                     <Link
                       href="/admissions"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-5 py-2.5 text-sm font-extrabold !text-[#7F342B] shadow-[0_16px_38px_rgba(244,179,33,0.25)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-5 py-2.5 text-sm font-extrabold !text-[#944337] shadow-[0_16px_38px_rgba(244,179,33,0.25)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
                     >
-                      <span className="text-[#7F342B]">Start Enrollment</span>
-                      <ArrowRight size={16} className="text-[#7F342B]" />
+                      <span className="text-[#944337]">Start Enrollment</span>
+                      <ArrowRight size={16} className="text-[#944337]" />
                     </Link>
 
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[#A84F3F] px-5 py-2.5 text-sm font-extrabold !text-white shadow-[0_16px_38px_rgba(168,79,63,0.28)] transition hover:-translate-y-1 hover:bg-[#7F342B]"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B86452] px-5 py-2.5 text-sm font-extrabold !text-white shadow-[0_16px_38px_rgba(168,79,63,0.28)] transition hover:-translate-y-1 hover:bg-[#944337]"
                     >
                       <span className="text-white">Ask About Support</span>
                       <MessageCircle size={16} className="text-white" />
@@ -295,7 +295,7 @@ export default function GalleryPage() {
 
                 {/* Image Right */}
                 <div className="order-1 lg:order-2">
-                  <div className="relative aspect-[3/2] overflow-hidden rounded-[1.75rem] bg-[#A84F3F] shadow-[0_22px_70px_rgba(168,79,63,0.15)]">
+                  <div className="relative aspect-[3/2] overflow-hidden rounded-[1.75rem] bg-[#B86452] shadow-[0_22px_70px_rgba(168,79,63,0.15)]">
                     <Image
                       src={item.src}
                       alt={item.alt}
@@ -305,7 +305,7 @@ export default function GalleryPage() {
                       priority={index === 0}
                     />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#7F342B]/50 via-transparent to-transparent opacity-80" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#944337]/50 via-transparent to-transparent opacity-80" />
 
                     <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-2xl border border-white/25 bg-white/18 px-4 py-3 text-white shadow-lg backdrop-blur-md">
                       <span className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.16em]">
@@ -326,7 +326,7 @@ export default function GalleryPage() {
       {/* Final CTA */}
       <section className="px-4 py-6 pb-12 sm:px-6 sm:py-8 sm:pb-14 lg:px-8 lg:py-10 lg:pb-16">
         <div className="mx-auto max-w-7xl">
-          <div className="rounded-[2rem] bg-[#A84F3F] p-6 text-white shadow-[0_26px_85px_rgba(168,79,63,0.18)] sm:p-8 lg:p-10">
+          <div className="rounded-[2rem] bg-[#B86452] p-6 text-white shadow-[0_26px_85px_rgba(168,79,63,0.18)] sm:p-8 lg:p-10">
             <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#F4D77B]">
@@ -347,10 +347,10 @@ export default function GalleryPage() {
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
                 <Link
                   href="/admissions"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.36)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#944337] shadow-[0_18px_45px_rgba(244,179,33,0.36)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
                 >
-                  <span className="text-[#7F342B]">Start Enrollment</span>
-                  <ArrowRight size={17} className="text-[#7F342B]" />
+                  <span className="text-[#944337]">Start Enrollment</span>
+                  <ArrowRight size={17} className="text-[#944337]" />
                 </Link>
 
                 <Link

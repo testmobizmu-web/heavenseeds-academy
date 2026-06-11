@@ -3,13 +3,16 @@ import Link from "next/link";
 import {
   Baby,
   Brain,
+  BookOpenCheck,
   Heart,
+  HeartHandshake,
   Mail,
   MapPin,
   MessageCircle,
   Phone,
   ShieldCheck,
   Speech,
+  UsersRound,
 } from "lucide-react";
 
 const quickLinks = [
@@ -24,10 +27,11 @@ const quickLinks = [
 
 const supportLinks = [
   { label: "Nursery", href: "/programmes" },
+  { label: "Pre-Primary", href: "/programmes" },
   { label: "Inclusive Education", href: "/programmes" },
-  { label: "Primary Support", href: "/programmes" },
-  { label: "Speech Delay Support", href: "/programmes" },
-  { label: "Child Psychology Support", href: "/programmes" },
+  { label: "Social Development", href: "/programmes" },
+  { label: "Emotional Learning", href: "/programmes" },
+  { label: "Occupational & Speech Therapy Support", href: "/programmes" },
 ];
 
 const policyLinks = [
@@ -41,10 +45,10 @@ const address =
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-[#A84F3F] text-white">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-[#B86452] text-white">
       {/* Luxury background glows */}
       <div className="pointer-events-none absolute -left-28 -top-28 size-80 rounded-full bg-[#F4D77B]/22 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-36 right-[-80px] size-[28rem] rounded-full bg-[#7F342B]/38 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-36 right-[-80px] size-[28rem] rounded-full bg-[#944337]/38 blur-3xl" />
       <div className="pointer-events-none absolute left-1/2 top-1/2 size-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/8 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
@@ -54,17 +58,17 @@ export default function Footer() {
             {
               icon: Baby,
               title: "Nursery",
-              text: "Gentle early learning",
+              text: "Gentle early care",
             },
             {
-              icon: Speech,
-              title: "Speech Support",
-              text: "Language & expression",
+              icon: BookOpenCheck,
+              title: "Pre-Primary",
+              text: "School readiness",
             },
             {
-              icon: Brain,
-              title: "Emotional Care",
-              text: "Confidence & wellbeing",
+              icon: HeartHandshake,
+              title: "Inclusive Education",
+              text: "Adapted learning support",
             },
           ].map((item) => {
             const Icon = item.icon;
@@ -74,7 +78,7 @@ export default function Footer() {
                 key={item.title}
                 className="flex items-center gap-3 rounded-2xl bg-white/8 p-3"
               >
-                <div className="grid size-11 shrink-0 place-items-center rounded-2xl bg-[#F4B321] text-[#7F342B] shadow-[0_14px_35px_rgba(0,0,0,0.14)]">
+                <div className="grid size-11 shrink-0 place-items-center rounded-2xl bg-[#F4B321] text-[#944337] shadow-[0_14px_35px_rgba(0,0,0,0.14)]">
                   <Icon size={20} strokeWidth={2.4} />
                 </div>
 
@@ -106,23 +110,27 @@ export default function Footer() {
             </Link>
 
             <p className="mt-5 max-w-md text-sm font-semibold leading-7 text-white/78">
-              Heaven’s Seed International School is an inclusive learning
-              community supporting nursery learners, primary learners and
-              children with different learning needs through care, patience and
-              family partnership.
+              Heaven’s Seed International School supports children through
+              nursery, pre-primary and inclusive education, with focus on
+              social, emotional, communication and holistic development.
             </p>
 
             <div className="mt-5 flex flex-wrap gap-2">
-              {["Nursery", "Inclusive", "Primary", "Speech", "Emotional"].map(
-                (item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-white/14 bg-white/10 px-3 py-1.5 text-[11px] font-extrabold text-white/82"
-                  >
-                    {item}
-                  </span>
-                )
-              )}
+              {[
+                "Nursery",
+                "Pre-Primary",
+                "Inclusive",
+                "Social",
+                "Emotional",
+                "Therapy Support",
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/14 bg-white/10 px-3 py-1.5 text-[11px] font-extrabold text-white/82"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
 
@@ -214,14 +222,14 @@ export default function Footer() {
               </Link>
             </div>
 
-            <div className="mt-5 rounded-3xl border border-[#F4D77B]/24 bg-[#7F342B]/24 p-4">
+            <div className="mt-5 rounded-3xl border border-[#F4D77B]/24 bg-[#944337]/24 p-4">
               <div className="flex gap-3">
                 <ShieldCheck
                   size={20}
                   className="mt-0.5 shrink-0 text-[#F4D77B]"
                 />
                 <p className="text-sm font-bold leading-6 text-white/84">
-                  Need help with enrollment or support options? Contact us and
+                  Looking for a nursery in an inclusive setup? Contact us and
                   our team will guide you step by step.
                 </p>
               </div>

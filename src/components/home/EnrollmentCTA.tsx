@@ -10,9 +10,11 @@ import {
   CheckCircle2,
   HeartHandshake,
   MessageCircle,
+  MessageCircleHeart,
   ShieldCheck,
   Sparkles,
   Speech,
+  UsersRound,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -21,79 +23,79 @@ type Language = "en" | "fr";
 const content = {
   en: {
     eyebrow: "Admissions Open",
-    title: "Start the right support pathway for your child.",
+    title: "Looking for a nursery in an inclusive setup?",
     description:
-      "Heaven’s Seed International School welcomes families seeking nursery education, inclusive learning, primary support, speech delay support and emotional development guidance.",
+      "Contact Heaven’s Seed International School to discuss your child’s age, learning needs, social development, emotional support and the best next step for enrollment.",
     primaryCta: "Start Enrollment",
     secondaryCta: "Contact Us",
     journeyEyebrow: "Enrollment Journey",
     journeyTitle: "Simple, caring steps for parents.",
     note:
-      "Prepare your child’s age, learning level, speech concerns if any, and parent contact details before applying.",
+      "Prepare your child’s age, current routine, communication needs, social development, emotional support needs and parent contact details before applying.",
     imageAlt:
-      "Heaven’s Seed International School enrollment and inclusive learning support",
+      "Heaven’s Seed International School nursery pre-primary and inclusive early childhood education enrollment",
     highlights: [
-      "Nursery education",
-      "Inclusive learning support",
-      "Primary learning guidance",
-      "Speech delay support",
-      "Child psychology support",
-      "Parent partnership",
+      "Nursery admission",
+      "Pre-primary education",
+      "Inclusive setup",
+      "Social development",
+      "Emotional learning",
+      "Occupational & speech therapy support",
     ],
     steps: [
       {
         icon: MessageCircle,
         title: "Contact Us",
-        text: "Share your child’s age, needs and preferred start period.",
+        text: "Share your child’s age, routine, learning needs and preferred start period.",
       },
       {
         icon: CalendarCheck,
         title: "Guided Discussion",
-        text: "We understand your child’s learning, speech and emotional support needs.",
+        text: "We understand your child’s social, emotional, communication and early learning development.",
       },
       {
         icon: CheckCircle2,
         title: "Start Enrollment",
-        text: "We guide you clearly through the next steps with care.",
+        text: "We guide you clearly through the next steps with care, patience and transparency.",
       },
     ],
   },
   fr: {
     eyebrow: "Inscriptions ouvertes",
-    title: "Commencez le bon parcours de soutien pour votre enfant.",
+    title: "Vous cherchez une nurserie dans un cadre inclusif ?",
     description:
-      "Heaven’s Seed International School accueille les familles recherchant la nurserie, l’éducation inclusive, le soutien primaire, le soutien du langage et l’accompagnement émotionnel.",
+      "Contactez Heaven’s Seed International School pour discuter de l’Ã¢ge de votre enfant, de ses besoins d’apprentissage, de son dÃ©veloppement social, de son soutien Ã©motionnel et de la meilleure Ã©tape pour l’inscription.",
     primaryCta: "Commencer l’inscription",
     secondaryCta: "Nous contacter",
     journeyEyebrow: "Parcours d’inscription",
-    journeyTitle: "Des étapes simples et bienveillantes.",
+    journeyTitle: "Des Ã©tapes simples et bienveillantes.",
     note:
-      "Préparez l’âge de votre enfant, son niveau d’apprentissage, ses besoins de langage si nécessaire, et les contacts des parents.",
+      "PrÃ©parez l’Ã¢ge de votre enfant, sa routine actuelle, ses besoins de communication, son dÃ©veloppement social, ses besoins Ã©motionnels et les contacts des parents.",
     imageAlt:
-      "Inscription et soutien inclusif à Heaven’s Seed International School",
+      "Inscription Ã  Heaven’s Seed International School pour la nurserie, le prÃ©-primaire et l’Ã©ducation inclusive",
     highlights: [
-      "Nurserie",
-      "Éducation inclusive",
-      "Soutien primaire",
-      "Soutien du langage",
-      "Soutien émotionnel",
-      "Partenariat parents",
+      "Admission nurserie",
+      "Ã‰ducation prÃ©-primaire",
+      "Cadre inclusif",
+      "DÃ©veloppement social",
+      "Apprentissage Ã©motionnel",
+      "Soutien ergothÃ©rapie & orthophonie",
     ],
     steps: [
       {
         icon: MessageCircle,
         title: "Contactez-nous",
-        text: "Partagez l’âge, les besoins et la période souhaitée.",
+        text: "Partagez l’Ã¢ge de votre enfant, sa routine, ses besoins et la pÃ©riode souhaitÃ©e.",
       },
       {
         icon: CalendarCheck,
-        title: "Discussion guidée",
-        text: "Nous comprenons les besoins d’apprentissage, de langage et émotionnels.",
+        title: "Discussion guidÃ©e",
+        text: "Nous comprenons son dÃ©veloppement social, Ã©motionnel, communicationnel et ses premiers apprentissages.",
       },
       {
         icon: CheckCircle2,
         title: "Inscription",
-        text: "Nous vous guidons clairement avec soin et patience.",
+        text: "Nous vous guidons clairement avec soin, patience et transparence.",
       },
     ],
   },
@@ -158,7 +160,7 @@ export default function EnrollmentCTA() {
       className="relative overflow-hidden px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="relative overflow-hidden rounded-[2rem] bg-[#A84F3F] shadow-[0_26px_85px_rgba(168,79,63,0.18)]">
+        <div className="relative overflow-hidden rounded-[2rem] bg-[#B86452] shadow-[0_26px_85px_rgba(168,79,63,0.18)]">
           <Image
             src="/images/Home/enrollment-image.webp"
             alt={t.imageAlt}
@@ -169,8 +171,8 @@ export default function EnrollmentCTA() {
             className="object-cover object-center"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-[#7F342B]/88 via-[#A84F3F]/56 to-[#A84F3F]/18" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#7F342B]/58 via-transparent to-white/8" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#944337]/90 via-[#B86452]/58 to-[#B86452]/18" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#944337]/62 via-transparent to-white/8" />
 
           <div className="absolute -left-20 -top-24 size-72 rounded-full bg-[#F4D77B]/20 blur-3xl" />
           <div className="absolute -bottom-28 right-0 size-80 rounded-full bg-[#F4B321]/18 blur-3xl" />
@@ -198,13 +200,13 @@ export default function EnrollmentCTA() {
                 {t.highlights.map((item, index) => {
                   const icons = [
                     Baby,
-                    HeartHandshake,
                     ShieldCheck,
-                    Speech,
+                    HeartHandshake,
+                    UsersRound,
                     Brain,
-                    CheckCircle2,
+                    Speech,
                   ];
-                  const Icon = icons[index] ?? ShieldCheck;
+                  const Icon = icons[index] ?? CheckCircle2;
 
                   return (
                     <div
@@ -226,10 +228,10 @@ export default function EnrollmentCTA() {
                 <Link
                   href="/admissions"
                   aria-label="Start enrollment at Heaven’s Seed International School"
-                  className="enroll-cta-pulse inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.42)] transition duration-300 hover:-translate-y-1 hover:bg-[#FFD46A]"
+                  className="enroll-cta-pulse inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#944337] shadow-[0_18px_45px_rgba(244,179,33,0.42)] transition duration-300 hover:-translate-y-1 hover:bg-[#FFD46A]"
                 >
-                  <span className="text-[#7F342B]">{t.primaryCta}</span>
-                  <ArrowRight size={18} className="text-[#7F342B]" />
+                  <span className="text-[#944337]">{t.primaryCta}</span>
+                  <ArrowRight size={18} className="text-[#944337]" />
                 </Link>
 
                 <Link
@@ -265,7 +267,7 @@ export default function EnrollmentCTA() {
                       <div className="absolute -right-10 -top-10 size-24 rounded-full bg-[#F4D77B]/16 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100" />
 
                       <div className="relative flex gap-4">
-                        <div className="grid size-10 shrink-0 place-items-center rounded-2xl bg-[#F4B321] text-[#7F342B] shadow-[0_14px_35px_rgba(0,0,0,0.14)]">
+                        <div className="grid size-10 shrink-0 place-items-center rounded-2xl bg-[#F4B321] text-[#944337] shadow-[0_14px_35px_rgba(0,0,0,0.14)]">
                           <Icon size={19} strokeWidth={2.4} />
                         </div>
 
@@ -290,7 +292,7 @@ export default function EnrollmentCTA() {
                 })}
               </div>
 
-              <div className="mt-4 rounded-3xl border border-[#F4D77B]/26 bg-[#7F342B]/45 p-4 backdrop-blur-md">
+              <div className="mt-4 rounded-3xl border border-[#F4D77B]/26 bg-[#944337]/45 p-4 backdrop-blur-md">
                 <p className="text-xs font-bold leading-5 text-white/88 sm:text-sm sm:leading-6">
                   {t.note}
                 </p>
@@ -301,8 +303,9 @@ export default function EnrollmentCTA() {
 
         <p className="sr-only">
           Heaven’s Seed International School admissions for nursery education,
-          inclusive education, primary learning support, speech delay support,
-          speech therapy guidance, child psychology support and emotional support.
+          pre-primary education, inclusive education, social development,
+          emotional learning, communication development, adapted pedagogical
+          approaches, occupational therapy support and speech therapy guidance.
         </p>
       </div>
     </section>

@@ -19,9 +19,9 @@ const content = {
     eyebrow: "Avis des parents",
     title: "La confiance des familles pour un soutien inclusif et bienveillant.",
     description:
-      "Des retours en anglais et en français sur la nurserie, l’éducation inclusive, le soutien du langage, l’accompagnement émotionnel et la confiance.",
+      "Des retours en anglais et en franÃ§ais sur la nurserie, l’Ã©ducation inclusive, le soutien du langage, l’accompagnement Ã©motionnel et la confiance.",
     sr:
-      "Avis des parents pour Heaven’s Seed International School, proposant la nurserie, l’éducation inclusive, le soutien primaire, le soutien du langage et l’accompagnement émotionnel.",
+      "Avis des parents pour Heaven’s Seed International School, proposant la nurserie, l’Ã©ducation inclusive, le soutien primaire, le soutien du langage et l’accompagnement Ã©motionnel.",
   },
 };
 
@@ -40,7 +40,7 @@ const testimonials = [
     lang: "FR",
     rating: 4.5,
     image: "/images/Home/testimonials/man/profilefrance.png",
-    text: "Une équipe douce et rassurante. Mon enfant progresse avec plus de confiance, surtout dans l’expression.",
+    text: "Une Ã©quipe douce et rassurante. Mon enfant progresse avec plus de confiance, surtout dans l’expression.",
   },
   {
     name: "Claire Bennett",
@@ -56,7 +56,7 @@ const testimonials = [
     lang: "FR",
     rating: 5,
     image: "/images/Home/testimonials/women/profilefrance.png",
-    text: "Un accompagnement très humain pour les petits. On sent que chaque enfant est écouté et valorisé.",
+    text: "Un accompagnement trÃ¨s humain pour les petits. On sent que chaque enfant est Ã©coutÃ© et valorisÃ©.",
   },
   {
     name: "Arjun Mehta",
@@ -76,19 +76,19 @@ const testimonials = [
   },
   {
     name: "Marc Dubois",
-    role: "Papa, expatrié",
+    role: "Papa, expatriÃ©",
     lang: "FR",
     rating: 5,
     image: "/images/Home/testimonials/man/profileparis.png",
-    text: "Un cadre propre, calme et bien organisé. L’approche inclusive donne beaucoup de confiance aux parents.",
+    text: "Un cadre propre, calme et bien organisÃ©. L’approche inclusive donne beaucoup de confiance aux parents.",
   },
   {
-    name: "Élise Laurent",
+    name: "Ã‰lise Laurent",
     role: "Maman, Grand Baie",
     lang: "FR",
     rating: 4.5,
     image: "/images/Home/testimonials/women/profilefrance1.png",
-    text: "Une école douce et familiale avec une vraie attention au rythme et aux besoins de chaque enfant.",
+    text: "Une Ã©cole douce et familiale avec une vraie attention au rythme et aux besoins de chaque enfant.",
   },
   {
     name: "Daniel Tan",
@@ -128,15 +128,15 @@ const testimonials = [
     lang: "FR",
     rating: 4.5,
     image: "/images/Home/testimonials/man/profileparis2.png",
-    text: "Très bonne communication avec les parents. L’environnement est calme, joyeux et sécurisant.",
+    text: "TrÃ¨s bonne communication avec les parents. L’environnement est calme, joyeux et sÃ©curisant.",
   },
   {
-    name: "Amélie Dubois",
+    name: "AmÃ©lie Dubois",
     role: "Maman francophone",
     lang: "FR",
     rating: 5,
     image: "/images/Home/testimonials/women/profilefrance3.png",
-    text: "Heaven’s Seed donne une vraie impression de confiance, de douceur et de qualité dans l’accompagnement.",
+    text: "Heaven’s Seed donne une vraie impression de confiance, de douceur et de qualitÃ© dans l’accompagnement.",
   },
   {
     name: "William Parker",
@@ -155,12 +155,12 @@ const testimonials = [
     text: "My child became more independent and expressive. We feel very happy with the care and guidance.",
   },
   {
-    name: "Étienne Laurent",
+    name: "Ã‰tienne Laurent",
     role: "Parent, Maurice",
     lang: "FR",
     rating: 4.5,
     image: "/images/Home/testimonials/man/profilefrance1.png",
-    text: "Une approche humaine, professionnelle et bienveillante. Les enfants sont vraiment encouragés.",
+    text: "Une approche humaine, professionnelle et bienveillante. Les enfants sont vraiment encouragÃ©s.",
   },
   {
     name: "Naledi Dlamini",
@@ -226,7 +226,7 @@ function RatingStars({ rating }: { rating: number }) {
         />
       ))}
 
-      <span className="ml-2 text-[11px] font-extrabold text-[#7F342B]/70">
+      <span className="ml-2 text-[11px] font-extrabold text-[#944337]/70">
         {rating.toFixed(rating % 1 === 0 ? 0 : 1)}
       </span>
     </div>
@@ -278,7 +278,7 @@ export default function ParentTestimonials() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-4 grid gap-3 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <div>
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F] sm:text-[11px]">
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#B86452] sm:text-[11px]">
               {t.eyebrow}
             </p>
 
@@ -307,9 +307,9 @@ export default function ParentTestimonials() {
                 return (
                   <span
                     key={item.label}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-[#A84F3F]/10 bg-white/58 px-3 py-1.5 text-[11px] font-extrabold text-[#183528] backdrop-blur-md"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-[#B86452]/10 bg-white/58 px-3 py-1.5 text-[11px] font-extrabold text-[#183528] backdrop-blur-md"
                   >
-                    <Icon size={13} className="text-[#A84F3F]" />
+                    <Icon size={13} className="text-[#B86452]" />
                     {item.label}
                   </span>
                 );
@@ -354,7 +354,7 @@ export default function ParentTestimonials() {
                       </p>
                     </div>
 
-                    <span className="shrink-0 rounded-full bg-[#A84F3F]/10 px-2 py-1 text-[10px] font-extrabold text-[#7F342B]">
+                    <span className="shrink-0 rounded-full bg-[#B86452]/10 px-2 py-1 text-[10px] font-extrabold text-[#944337]">
                       {item.lang}
                     </span>
                   </div>

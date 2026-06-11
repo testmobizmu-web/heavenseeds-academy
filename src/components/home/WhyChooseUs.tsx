@@ -5,11 +5,11 @@ import {
   ArrowRight,
   Baby,
   Brain,
-  GraduationCap,
   HeartHandshake,
   Play,
   ShieldCheck,
   Speech,
+  UsersRound,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -20,14 +20,14 @@ const videoCards = [
     youtubeId: "iCVympHwNS8",
     poster: "/images/Home/why-video-1-poster.webp",
     label: "Nursery & Pre-Primary",
-    labelFr: "Nurserie & Pré-primaire",
+    labelFr: "Nurserie & PrÃ©-primaire",
     position: "start",
   },
   {
     youtubeId: "9CcCDTKoIWE",
     poster: "/images/Home/why-video-2-poster.webp",
-    label: "Primary Support",
-    labelFr: "Soutien primaire",
+    label: "Social Development",
+    labelFr: "DÃ©veloppement social",
     position: "end",
   },
   {
@@ -43,13 +43,13 @@ const content = {
   en: {
     eyebrow: "Why Choose Us",
     title:
-      "A caring pathway for nursery, pre-primary, primary and inclusive learners.",
+      "A caring inclusive setup for nursery and pre-primary development.",
     description:
-      "Heaven’s Seed International School supports every child with patience, structure and compassion — from nursery and pre-primary foundations to primary support, inclusive education, speech development and emotional wellbeing.",
+      "We support children through social, emotional and early learning development in an inclusive setup, using adapted pedagogical approaches, holistic guidance, occupational therapy support and speech therapy guidance.",
     cta: "Start Enrollment",
     secondaryCta: "View Programmes",
     videoEyebrow: "Learning in Motion",
-    videoTitle: "Watch how learning comes alive at Heaven’s Seed.",
+    videoTitle: "A warm look at care, play and inclusive learning.",
     play: "Play video",
     points: [
       {
@@ -59,72 +59,72 @@ const content = {
       },
       {
         icon: Baby,
-        title: "Nursery & Pre-Primary",
-        text: "Gentle early learning through care, routine, play and confidence building.",
-      },
-      {
-        icon: GraduationCap,
-        title: "Primary Support",
-        text: "Flexible guidance for literacy, numeracy, focus and learning progress.",
+        title: "Nursery & Pre-Primary Foundation",
+        text: "Gentle early childhood learning through routine, care, play and discovery.",
       },
       {
         icon: HeartHandshake,
         title: "Inclusive Education",
-        text: "Support for children with different learning needs at their own pace.",
+        text: "An inclusive setup that supports different learning needs with patience and structure.",
       },
       {
-        icon: Speech,
-        title: "Speech Delay Support",
-        text: "Gentle help for speech, language, communication and expression.",
+        icon: UsersRound,
+        title: "Social Development",
+        text: "Helping children build confidence, interaction, participation and positive relationships.",
       },
       {
         icon: Brain,
-        title: "Emotional Support",
-        text: "Child psychology guidance for confidence, behaviour and wellbeing.",
+        title: "Emotional Learning",
+        text: "Supporting emotional awareness, calm learning, behaviour and self-confidence.",
+      },
+      {
+        icon: Speech,
+        title: "Occupational & Speech Therapy Support",
+        text: "Holistic support for communication, participation, sensory readiness and daily confidence.",
       },
     ],
   },
   fr: {
     eyebrow: "Pourquoi nous choisir",
     title:
-      "Un parcours bienveillant pour la nurserie, le pré-primaire, le primaire et l’inclusion.",
+      "Un cadre inclusif et bienveillant pour la nurserie et le prÃ©-primaire.",
     description:
-      "Heaven’s Seed International School accompagne chaque enfant avec patience, structure et compassion — de la nurserie et du pré-primaire au soutien primaire, à l’éducation inclusive, au langage et au bien-être émotionnel.",
+      "Nous accompagnons les enfants dans leur dÃ©veloppement social, Ã©motionnel et leurs premiers apprentissages dans un cadre inclusif, avec des approches pÃ©dagogiques adaptÃ©es, un accompagnement global, un soutien en ergothÃ©rapie et en orthophonie.",
     cta: "Commencer l’inscription",
     secondaryCta: "Voir les programmes",
     videoEyebrow: "Apprendre en mouvement",
-    videoTitle: "Découvrez l’apprentissage vivant à Heaven’s Seed.",
-    play: "Lire la vidéo",
+    videoTitle: "Un aperÃ§u chaleureux du soin, du jeu et de l’inclusion.",
+    play: "Lire la vidÃ©o",
     points: [
       {
         icon: ShieldCheck,
-        title: "Sécurité & soin",
-        text: "Un espace rassurant où chaque enfant se sent protégé, valorisé et soutenu.",
+        title: "SÃ©curitÃ© & soin",
+        text: "Un espace rassurant oÃ¹ chaque enfant se sent protÃ©gÃ©, valorisÃ© et soutenu.",
       },
       {
         icon: Baby,
-        title: "Nurserie & Pré-primaire",
-        text: "Un apprentissage doux avec soin, routine, jeu et confiance.",
-      },
-      {
-        icon: GraduationCap,
-        title: "Soutien primaire",
-        text: "Un accompagnement flexible pour la lecture, les nombres et le progrès scolaire.",
+        title: "Base nurserie & prÃ©-primaire",
+        text: "Un apprentissage doux de la petite enfance Ã  travers routine, soin, jeu et dÃ©couverte.",
       },
       {
         icon: HeartHandshake,
-        title: "Éducation inclusive",
-        text: "Un soutien adapté aux enfants ayant différents besoins d’apprentissage.",
+        title: "Ã‰ducation inclusive",
+        text: "Un cadre inclusif qui accompagne diffÃ©rents besoins avec patience et structure.",
       },
       {
-        icon: Speech,
-        title: "Soutien du langage",
-        text: "Une aide douce pour la parole, le langage, la communication et l’expression.",
+        icon: UsersRound,
+        title: "DÃ©veloppement social",
+        text: "Aider l’enfant Ã  dÃ©velopper la confiance, l’interaction, la participation et les relations positives.",
       },
       {
         icon: Brain,
-        title: "Soutien émotionnel",
-        text: "Un accompagnement pour la confiance, le comportement et le bien-être.",
+        title: "Apprentissage Ã©motionnel",
+        text: "Soutenir la conscience Ã©motionnelle, le calme, le comportement et la confiance.",
+      },
+      {
+        icon: Speech,
+        title: "Soutien ergothÃ©rapie & orthophonie",
+        text: "Un accompagnement global pour la communication, la participation et la confiance quotidienne.",
       },
     ],
   },
@@ -210,10 +210,10 @@ export default function WhyChooseUs() {
           {/* Left Text */}
           <div className="relative flex flex-col justify-center overflow-hidden rounded-[2rem] border border-white/45 bg-white/58 p-5 shadow-[0_24px_80px_rgba(24,53,40,0.10)] backdrop-blur-xl sm:p-7 lg:p-9">
             <div className="pointer-events-none absolute -left-16 -top-16 size-44 rounded-full bg-[#F4B321]/14 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-20 right-0 size-52 rounded-full bg-[#A84F3F]/12 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-20 right-0 size-52 rounded-full bg-[#B86452]/12 blur-3xl" />
 
             <div className="relative">
-              <p className="text-[11px] font-extrabold uppercase tracking-[0.26em] text-[#A84F3F]">
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.26em] text-[#B86452]">
                 {t.eyebrow}
               </p>
 
@@ -232,10 +232,10 @@ export default function WhyChooseUs() {
                   return (
                     <article
                       key={point.title}
-                      className="group rounded-3xl border border-[#A84F3F]/10 bg-white/62 p-3.5 shadow-sm transition duration-500 hover:-translate-y-1 hover:bg-white/82 hover:shadow-[0_16px_42px_rgba(24,53,40,0.08)]"
+                      className="group rounded-3xl border border-[#B86452]/10 bg-white/62 p-3.5 shadow-sm transition duration-500 hover:-translate-y-1 hover:bg-white/82 hover:shadow-[0_16px_42px_rgba(24,53,40,0.08)]"
                     >
                       <div className="flex gap-3">
-                        <div className="grid size-10 shrink-0 place-items-center rounded-2xl bg-[#A84F3F] text-white shadow-[0_12px_28px_rgba(168,79,63,0.18)] transition duration-500 group-hover:bg-[#7F342B]">
+                        <div className="grid size-10 shrink-0 place-items-center rounded-2xl bg-[#B86452] text-white shadow-[0_12px_28px_rgba(168,79,63,0.18)] transition duration-500 group-hover:bg-[#944337]">
                           <Icon size={18} strokeWidth={2.4} />
                         </div>
 
@@ -257,15 +257,15 @@ export default function WhyChooseUs() {
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/admissions"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-5 py-2.5 text-xs font-extrabold !text-[#7F342B] shadow-[0_14px_35px_rgba(244,179,33,0.28)] transition duration-300 hover:-translate-y-1 hover:bg-[#FFD46A] sm:text-sm"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-5 py-2.5 text-xs font-extrabold !text-[#944337] shadow-[0_14px_35px_rgba(244,179,33,0.28)] transition duration-300 hover:-translate-y-1 hover:bg-[#FFD46A] sm:text-sm"
                 >
-                  <span className="text-[#7F342B]">{t.cta}</span>
-                  <ArrowRight size={16} className="text-[#7F342B]" />
+                  <span className="text-[#944337]">{t.cta}</span>
+                  <ArrowRight size={16} className="text-[#944337]" />
                 </Link>
 
                 <Link
                   href="/programmes"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#A84F3F] px-5 py-2.5 text-xs font-extrabold !text-white shadow-[0_14px_35px_rgba(168,79,63,0.24)] transition duration-300 hover:-translate-y-1 hover:bg-[#7F342B] sm:text-sm"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B86452] px-5 py-2.5 text-xs font-extrabold !text-white shadow-[0_14px_35px_rgba(168,79,63,0.24)] transition duration-300 hover:-translate-y-1 hover:bg-[#944337] sm:text-sm"
                 >
                   <span className="text-white">{t.secondaryCta}</span>
                 </Link>
@@ -284,11 +284,11 @@ export default function WhyChooseUs() {
           >
             <div className="absolute inset-0 bg-white/88" />
             <div className="pointer-events-none absolute -right-16 -top-16 size-56 rounded-full bg-[#F4B321]/18 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-20 left-0 size-60 rounded-full bg-[#A84F3F]/12 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-20 left-0 size-60 rounded-full bg-[#B86452]/12 blur-3xl" />
 
             <div className="relative flex h-full min-h-[590px] flex-col justify-center gap-5">
-              <div className="rounded-[1.5rem] border border-[#A84F3F]/10 bg-white/82 p-4 shadow-[0_14px_45px_rgba(24,53,40,0.08)] backdrop-blur-md">
-                <p className="text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#A84F3F]">
+              <div className="rounded-[1.5rem] border border-[#B86452]/10 bg-white/82 p-4 shadow-[0_14px_45px_rgba(24,53,40,0.08)] backdrop-blur-md">
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#B86452]">
                   {t.videoEyebrow}
                 </p>
                 <h3 className="mt-2 text-xl font-extrabold tracking-[-0.04em] text-[#183528] sm:text-2xl">
@@ -312,7 +312,7 @@ export default function WhyChooseUs() {
                       key={video.youtubeId}
                       className={`${align} transition duration-500 hover:-translate-y-1`}
                     >
-                      <div className="group relative aspect-video overflow-hidden rounded-[1.25rem] bg-black shadow-[0_18px_50px_rgba(24,53,40,0.14)] ring-1 ring-[#A84F3F]/10">
+                      <div className="group relative aspect-video overflow-hidden rounded-[1.25rem] bg-black shadow-[0_18px_50px_rgba(24,53,40,0.14)] ring-1 ring-[#B86452]/10">
                         {isActive ? (
                           <iframe
                             key={`${video.youtubeId}-player`}
@@ -340,7 +340,7 @@ export default function WhyChooseUs() {
                             <div className="absolute inset-0 bg-black/18 transition duration-300 group-hover:bg-black/10" />
 
                             <span className="absolute inset-0 grid place-items-center">
-                              <span className="grid size-16 place-items-center rounded-full bg-black/58 text-white shadow-[0_18px_45px_rgba(0,0,0,0.25)] backdrop-blur-md transition duration-300 group-hover:scale-105 group-hover:bg-[#F4B321] group-hover:text-[#7F342B]">
+                              <span className="grid size-16 place-items-center rounded-full bg-black/58 text-white shadow-[0_18px_45px_rgba(0,0,0,0.25)] backdrop-blur-md transition duration-300 group-hover:scale-105 group-hover:bg-[#F4B321] group-hover:text-[#944337]">
                                 <Play
                                   size={25}
                                   className="ml-0.5 fill-current"
@@ -360,9 +360,10 @@ export default function WhyChooseUs() {
 
         <p className="sr-only">
           Heaven’s Seed International School provides nursery education,
-          pre-primary education, primary learning support, inclusive education,
-          speech delay support, speech therapy guidance, child psychology
-          support and emotional support for children in Mauritius.
+          pre-primary education, inclusive education, social development,
+          emotional learning, communication development, adapted pedagogical
+          approaches, occupational therapy support and speech therapy guidance
+          for children in Mauritius.
         </p>
       </div>
     </section>

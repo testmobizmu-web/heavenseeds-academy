@@ -78,7 +78,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl">
           <div className="overflow-hidden rounded-[2rem] border border-white/45 bg-white/75 shadow-[0_26px_85px_rgba(24,53,40,0.12)] backdrop-blur-xl">
             {/* Mobile image - full 16:9 visible */}
-            <div className="relative aspect-video w-full overflow-hidden bg-[#A84F3F] lg:hidden">
+            <div className="relative aspect-video w-full overflow-hidden bg-[#B86452] lg:hidden">
               <Image
                 src="/images/About/about-hero.webp"
                 alt="Heaven’s Seed International School inclusive online learning community"
@@ -91,7 +91,7 @@ export default function AboutPage() {
             </div>
 
             {/* Desktop hero */}
-            <div className="relative hidden aspect-[16/7] w-full overflow-hidden bg-[#A84F3F] lg:block">
+            <div className="relative hidden aspect-[16/7] w-full overflow-hidden bg-[#B86452] lg:block">
               <Image
                 src="/images/About/about-hero.webp"
                 alt="Heaven’s Seed International School inclusive online learning community"
@@ -102,8 +102,8 @@ export default function AboutPage() {
                 className="object-cover object-center"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-r from-[#7F342B]/88 via-[#A84F3F]/48 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#7F342B]/44 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#944337]/88 via-[#B86452]/48 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#944337]/44 via-transparent to-transparent" />
 
               <div className="absolute inset-0 flex items-center">
                 <div className="max-w-3xl px-10">
@@ -127,7 +127,7 @@ export default function AboutPage() {
 
             {/* Mobile/tablet text */}
             <div className="p-5 sm:p-7 lg:hidden">
-              <p className="inline-flex items-center gap-2 rounded-full border border-[#A84F3F]/15 bg-[#A84F3F]/8 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#7F342B]">
+              <p className="inline-flex items-center gap-2 rounded-full border border-[#B86452]/15 bg-[#B86452]/8 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#944337]">
                 <Leaf size={14} />
                 About Heaven’s Seed
               </p>
@@ -145,15 +145,15 @@ export default function AboutPage() {
               <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/admissions"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.32)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#944337] shadow-[0_18px_45px_rgba(244,179,33,0.32)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
                 >
-                  <span className="text-[#7F342B]">Start Enrollment</span>
-                  <ArrowRight size={17} className="text-[#7F342B]" />
+                  <span className="text-[#944337]">Start Enrollment</span>
+                  <ArrowRight size={17} className="text-[#944337]" />
                 </Link>
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#A84F3F] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(168,79,63,0.32)] transition hover:-translate-y-1 hover:bg-[#7F342B]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B86452] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(168,79,63,0.32)] transition hover:-translate-y-1 hover:bg-[#944337]"
                 >
                   <span className="text-white">Contact Us</span>
                   <MessageCircle size={17} className="text-white" />
@@ -169,7 +169,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
             <div className="rounded-[2rem] border border-white/45 bg-white/62 p-6 shadow-[0_22px_70px_rgba(24,53,40,0.09)] backdrop-blur-xl sm:p-8 lg:p-10">
-              <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F]">
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#B86452]">
                 Who We Are
               </p>
 
@@ -207,15 +207,15 @@ export default function AboutPage() {
               <div className="mt-7 hidden flex-col gap-3 sm:flex-row lg:flex">
                 <Link
                   href="/admissions"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.32)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#944337] shadow-[0_18px_45px_rgba(244,179,33,0.32)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
                 >
-                  <span className="text-[#7F342B]">Start Enrollment</span>
-                  <ArrowRight size={17} className="text-[#7F342B]" />
+                  <span className="text-[#944337]">Start Enrollment</span>
+                  <ArrowRight size={17} className="text-[#944337]" />
                 </Link>
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#A84F3F] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(168,79,63,0.32)] transition hover:-translate-y-1 hover:bg-[#7F342B]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B86452] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(168,79,63,0.32)] transition hover:-translate-y-1 hover:bg-[#944337]"
                 >
                   <span className="text-white">Contact Us</span>
                   <MessageCircle size={17} className="text-white" />
@@ -232,7 +232,7 @@ export default function AboutPage() {
                     key={item.title}
                     className="group rounded-[1.75rem] border border-white/45 bg-white/48 p-5 shadow-[0_18px_55px_rgba(24,53,40,0.08)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-white/70 sm:p-6"
                   >
-                    <div className="grid size-12 place-items-center rounded-2xl bg-[#A84F3F] text-white shadow-[0_16px_38px_rgba(168,79,63,0.22)] transition duration-500 group-hover:bg-[#7F342B]">
+                    <div className="grid size-12 place-items-center rounded-2xl bg-[#B86452] text-white shadow-[0_16px_38px_rgba(168,79,63,0.22)] transition duration-500 group-hover:bg-[#944337]">
                       <Icon size={22} strokeWidth={2.4} />
                     </div>
 
@@ -255,12 +255,12 @@ export default function AboutPage() {
       <section className="px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 lg:grid-cols-2">
-            <article className="relative overflow-hidden rounded-[2rem] bg-[#A84F3F] p-6 text-white shadow-[0_26px_85px_rgba(168,79,63,0.18)] sm:p-8 lg:p-10">
+            <article className="relative overflow-hidden rounded-[2rem] bg-[#B86452] p-6 text-white shadow-[0_26px_85px_rgba(168,79,63,0.18)] sm:p-8 lg:p-10">
               <div className="absolute -left-20 -top-20 size-64 rounded-full bg-[#F4D77B]/22 blur-3xl" />
-              <div className="absolute -bottom-24 right-0 size-72 rounded-full bg-[#7F342B]/25 blur-3xl" />
+              <div className="absolute -bottom-24 right-0 size-72 rounded-full bg-[#944337]/25 blur-3xl" />
 
               <div className="relative">
-                <div className="grid size-13 place-items-center rounded-2xl bg-white text-[#7F342B] shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
+                <div className="grid size-13 place-items-center rounded-2xl bg-white text-[#944337] shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
                   <BookOpenCheck size={25} />
                 </div>
 
@@ -283,15 +283,15 @@ export default function AboutPage() {
               </div>
             </article>
 
-            <article className="relative overflow-hidden rounded-[2rem] border border-[#A84F3F]/12 bg-white p-6 shadow-[0_26px_85px_rgba(24,53,40,0.10)] sm:p-8 lg:p-10">
+            <article className="relative overflow-hidden rounded-[2rem] border border-[#B86452]/12 bg-white p-6 shadow-[0_26px_85px_rgba(24,53,40,0.10)] sm:p-8 lg:p-10">
               <div className="absolute -right-20 -top-20 size-64 rounded-full bg-[#F4B321]/20 blur-3xl" />
 
               <div className="relative">
-                <div className="grid size-13 place-items-center rounded-2xl bg-[#F4B321] text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.24)]">
+                <div className="grid size-13 place-items-center rounded-2xl bg-[#F4B321] text-[#944337] shadow-[0_18px_45px_rgba(244,179,33,0.24)]">
                   <Lightbulb size={25} />
                 </div>
 
-                <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F]">
+                <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#B86452]">
                   Our Vision
                 </p>
 
@@ -316,7 +316,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-6 grid gap-4 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
-              <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F]">
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#B86452]">
                 How We Proceed
               </p>
 
@@ -338,7 +338,7 @@ export default function AboutPage() {
                 className="group rounded-[1.75rem] border border-white/45 bg-white/52 p-5 shadow-[0_18px_55px_rgba(24,53,40,0.08)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-white/75"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-3xl font-extrabold tracking-[-0.06em] text-[#A84F3F]">
+                  <span className="text-3xl font-extrabold tracking-[-0.06em] text-[#B86452]">
                     {item.step}
                   </span>
 
@@ -360,7 +360,7 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <div className="mt-8 rounded-[2rem] bg-[#A84F3F] p-6 text-white shadow-[0_26px_85px_rgba(168,79,63,0.18)] sm:p-8">
+          <div className="mt-8 rounded-[2rem] bg-[#B86452] p-6 text-white shadow-[0_26px_85px_rgba(168,79,63,0.18)] sm:p-8">
             <div className="grid gap-5 sm:grid-cols-[1fr_auto] sm:items-center">
               <div>
                 <h2 className="text-2xl font-extrabold tracking-[-0.04em]">
@@ -377,10 +377,10 @@ export default function AboutPage() {
                 href="https://wa.me/23058204613"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.36)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#944337] shadow-[0_18px_45px_rgba(244,179,33,0.36)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
               >
-                <span className="text-[#7F342B]">WhatsApp Us</span>
-                <ArrowRight size={17} className="text-[#7F342B]" />
+                <span className="text-[#944337]">WhatsApp Us</span>
+                <ArrowRight size={17} className="text-[#944337]" />
               </Link>
             </div>
           </div>

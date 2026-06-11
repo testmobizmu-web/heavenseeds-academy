@@ -5,11 +5,12 @@ import Image from "next/image";
 import {
   Baby,
   Brain,
+  BookOpenCheck,
   ChevronRight,
-  GraduationCap,
   HeartHandshake,
   MessageCircle,
   Speech,
+  UsersRound,
   X,
 } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -28,7 +29,7 @@ const navContent = {
   ],
   fr: [
     { label: "Accueil", href: "/" },
-    { label: "À propos", href: "/about" },
+    { label: "Ã€ propos", href: "/about" },
     { label: "Programmes", href: "/programmes" },
     { label: "Admissions", href: "/admissions" },
     { label: "Galerie", href: "/gallery" },
@@ -45,14 +46,15 @@ const text = {
     whatsapp: "WhatsApp Us",
     schoolName: "Heaven’s Seed International School",
     description:
-      "Nursery, inclusive education, primary support, speech delay support and emotional care.",
+      "Nursery, pre-primary and inclusive early childhood education supporting social, emotional, communication and holistic development.",
     supportTitle: "Learning Support",
     supports: [
       { icon: Baby, label: "Nursery" },
-      { icon: HeartHandshake, label: "Inclusive" },
-      { icon: GraduationCap, label: "Primary" },
-      { icon: Speech, label: "Speech" },
-      { icon: Brain, label: "Emotional" },
+      { icon: BookOpenCheck, label: "Pre-Primary" },
+      { icon: HeartHandshake, label: "Inclusive Education" },
+      { icon: UsersRound, label: "Social Development" },
+      { icon: Brain, label: "Emotional Learning" },
+      { icon: Speech, label: "Occupational & Speech Therapy" },
     ],
   },
   fr: {
@@ -62,14 +64,15 @@ const text = {
     whatsapp: "WhatsApp",
     schoolName: "Heaven’s Seed International School",
     description:
-      "Nurserie, éducation inclusive, soutien primaire, langage et soutien émotionnel.",
+      "Nurserie, prÃ©-primaire et Ã©ducation inclusive de la petite enfance, avec soutien social, Ã©motionnel, communicationnel et global.",
     supportTitle: "Soutien",
     supports: [
       { icon: Baby, label: "Nurserie" },
-      { icon: HeartHandshake, label: "Inclusion" },
-      { icon: GraduationCap, label: "Primaire" },
-      { icon: Speech, label: "Langage" },
-      { icon: Brain, label: "Émotionnel" },
+      { icon: BookOpenCheck, label: "PrÃ©-primaire" },
+      { icon: HeartHandshake, label: "Ã‰ducation inclusive" },
+      { icon: UsersRound, label: "DÃ©veloppement social" },
+      { icon: Brain, label: "Apprentissage Ã©motionnel" },
+      { icon: Speech, label: "ErgothÃ©rapie & orthophonie" },
     ],
   },
 };
@@ -185,7 +188,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
         type="button"
         aria-label="Close menu overlay"
         onClick={onClose}
-        className={`absolute inset-0 bg-[#7F342B]/55 backdrop-blur-md transition-opacity duration-300 ${
+        className={`absolute inset-0 bg-[#944337]/55 backdrop-blur-md transition-opacity duration-300 ${
           open ? "opacity-100" : "opacity-0"
         }`}
       />
@@ -198,10 +201,10 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
       >
         <div className="relative flex h-full flex-col overflow-hidden">
           <div className="absolute -left-24 -top-24 size-72 rounded-full bg-[#F4B321]/18 blur-3xl" />
-          <div className="absolute -bottom-28 right-[-70px] size-80 rounded-full bg-[#A84F3F]/14 blur-3xl" />
+          <div className="absolute -bottom-28 right-[-70px] size-80 rounded-full bg-[#B86452]/14 blur-3xl" />
 
           {/* Header */}
-          <div className="relative flex h-[92px] shrink-0 items-center justify-between border-b border-[#A84F3F]/10 px-5 pt-[env(safe-area-inset-top)]">
+          <div className="relative flex h-[92px] shrink-0 items-center justify-between border-b border-[#B86452]/10 px-5 pt-[env(safe-area-inset-top)]">
             <Link href="/" onClick={onClose} className="flex items-center">
               <Image
                 src="/images/Logo/logo-heavenseedsacademy.png"
@@ -217,7 +220,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
               type="button"
               aria-label="Close menu"
               onClick={onClose}
-              className="grid size-12 place-items-center rounded-full bg-[#A84F3F] text-white shadow-[0_14px_35px_rgba(168,79,63,0.25)] transition hover:bg-[#7F342B]"
+              className="grid size-12 place-items-center rounded-full bg-[#B86452] text-white shadow-[0_14px_35px_rgba(168,79,63,0.25)] transition hover:bg-[#944337]"
             >
               <X size={21} />
             </button>
@@ -225,17 +228,18 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
 
           {/* Scrollable content */}
           <div className="relative flex-1 overflow-y-auto px-5 py-5">
-            <div className="rounded-[1.6rem] border border-[#A84F3F]/10 bg-[#FFF4DF]/70 p-4 shadow-[0_14px_40px_rgba(24,53,40,0.06)]">
+            <div className="rounded-[1.6rem] border border-[#B86452]/10 bg-[#FFF4DF]/70 p-4 shadow-[0_14px_40px_rgba(24,53,40,0.06)]">
               <p className="text-sm font-extrabold text-[#183528]">
                 {t.schoolName}
               </p>
+
               <p className="mt-1 text-xs font-semibold leading-5 text-[#426252]">
                 {t.description}
               </p>
             </div>
 
             <div className="mt-5">
-              <p className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F]">
+              <p className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#B86452]">
                 {t.menu}
               </p>
 
@@ -246,12 +250,12 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                     href={item.href}
                     onClick={onClose}
                     style={{ animationDelay: `${index * 0.055}s` }}
-                    className={`group flex items-center justify-between rounded-2xl border border-[#A84F3F]/10 bg-white px-4 py-3 text-sm font-extrabold text-[#183528] shadow-[0_12px_30px_rgba(24,53,40,0.06)] transition duration-300 hover:border-[#F4B321]/70 hover:bg-[#FFF4DF] ${
+                    className={`group flex items-center justify-between rounded-2xl border border-[#B86452]/10 bg-white px-4 py-3 text-sm font-extrabold text-[#183528] shadow-[0_12px_30px_rgba(24,53,40,0.06)] transition duration-300 hover:border-[#F4B321]/70 hover:bg-[#FFF4DF] ${
                       open ? "animate-hsa-mobile-item" : ""
                     }`}
                   >
                     <span>{item.label}</span>
-                    <span className="grid size-7 place-items-center rounded-full bg-[#F4B321]/18 text-[#7F342B] transition group-hover:bg-[#F4B321]">
+                    <span className="grid size-7 place-items-center rounded-full bg-[#F4B321]/18 text-[#944337] transition group-hover:bg-[#F4B321]">
                       <ChevronRight size={15} />
                     </span>
                   </Link>
@@ -259,39 +263,45 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
               </nav>
             </div>
 
-            <div className="mt-5 grid grid-cols-2 gap-2">
-              {t.supports.map((support) => {
-                const Icon = support.icon;
+            <div className="mt-5">
+              <p className="mb-3 text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#B86452]">
+                {t.supportTitle}
+              </p>
 
-                return (
-                  <div
-                    key={support.label}
-                    className="flex items-center gap-2 rounded-2xl border border-[#A84F3F]/10 bg-white/78 px-3 py-2.5 text-xs font-extrabold text-[#183528] shadow-sm"
-                  >
-                    <Icon size={15} className="shrink-0 text-[#A84F3F]" />
-                    <span className="truncate">{support.label}</span>
-                  </div>
-                );
-              })}
+              <div className="grid grid-cols-2 gap-2">
+                {t.supports.map((support) => {
+                  const Icon = support.icon;
+
+                  return (
+                    <div
+                      key={support.label}
+                      className="flex min-h-[48px] items-center gap-2 rounded-2xl border border-[#B86452]/10 bg-white/78 px-3 py-2.5 text-xs font-extrabold text-[#183528] shadow-sm"
+                    >
+                      <Icon size={15} className="shrink-0 text-[#B86452]" />
+                      <span className="leading-4">{support.label}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
           {/* Bottom sticky CTA */}
-          <div className="relative shrink-0 border-t border-[#A84F3F]/10 bg-white/95 px-5 pb-[calc(env(safe-area-inset-bottom)+16px)] pt-4 backdrop-blur-xl">
+          <div className="relative shrink-0 border-t border-[#B86452]/10 bg-white/95 px-5 pb-[calc(env(safe-area-inset-bottom)+16px)] pt-4 backdrop-blur-xl">
             <div className="grid gap-3">
               <Link
                 href="/admissions"
                 onClick={onClose}
-                className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[#F4B321] px-5 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.28)] transition hover:bg-[#FFD46A]"
+                className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[#F4B321] px-5 text-sm font-extrabold !text-[#944337] shadow-[0_18px_45px_rgba(244,179,33,0.28)] transition hover:bg-[#FFD46A]"
               >
-                <span className="text-[#7F342B]">{t.enroll}</span>
+                <span className="text-[#944337]">{t.enroll}</span>
               </Link>
 
               <Link
                 href="https://wa.me/23058204613"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#A84F3F] px-5 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(168,79,63,0.24)] transition hover:bg-[#7F342B]"
+                className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#B86452] px-5 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(168,79,63,0.24)] transition hover:bg-[#944337]"
               >
                 <span className="text-white">{t.whatsapp}</span>
                 <MessageCircle size={17} className="text-white" />
@@ -309,7 +319,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="grid size-9 place-items-center rounded-full bg-[#A84F3F] text-white shadow-md transition hover:bg-[#7F342B]"
+                  className="grid size-9 place-items-center rounded-full bg-[#B86452] text-white shadow-md transition hover:bg-[#944337]"
                 >
                   <FacebookIcon />
                 </a>
@@ -319,7 +329,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="grid size-9 place-items-center rounded-full bg-[#A84F3F] text-white shadow-md transition hover:bg-[#7F342B]"
+                  className="grid size-9 place-items-center rounded-full bg-[#B86452] text-white shadow-md transition hover:bg-[#944337]"
                 >
                   <InstagramIcon />
                 </a>
@@ -333,7 +343,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   className={`grid size-9 place-items-center rounded-full bg-white shadow-sm ring-2 transition ${
                     language === "en"
                       ? "ring-[#F4B321]"
-                      : "ring-[#A84F3F]/10"
+                      : "ring-[#B86452]/10"
                   }`}
                 >
                   <Image
@@ -352,7 +362,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   className={`grid size-9 place-items-center rounded-full bg-white shadow-sm ring-2 transition ${
                     language === "fr"
                       ? "ring-[#F4B321]"
-                      : "ring-[#A84F3F]/10"
+                      : "ring-[#B86452]/10"
                   }`}
                 >
                   <Image

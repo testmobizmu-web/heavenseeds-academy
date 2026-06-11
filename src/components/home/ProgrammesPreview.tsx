@@ -7,12 +7,11 @@ import {
   BookOpenCheck,
   Brain,
   CheckCircle2,
-  GraduationCap,
   HeartHandshake,
   Palette,
   ShieldCheck,
-  Sparkles,
   Speech,
+  UsersRound,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -21,138 +20,189 @@ type Language = "en" | "fr";
 const content = {
   en: {
     eyebrow: "Our Programmes",
-    title: "Nursery, inclusive education and primary support.",
+    title: "Nursery, pre-primary and inclusive early childhood education.",
     description:
-      "Heaven’s Seed International School supports children through nursery care, inclusive learning, primary guidance, speech delay support and emotional development.",
+      "Heaven’s Seed International School supports children through nursery care, pre-primary learning, inclusive education, social development, emotional learning and adapted pedagogical approaches.",
     trustPoints: [
       { icon: ShieldCheck, label: "Safe & Caring" },
-      { icon: HeartHandshake, label: "Inclusive Education" },
-      { icon: Speech, label: "Speech Delay Support" },
-      { icon: Brain, label: "Emotional Support" },
+      { icon: Baby, label: "Nursery & Pre-Primary" },
+      { icon: HeartHandshake, label: "Inclusive Setup" },
+      { icon: UsersRound, label: "Social Development" },
+      { icon: Brain, label: "Emotional Learning" },
+      { icon: Speech, label: "Occupational & Speech Support" },
     ],
     programmes: [
       {
         icon: Baby,
-        title: "Nursery Programme",
+        title: "Nursery Care",
         age: "Early Years",
         description:
-          "A gentle start where young children learn through routine, care, play, stories and guided discovery.",
-        highlights: ["Safe routines", "Play-based learning", "Social confidence"],
+          "Nursery care with early stimulation, gentle routines, sensory play and occupational therapy support where needed.",
+        highlights: [
+          "Safe daily routines",
+          "Sensory play activities",
+          "Occupational therapy support",
+        ],
+      },
+      {
+        icon: UsersRound,
+        title: "Social Development",
+        age: "Confidence & Interaction",
+        description:
+          "Social development through play, communication, group activities and confidence-building in an inclusive setup.",
+        highlights: [
+          "Group interaction",
+          "Communication through play",
+          "Confidence-building",
+        ],
+      },
+      {
+        icon: BookOpenCheck,
+        title: "Pre-Primary / Early Childhood Education",
+        age: "School Readiness",
+        description:
+          "Pre-primary learning foundations for school readiness, early literacy, early numeracy, discovery and independent learning habits.",
+        highlights: [
+          "Early literacy",
+          "Early numeracy",
+          "School readiness",
+        ],
+      },
+      {
+        icon: Brain,
+        title: "Emotional Learning & Social Communication",
+        age: "Wellbeing",
+        description:
+          "Emotional learning and social communication support for confidence, behaviour, expression and positive relationships.",
+        highlights: [
+          "Emotional awareness",
+          "Positive behaviour",
+          "Social communication",
+        ],
       },
       {
         icon: HeartHandshake,
         title: "Inclusive Education",
-        age: "All Learners",
+        age: "Adapted Learning",
         description:
-          "Support for children with different learning needs through patience, structure and individual attention.",
-        highlights: ["Different learning needs", "Individual support", "Confidence building"],
-      },
-      {
-        icon: GraduationCap,
-        title: "Primary Support",
-        age: "Primary Level",
-        description:
-          "Flexible support for reading, writing, numeracy, focus, homework and learning progress.",
-        highlights: ["Literacy support", "Numeracy confidence", "Learning progress"],
+          "An inclusive learning environment with adapted pedagogical approaches to support each child’s pace, needs and potential.",
+        highlights: [
+          "Adapted pedagogy",
+          "Different learning needs",
+          "Individual attention",
+        ],
       },
       {
         icon: Speech,
-        title: "Speech Delay Support",
-        age: "Communication",
+        title: "Occupational & Speech Therapy Support",
+        age: "Holistic Development",
         description:
-          "Gentle guidance to support speech, language, vocabulary, expression and communication confidence.",
-        highlights: ["Speech confidence", "Vocabulary growth", "Expression support"],
-      },
-      {
-        icon: Brain,
-        title: "Child Psychology Support",
-        age: "Emotional Care",
-        description:
-          "Support for emotional wellbeing, confidence, social comfort, behaviour and calm learning.",
-        highlights: ["Emotional support", "Behaviour guidance", "Social confidence"],
-      },
-      {
-        icon: Palette,
-        title: "Creative Development",
-        age: "Daily Growth",
-        description:
-          "Art, stories, sensory activities and creative expression to help children learn with joy.",
-        highlights: ["Creative expression", "Sensory learning", "Imagination"],
+          "Occupational and speech therapy support to foster holistic development, communication, participation and daily learning confidence.",
+        highlights: [
+          "Communication support",
+          "Fine motor readiness",
+          "Holistic development",
+        ],
       },
     ],
     ctaEyebrow: "Admissions Open",
-    ctaTitle:
-      "Find the right learning pathway for your child.",
+    ctaTitle: "Looking for a nursery in an inclusive setup?",
     ctaText:
-      "Speak with us about nursery, inclusive education, primary learning support, speech delay support, speech therapy guidance and child psychology support.",
+      "Speak with us about your child’s age, learning needs, social development, emotional learning, communication and the best next step for enrollment.",
     cta: "View Programmes",
   },
   fr: {
     eyebrow: "Nos Programmes",
-    title: "Nurserie, éducation inclusive et soutien primaire.",
+    title:
+      "Nurserie, prÃ©-primaire et Ã©ducation inclusive de la petite enfance.",
     description:
-      "Heaven’s Seed International School accompagne les enfants avec la nurserie, l’apprentissage inclusif, le soutien primaire, le soutien du langage et le développement émotionnel.",
+      "Heaven’s Seed International School accompagne les enfants avec la nurserie, le prÃ©-primaire, l’Ã©ducation inclusive, le dÃ©veloppement social, l’apprentissage Ã©motionnel et des approches pÃ©dagogiques adaptÃ©es.",
     trustPoints: [
-      { icon: ShieldCheck, label: "Sécurité & soin" },
-      { icon: HeartHandshake, label: "Éducation inclusive" },
-      { icon: Speech, label: "Soutien du langage" },
-      { icon: Brain, label: "Soutien émotionnel" },
+      { icon: ShieldCheck, label: "SÃ©curitÃ© & soin" },
+      { icon: Baby, label: "Nurserie & PrÃ©-primaire" },
+      { icon: HeartHandshake, label: "Cadre inclusif" },
+      { icon: UsersRound, label: "DÃ©veloppement social" },
+      { icon: Brain, label: "Apprentissage Ã©motionnel" },
+      { icon: Speech, label: "ErgothÃ©rapie & orthophonie" },
     ],
     programmes: [
       {
         icon: Baby,
-        title: "Programme Nurserie",
+        title: "Nurserie",
         age: "Petite enfance",
         description:
-          "Un départ doux où l’enfant apprend avec routine, soin, jeu, histoires et découverte guidée.",
-        highlights: ["Routines sûres", "Apprentissage par le jeu", "Confiance sociale"],
+          "Une nurserie avec stimulation prÃ©coce, routines douces, jeux sensoriels et soutien en ergothÃ©rapie si nÃ©cessaire.",
+        highlights: [
+          "Routines sÃ©curisantes",
+          "Jeux sensoriels",
+          "Soutien en ergothÃ©rapie",
+        ],
       },
       {
-        icon: HeartHandshake,
-        title: "Éducation Inclusive",
-        age: "Tous les enfants",
+        icon: UsersRound,
+        title: "DÃ©veloppement social",
+        age: "Confiance & interaction",
         description:
-          "Un soutien pour les enfants ayant différents besoins d’apprentissage avec patience et attention.",
-        highlights: ["Besoins différents", "Soutien individuel", "Confiance"],
+          "Le dÃ©veloppement social Ã  travers le jeu, la communication, les activitÃ©s de groupe et la confiance dans un cadre inclusif.",
+        highlights: [
+          "Interaction en groupe",
+          "Communication par le jeu",
+          "Confiance sociale",
+        ],
       },
       {
-        icon: GraduationCap,
-        title: "Soutien Primaire",
-        age: "Niveau primaire",
+        icon: BookOpenCheck,
+        title: "PrÃ©-primaire / Ã‰ducation de la petite enfance",
+        age: "PrÃ©paration scolaire",
         description:
-          "Un accompagnement flexible pour la lecture, l’écriture, les nombres, la concentration et les devoirs.",
-        highlights: ["Lecture", "Numératie", "Progrès scolaire"],
-      },
-      {
-        icon: Speech,
-        title: "Soutien du Retard de Langage",
-        age: "Communication",
-        description:
-          "Un accompagnement doux pour la parole, le vocabulaire, l’expression et la communication.",
-        highlights: ["Confiance orale", "Vocabulaire", "Expression"],
+          "Des bases prÃ©-primaires pour la prÃ©paration scolaire, l’Ã©veil Ã  la lecture, aux nombres, Ã  la dÃ©couverte et Ã  l’autonomie.",
+        highlights: [
+          "Ã‰veil Ã  la lecture",
+          "Ã‰veil aux nombres",
+          "PrÃ©paration scolaire",
+        ],
       },
       {
         icon: Brain,
-        title: "Soutien Psychologique",
-        age: "Bien-être",
+        title: "Apprentissage Ã©motionnel & communication sociale",
+        age: "Bien-Ãªtre",
         description:
-          "Un soutien pour le bien-être émotionnel, la confiance, le comportement et l’apprentissage calme.",
-        highlights: ["Émotionnel", "Comportement", "Confiance sociale"],
+          "Un soutien pour l’apprentissage Ã©motionnel et la communication sociale afin de dÃ©velopper la confiance, l’expression et les relations positives.",
+        highlights: [
+          "Conscience Ã©motionnelle",
+          "Comportement positif",
+          "Communication sociale",
+        ],
       },
       {
-        icon: Palette,
-        title: "Développement Créatif",
-        age: "Éveil quotidien",
+        icon: HeartHandshake,
+        title: "Ã‰ducation inclusive",
+        age: "Apprentissage adaptÃ©",
         description:
-          "Art, histoires, activités sensorielles et expression créative pour apprendre avec joie.",
-        highlights: ["Expression", "Sensoriel", "Imagination"],
+          "Un environnement inclusif avec des approches pÃ©dagogiques adaptÃ©es pour soutenir le rythme, les besoins et le potentiel de chaque enfant.",
+        highlights: [
+          "PÃ©dagogie adaptÃ©e",
+          "Besoins diffÃ©rents",
+          "Attention individuelle",
+        ],
+      },
+      {
+        icon: Speech,
+        title: "Soutien ergothÃ©rapie & orthophonie",
+        age: "DÃ©veloppement global",
+        description:
+          "Un soutien en ergothÃ©rapie et en orthophonie pour favoriser le dÃ©veloppement global, la communication, la participation et la confiance.",
+        highlights: [
+          "Soutien communication",
+          "MotricitÃ© fine",
+          "DÃ©veloppement global",
+        ],
       },
     ],
     ctaEyebrow: "Inscriptions ouvertes",
-    ctaTitle:
-      "Trouvez le bon parcours d’apprentissage pour votre enfant.",
+    ctaTitle: "Vous cherchez une nurserie dans un cadre inclusif ?",
     ctaText:
-      "Parlez-nous de la nurserie, de l’éducation inclusive, du soutien primaire, du langage et du soutien émotionnel.",
+      "Parlez-nous de l’Ã¢ge de votre enfant, de ses besoins d’apprentissage, de son dÃ©veloppement social, Ã©motionnel, de sa communication et de la meilleure Ã©tape pour l’inscription.",
     cta: "Voir les programmes",
   },
 };
@@ -219,7 +269,7 @@ export default function ProgrammesPreview() {
         {/* Top Heading */}
         <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
           <div>
-            <p className="text-[11px] font-extrabold uppercase tracking-[0.3em] text-[#A84F3F]">
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.3em] text-[#B86452]">
               {t.eyebrow}
             </p>
 
@@ -243,9 +293,9 @@ export default function ProgrammesPreview() {
                 return (
                   <div
                     key={item.label}
-                    className="inline-flex items-center gap-2 rounded-full border border-[#A84F3F]/10 bg-white/58 px-3 py-2 text-xs font-extrabold text-[#183528] shadow-sm backdrop-blur-md"
+                    className="inline-flex items-center gap-2 rounded-full border border-[#B86452]/10 bg-white/58 px-3 py-2 text-xs font-extrabold text-[#183528] shadow-sm backdrop-blur-md"
                   >
-                    <Icon size={14} className="text-[#A84F3F]" />
+                    <Icon size={14} className="text-[#B86452]" />
                     {item.label}
                   </div>
                 );
@@ -265,16 +315,16 @@ export default function ProgrammesPreview() {
                 className="group relative overflow-hidden rounded-[2rem] border border-white/45 bg-white/56 p-5 shadow-[0_22px_70px_rgba(24,53,40,0.09)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-white/76 sm:p-6"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="absolute -right-14 -top-14 size-36 rounded-full bg-[#F4B321]/18 blur-3xl transition duration-500 group-hover:bg-[#A84F3F]/18" />
-                <div className="absolute -bottom-16 -left-16 size-40 rounded-full bg-[#A84F3F]/8 blur-3xl transition duration-500 group-hover:bg-[#7F342B]/10" />
+                <div className="absolute -right-14 -top-14 size-36 rounded-full bg-[#F4B321]/18 blur-3xl transition duration-500 group-hover:bg-[#B86452]/18" />
+                <div className="absolute -bottom-16 -left-16 size-40 rounded-full bg-[#B86452]/8 blur-3xl transition duration-500 group-hover:bg-[#944337]/10" />
 
                 <div className="relative">
                   <div className="flex items-start justify-between gap-4">
-                    <div className="grid size-13 place-items-center rounded-2xl bg-[#A84F3F] text-white shadow-[0_16px_38px_rgba(168,79,63,0.22)] transition duration-500 group-hover:-translate-y-1 group-hover:bg-[#7F342B]">
+                    <div className="grid size-13 place-items-center rounded-2xl bg-[#B86452] text-white shadow-[0_16px_38px_rgba(168,79,63,0.22)] transition duration-500 group-hover:-translate-y-1 group-hover:bg-[#944337]">
                       <Icon size={24} strokeWidth={2.4} />
                     </div>
 
-                    <span className="rounded-full border border-[#F4B321]/40 bg-[#FFF4DF]/78 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#7F342B]">
+                    <span className="rounded-full border border-[#F4B321]/40 bg-[#FFF4DF]/78 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#944337]">
                       {programme.age}
                     </span>
                   </div>
@@ -309,7 +359,7 @@ export default function ProgrammesPreview() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-8 overflow-hidden rounded-[2rem] border border-white/45 bg-[#A84F3F] p-6 text-white shadow-[0_26px_80px_rgba(168,79,63,0.18)] sm:p-8 lg:mt-10">
+        <div className="mt-8 overflow-hidden rounded-[2rem] border border-white/45 bg-[#B86452] p-6 text-white shadow-[0_26px_80px_rgba(168,79,63,0.18)] sm:p-8 lg:mt-10">
           <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#F4D77B]">
@@ -327,20 +377,21 @@ export default function ProgrammesPreview() {
 
             <Link
               href="/programmes"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.35)] transition duration-300 hover:-translate-y-1 hover:bg-[#FFD46A] sm:px-7 sm:py-4"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#944337] shadow-[0_18px_45px_rgba(244,179,33,0.35)] transition duration-300 hover:-translate-y-1 hover:bg-[#FFD46A] sm:px-7 sm:py-4"
               aria-label="View Heaven’s Seed International School programmes"
             >
-              <span className="text-[#7F342B]">{t.cta}</span>
-              <ArrowRight size={18} className="text-[#7F342B]" />
+              <span className="text-[#944337]">{t.cta}</span>
+              <ArrowRight size={18} className="text-[#944337]" />
             </Link>
           </div>
         </div>
 
         <p className="sr-only">
           Heaven’s Seed International School programmes include nursery
-          education, inclusive education, primary learning support, speech delay
-          support, speech therapy guidance, child psychology support and
-          emotional support.
+          education, pre-primary education, inclusive education, social
+          development, emotional learning, social communication, adapted
+          pedagogical approaches, occupational therapy support and speech therapy
+          guidance.
         </p>
       </div>
     </section>

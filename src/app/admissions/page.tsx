@@ -130,7 +130,7 @@ export default function AdmissionsPage() {
         <div className="mx-auto max-w-7xl">
           <div className="overflow-hidden rounded-[2rem] border border-white/45 bg-white/75 shadow-[0_26px_85px_rgba(24,53,40,0.12)] backdrop-blur-xl">
             {/* Mobile/tablet image */}
-            <div className="relative aspect-video w-full overflow-hidden bg-[#A84F3F] lg:hidden">
+            <div className="relative aspect-video w-full overflow-hidden bg-[#B86452] lg:hidden">
               <Image
                 src="/images/Admissions/admissions-hero.webp"
                 alt="Heaven’s Seed International School admissions for nursery inclusive and primary support"
@@ -143,7 +143,7 @@ export default function AdmissionsPage() {
             </div>
 
             {/* Desktop hero */}
-            <div className="relative hidden aspect-[16/7] w-full overflow-hidden bg-[#A84F3F] lg:block">
+            <div className="relative hidden aspect-[16/7] w-full overflow-hidden bg-[#B86452] lg:block">
               <Image
                 src="/images/Admissions/admissions-hero.webp"
                 alt="Heaven’s Seed International School admissions for nursery inclusive and primary support"
@@ -154,8 +154,8 @@ export default function AdmissionsPage() {
                 className="object-cover object-center"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-r from-[#7F342B]/88 via-[#A84F3F]/48 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#7F342B]/44 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#944337]/88 via-[#B86452]/48 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#944337]/44 via-transparent to-transparent" />
 
               <div className="absolute inset-0 flex items-center">
                 <div className="max-w-3xl px-10">
@@ -178,10 +178,10 @@ export default function AdmissionsPage() {
                       href="https://wa.me/23058204613"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.36)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#944337] shadow-[0_18px_45px_rgba(244,179,33,0.36)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
                     >
-                      <span className="text-[#7F342B]">WhatsApp Admissions</span>
-                      <ArrowRight size={17} className="text-[#7F342B]" />
+                      <span className="text-[#944337]">WhatsApp Admissions</span>
+                      <ArrowRight size={17} className="text-[#944337]" />
                     </Link>
 
                     <Link
@@ -198,7 +198,7 @@ export default function AdmissionsPage() {
 
             {/* Mobile/tablet text */}
             <div className="p-5 sm:p-7 lg:hidden">
-              <p className="inline-flex items-center gap-2 rounded-full border border-[#A84F3F]/15 bg-[#A84F3F]/8 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#7F342B]">
+              <p className="inline-flex items-center gap-2 rounded-full border border-[#B86452]/15 bg-[#B86452]/8 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.24em] text-[#944337]">
                 <HeartHandshake size={14} />
                 Admissions Open
               </p>
@@ -217,15 +217,15 @@ export default function AdmissionsPage() {
                   href="https://wa.me/23058204613"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.32)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#944337] shadow-[0_18px_45px_rgba(244,179,33,0.32)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
                 >
-                  <span className="text-[#7F342B]">WhatsApp Admissions</span>
-                  <ArrowRight size={17} className="text-[#7F342B]" />
+                  <span className="text-[#944337]">WhatsApp Admissions</span>
+                  <ArrowRight size={17} className="text-[#944337]" />
                 </Link>
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#A84F3F] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(168,79,63,0.32)] transition hover:-translate-y-1 hover:bg-[#7F342B]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B86452] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(168,79,63,0.32)] transition hover:-translate-y-1 hover:bg-[#944337]"
                 >
                   <span className="text-white">Contact Us</span>
                   <MessageCircle size={17} className="text-white" />
@@ -241,7 +241,7 @@ export default function AdmissionsPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
             <div className="rounded-[2rem] border border-white/45 bg-white/60 p-6 shadow-[0_22px_70px_rgba(24,53,40,0.09)] backdrop-blur-xl sm:p-8 lg:p-10">
-              <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F]">
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#B86452]">
                 Admissions Guidance
               </p>
 
@@ -266,9 +266,9 @@ export default function AdmissionsPage() {
               <div className="mt-7 grid gap-3 sm:grid-cols-2">
                 <Link
                   href="tel:57614680"
-                  className="flex items-center gap-3 rounded-2xl border border-[#A84F3F]/12 bg-white/70 p-4 text-sm font-extrabold text-[#183528] shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
+                  className="flex items-center gap-3 rounded-2xl border border-[#B86452]/12 bg-white/70 p-4 text-sm font-extrabold text-[#183528] shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
                 >
-                  <Phone size={18} className="text-[#A84F3F]" />
+                  <Phone size={18} className="text-[#B86452]" />
                   57614680
                 </Link>
 
@@ -276,17 +276,17 @@ export default function AdmissionsPage() {
                   href="https://wa.me/23058204613"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 rounded-2xl border border-[#A84F3F]/12 bg-white/70 p-4 text-sm font-extrabold text-[#183528] shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
+                  className="flex items-center gap-3 rounded-2xl border border-[#B86452]/12 bg-white/70 p-4 text-sm font-extrabold text-[#183528] shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
                 >
-                  <MessageCircle size={18} className="text-[#A84F3F]" />
+                  <MessageCircle size={18} className="text-[#B86452]" />
                   WhatsApp 58204613
                 </Link>
 
                 <Link
                   href="mailto:Heavenseed2126@gmail.com"
-                  className="flex items-center gap-3 rounded-2xl border border-[#A84F3F]/12 bg-white/70 p-4 text-sm font-extrabold text-[#183528] shadow-sm transition hover:-translate-y-0.5 hover:bg-white sm:col-span-2"
+                  className="flex items-center gap-3 rounded-2xl border border-[#B86452]/12 bg-white/70 p-4 text-sm font-extrabold text-[#183528] shadow-sm transition hover:-translate-y-0.5 hover:bg-white sm:col-span-2"
                 >
-                  <Mail size={18} className="text-[#A84F3F]" />
+                  <Mail size={18} className="text-[#B86452]" />
                   Heavenseed2126@gmail.com
                 </Link>
 
@@ -294,9 +294,9 @@ export default function AdmissionsPage() {
                   href="https://www.google.com/maps/search/?api=1&query=111%2C%20Malartic%20Avenue%2C%20Quatre%20Bornes%2C%2075947%2C%20Zone%204%2C%20Mauritius"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 rounded-2xl border border-[#A84F3F]/12 bg-white/70 p-4 text-sm font-extrabold leading-6 text-[#183528] shadow-sm transition hover:-translate-y-0.5 hover:bg-white sm:col-span-2"
+                  className="flex items-start gap-3 rounded-2xl border border-[#B86452]/12 bg-white/70 p-4 text-sm font-extrabold leading-6 text-[#183528] shadow-sm transition hover:-translate-y-0.5 hover:bg-white sm:col-span-2"
                 >
-                  <MapPin size={18} className="mt-0.5 shrink-0 text-[#A84F3F]" />
+                  <MapPin size={18} className="mt-0.5 shrink-0 text-[#B86452]" />
                   <span>
                     111, Malartic Avenue, Quatre Bornes, 75947, Zone 4,
                     Mauritius
@@ -315,7 +315,7 @@ export default function AdmissionsPage() {
                     className="group rounded-[1.75rem] border border-white/45 bg-white/48 p-5 shadow-[0_18px_55px_rgba(24,53,40,0.08)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-white/70"
                   >
                     <div className="flex gap-4">
-                      <div className="grid size-12 shrink-0 place-items-center rounded-2xl bg-[#A84F3F] text-white shadow-[0_16px_38px_rgba(168,79,63,0.22)] transition duration-500 group-hover:bg-[#7F342B]">
+                      <div className="grid size-12 shrink-0 place-items-center rounded-2xl bg-[#B86452] text-white shadow-[0_16px_38px_rgba(168,79,63,0.22)] transition duration-500 group-hover:bg-[#944337]">
                         <Icon size={22} strokeWidth={2.4} />
                       </div>
 
@@ -342,7 +342,7 @@ export default function AdmissionsPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-7 grid gap-4 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
-              <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F]">
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#B86452]">
                 Enrollment Steps
               </p>
 
@@ -366,15 +366,15 @@ export default function AdmissionsPage() {
                   key={item.step}
                   className="group relative overflow-hidden rounded-[2rem] border border-white/45 bg-white/52 p-6 shadow-[0_22px_70px_rgba(24,53,40,0.09)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:bg-white/75"
                 >
-                  <div className="absolute -right-16 -top-16 size-40 rounded-full bg-[#F4B321]/16 blur-3xl transition duration-500 group-hover:bg-[#A84F3F]/16" />
+                  <div className="absolute -right-16 -top-16 size-40 rounded-full bg-[#F4B321]/16 blur-3xl transition duration-500 group-hover:bg-[#B86452]/16" />
 
                   <div className="relative">
                     <div className="flex items-start justify-between">
-                      <span className="text-4xl font-extrabold tracking-[-0.07em] text-[#A84F3F]">
+                      <span className="text-4xl font-extrabold tracking-[-0.07em] text-[#B86452]">
                         {item.step}
                       </span>
 
-                      <div className="grid size-12 place-items-center rounded-2xl bg-[#A84F3F] text-white shadow-[0_16px_38px_rgba(168,79,63,0.22)] transition duration-500 group-hover:bg-[#7F342B]">
+                      <div className="grid size-12 place-items-center rounded-2xl bg-[#B86452] text-white shadow-[0_16px_38px_rgba(168,79,63,0.22)] transition duration-500 group-hover:bg-[#944337]">
                         <Icon size={22} strokeWidth={2.4} />
                       </div>
                     </div>
@@ -397,7 +397,7 @@ export default function AdmissionsPage() {
       {/* Required Info */}
       <section className="px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
         <div className="mx-auto max-w-7xl">
-          <div className="overflow-hidden rounded-[2rem] bg-[#A84F3F] p-6 text-white shadow-[0_26px_85px_rgba(168,79,63,0.18)] sm:p-8 lg:p-10">
+          <div className="overflow-hidden rounded-[2rem] bg-[#B86452] p-6 text-white shadow-[0_26px_85px_rgba(168,79,63,0.18)] sm:p-8 lg:p-10">
             <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
               <div>
                 <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#F4D77B]">
@@ -443,7 +443,7 @@ export default function AdmissionsPage() {
       <section className="px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-7 text-center">
-            <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F]">
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#B86452]">
               Admissions FAQ
             </p>
 
@@ -477,7 +477,7 @@ export default function AdmissionsPage() {
           <div className="rounded-[2rem] border border-white/45 bg-white/60 p-6 shadow-[0_24px_80px_rgba(24,53,40,0.10)] backdrop-blur-xl sm:p-8 lg:p-10">
             <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
-                <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#A84F3F]">
+                <p className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-[#B86452]">
                   Start Today
                 </p>
 
@@ -497,15 +497,15 @@ export default function AdmissionsPage() {
                   href="https://wa.me/23058204613"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#7F342B] shadow-[0_18px_45px_rgba(244,179,33,0.32)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4B321] px-6 py-3 text-sm font-extrabold !text-[#944337] shadow-[0_18px_45px_rgba(244,179,33,0.32)] transition hover:-translate-y-1 hover:bg-[#FFD46A]"
                 >
-                  <span className="text-[#7F342B]">WhatsApp Admissions</span>
-                  <ArrowRight size={17} className="text-[#7F342B]" />
+                  <span className="text-[#944337]">WhatsApp Admissions</span>
+                  <ArrowRight size={17} className="text-[#944337]" />
                 </Link>
 
                 <Link
                   href="mailto:Heavenseed2126@gmail.com"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#A84F3F] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(168,79,63,0.32)] transition hover:-translate-y-1 hover:bg-[#7F342B]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B86452] px-6 py-3 text-sm font-extrabold !text-white shadow-[0_18px_45px_rgba(168,79,63,0.32)] transition hover:-translate-y-1 hover:bg-[#944337]"
                 >
                   <span className="text-white">Email Us</span>
                   <Mail size={17} className="text-white" />

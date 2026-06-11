@@ -64,7 +64,7 @@ export function createMetadata({
           url: ogImageUrl,
           width: 1200,
           height: 630,
-          alt: `${pageTitle} - Nursery, inclusive education, primary support and speech delay support in Mauritius`,
+          alt: `${pageTitle} - Nursery, pre-primary and inclusive early childhood education in Mauritius`,
         },
       ],
       locale: siteConfig.locale,
